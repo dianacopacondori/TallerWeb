@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    background-image: url('pokeCafe_logo.png');
+    background-repeat: no-repeat;
+    background-position: center; /* Centra la imagen dentro del espacio */
+    background-size: contain;    /* Escala la imagen para que quepa completa */
+    /* Ajusta estos valores para cambiar el tamaño total */
+    width: 160px; 
+    height: 80px; 
+    margin: 10px 20px;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: rgb(236, 239, 207);
+    border-bottom: 1.6px solid rgb(132, 107, 72);
+}
+.nav-links{
+    margin-left: auto;
+}
+.nav-links a{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: rgb(79, 130, 132);
+    margin-right: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 0.9px solid  transparent;
+    border-radius: 40px;
+    transition: border-color 0.3s ease;
+}
+.nav-links a:hover{
+    border-color: black;
+}
