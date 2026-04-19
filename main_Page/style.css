@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    padding-top: 100px;
 }
 .logo{
     background-image: url('pokeCafe_logo.png');
@@ -13,7 +14,12 @@ body{
     margin: 10px 20px;
 }
 .nav-bar{
+    position: fixed;
     display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     align-items: center;
     height: 100px;
     background: rgb(236, 239, 207);
@@ -35,4 +41,10 @@ body{
 }
 .nav-links a:hover{
     border-color: black;
+}
+.contenido {
+            height: 2000px; 
+            background: linear-gradient(to bottom, #f7f1e3, #d1ccc0);
+            text-align: center;
+            padding: 50px 20px;
 }
