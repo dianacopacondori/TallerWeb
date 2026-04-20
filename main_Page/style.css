@@ -2,6 +2,17 @@ body{
     margin: 0px;
     padding: 0px;
     padding-top: 100px;
+    font-family: "Montserrat", sans-serif;
+
+    background: linear-gradient(
+        rgba(255, 248, 220, 0.85),
+        rgba(255, 248, 220, 0.9)
+    ),
+    url("img/fondo-pokemon-cafe.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .logo{
     background-image: url('pokeCafe_logo.png');
@@ -24,14 +35,15 @@ body{
     height: 100px;
     background: rgb(236, 239, 207);
     border-bottom: 1.6px solid rgb(132, 107, 72);
+    backdrop-filter: blur(10px);
 }
 .nav-links{
     margin-left: auto;
 }
 .nav-links a{
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    color: rgb(79, 130, 132);
+    font-size: 18px;
+    color: rgb(108, 105, 105);
     margin-right: 50px;
     padding: 10px 20px;
     text-decoration: none;
@@ -41,10 +53,187 @@ body{
 }
 .nav-links a:hover{
     border-color: black;
+    background: rgb(247, 224, 110);
+    color: black;
+}
+.slider-box{
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+}
+.slider-box ul{
+    display: flex;
+    padding: 0;
+    width: 200%;
+    animation: slide 4s infinite alternate ease-in-out;
+}
+.slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.slider-box .banner{
+    width: 100%;
+    height: 700px;
+    background-image: url(pokemon-cafe.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-box .banner2{
+    width: 100%;
+    height: 700px;
+    background-image: url(pokemon-cafe-entrada.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes slide{
+    0%{margin-left: 0;}
+    45%{margin-left: 0%;}
+    55%{margin-left: -100%;}
+    100%{margin-left: -100%;}
+}
+h1 {
+    color: #ff6b6b;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #202020;
+}
+.bienvenida, .proposito {
+    margin-bottom: 40px;
+}
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.tabla-menu {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    font-family: "Montserrat";
+}
+
+.tabla-menu th, .tabla-menu td {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.tabla-menu th {
+    background: #f5cb24;
+}
+
+button {
+    margin: 15px;
+    background: linear-gradient(135deg, #ffcc00, #ff6b6b);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card h3 {
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.precio {
+    margin: 10px 0;
+}
+
+.original {
+    color: rgb(190, 82, 68);
+    margin-right: 10px;
+}
+
+.urgente {
+    color: red;
+    font-weight: bold;
 }
 .contenido {
-            height: 2000px; 
-            background: linear-gradient(to bottom, #f7f1e3, #d1ccc0);
-            text-align: center;
-            padding: 50px 20px;
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    margin-top: 50px;
+}
+
+.footer a {
+    color: #ffcc00;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
