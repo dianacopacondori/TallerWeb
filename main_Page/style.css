@@ -56,10 +56,12 @@ body{
     background: rgb(247, 224, 110);
     color: black;
 }
-.slider-box{
+.slider-box {
     width: 100%;
     overflow: hidden;
     height: 600px;
+    position: relative; /* Sigue siendo importante para que el hijo no se escape */
+    /* Eliminamos: display: flex, justify-content y align-items */
 }
 .slider-box ul{
     display: flex;
@@ -93,6 +95,30 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.capa-concepto {
+    position: absolute;       
+    z-index: 10;              
+    
+    /* Nuevas coordenadas de centrado infalible */
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: rgba(200, 165, 85, 0.75); 
+    width: 70%;
+    max-width: 900px;
+    padding: 60px 40px;
+    text-align: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.capa-concepto h2 {
+    font-size: 35px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
 @keyframes slide{
     0%{margin-left: 0;}
