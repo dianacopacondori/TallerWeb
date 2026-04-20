@@ -42,6 +42,50 @@ body{
 .nav-links a:hover{
     border-color: black;
 }
+.slider-box{
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+}
+.slider-box ul{
+    display: flex;
+    padding: 0;
+    width: 200%;
+    animation: slide 4s infinite alternate ease-in-out;
+}
+.slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.slider-box .banner{
+    width: 100%;
+    height: 700px;
+    background-image: url(pokemon-cafe.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-box .banner2{
+    width: 100%;
+    height: 700px;
+    background-image: url(pokemon-cafe-entrada.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes slide{
+    0%{margin-left: 0;}
+    45%{margin-left: 0%;}
+    55%{margin-left: -100%;}
+    100%{margin-left: -100%;}
+}
 .contenido {
             height: 2000px; 
             background: linear-gradient(to bottom, #f7f1e3, #d1ccc0);
