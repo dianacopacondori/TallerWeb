@@ -4,14 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-image: url(login_imgjpg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .card-login{
+            backdrop-filter: blur(4px);
+            width: 400px;
+            margin-top: 150px;
+            flex-direction: column;
+            border: 3px solid blanchedalmond;
+            border-radius: 10px;
+            padding: 40px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .form_group{
+            padding: 10px;
+        }
+        .form_group label{
+            font-size: 15px;
+            color: #bcbf32;
+
+        }
+        h1{
+            text-align: center;
+            color: #bcbf32;
+        }
+        input[type="password"],
+        input[type="text"]{
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        input[type="password"]:focus{
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+    </style>
 </head>
 <body>
-    <h1>Iniciar Sesión</h1>
-
 <form>
-  <input type="text" placeholder="Usuario"><br><br>
-  <input type="password" placeholder="Contraseña"><br><br>
-  <button>Ingresar</button>
+  <div class="card-login">
+    <h1>Iniciar Sesión</h1>
+    <div class="form_group">
+        <label for="user">Usuario:</label>
+        <input type="text" id="user" placeholder="Usuario">
+    </div>
+    
+    <div class="form_group">
+        <label for="">Contraseña:</label>
+        <input type="password" placeholder="Contraseña">
+    </div>
+    <div class="form_group">
+        <input type="submit" value="Registrarse">
+        <a href="index.html">Pagina</a>
+    </div>
+  </div>
 </form>
 </body>
 </html>
