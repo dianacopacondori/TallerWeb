@@ -15,7 +15,7 @@ body{
     background-attachment: fixed;
 }
 .logo{
-    background-image: url('pokeCafe_logo.png');
+    background-image: url('../img/img_main/pokeCafe_logo.png');
     background-repeat: no-repeat;
     background-position: center; /* Centra la imagen dentro del espacio */
     background-size: contain;    /* Escala la imagen para que quepa completa */
@@ -77,7 +77,7 @@ body{
 .slider-box .banner{
     width: 100%;
     height: 700px;
-    background-image: url(pokemon-cafe.jpg);
+    background-image: url(../img/img_main/pokemon-cafe.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,7 +88,7 @@ body{
 .slider-box .banner2{
     width: 100%;
     height: 700px;
-    background-image: url(pokemon-cafe-entrada.jpg);
+    background-image: url(../img/img_main/pokemon-cafe-entrada.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
