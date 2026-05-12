@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrarse</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,154 +11,152 @@
       rel="stylesheet"
     />
     <style>
-        body{
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            background-image: url(../main_Page/img/img_login/login_imgjpg.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-        .card-registrarse{
-            backdrop-filter: blur(4px);
-            width: 400px;
-            margin-top: 150px;
-            flex-direction: column;
-            border: 3px solid blanchedalmond;
-            border-radius: 10px;
-            padding: 40px;
-            font-family: "Montserrat", sans-serif;
-        }
-        .form_group{
-            padding: 10px;
-        }
-        .form_group label{
-            font-size: 15px ;
-            font-weight: bold;
-            color: #f0f0f0 ;
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(../main_Page/img/img_login/login_imgjpg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .card-registrarse {
+        backdrop-filter: blur(4px);
+        width: 400px;
+        margin-top: 150px;
+        flex-direction: column;
+        border: 3px solid blanchedalmond;
+        border-radius: 10px;
+        padding: 40px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .form_group {
+        padding: 10px;
+      }
+      .form_group label {
+        font-size: 15px;
+        font-weight: bold;
+        color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        color: #bcbf32;
+      }
+      input[type="password"],
+      input[type="text"],
+      input[type="email"],
+      input[type="submit"] {
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      input[type="password"]:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+      .login_google,
+      .login_face {
+        border: 2px solid rgb(124, 120, 120);
+        border-radius: 10px;
+        background-color: aliceblue;
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .icon-google {
+        background-image: url(../main_Page/img/img_icons/icons8-logo-de-google-48.png);
+        background-repeat: no-repeat;
+        background-position: center; /* Centra la imagen dentro del espacio */
+        background-size: contain; /* Escala la imagen para que quepa completa */
+        width: 30px;
+        height: 30px;
+        margin: 9px 40px;
+      }
+      .icon_face {
+        background-image: url(../main_Page/img/img_icons/icons8-facebook-nuevo-50.png);
+        background-repeat: no-repeat;
+        background-position: center; /* Centra la imagen dentro del espacio */
+        background-size: contain; /* Escala la imagen para que quepa completa */
+        width: 30px;
+        height: 30px;
+        margin: 9px 40px;
+      }
+      .boton-enlace {
+        text-decoration: none;
+        display: inline-block;
+        background-color: white; /* O el color que prefieras */
+        color: black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .boton-register {
+        text-decoration: none;
+        display: inline-block;
+        background-color: white; /* O el color que prefieras */
+        color: black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .footer {
+        width: 100%;
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 30px 10px;
+        margin-top: 50px;
+      }
 
-        }
-        h1{
-            text-align: center;
-            color: #bcbf32;
-        }
-        input[type="password"],
-        input[type="text"],
-        input[type="email"],
-        input[type="submit"]{
-            border: 1px solid;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        input[type="password"]:focus{
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0,123,255,0.5);
-        }
-        .login_google,.login_face{
-            border: 2px solid rgb(124, 120, 120);
-            border-radius: 10px;
-            background-color: aliceblue;
-            display: flex;
-            margin-bottom: 10px;
-        }
-        .icon-google{
-            background-image: url(../main_Page/img/img_icons/icons8-logo-de-google-48.png);
-            background-repeat: no-repeat;
-            background-position: center; /* Centra la imagen dentro del espacio */
-            background-size: contain;    /* Escala la imagen para que quepa completa */
-            width: 30px; 
-            height: 30px;
-            margin: 9px 40px;
-        }
-        .icon_face{
-            background-image: url(../main_Page/img/img_icons/icons8-facebook-nuevo-50.png);
-            background-repeat: no-repeat;
-            background-position: center; /* Centra la imagen dentro del espacio */
-            background-size: contain;    /* Escala la imagen para que quepa completa */
-            width: 30px; 
-            height: 30px;
-            margin: 9px 40px;
-        }
-        .boton-enlace {
-            text-decoration: none;
-            display: inline-block;
-            background-color: white; /* O el color que prefieras */
-            color: black;
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-        }
-        .boton-register{
-            text-decoration: none;
-            display: inline-block;
-            background-color: white; /* O el color que prefieras */
-            color: black;
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-        }
-        .footer {
-            width: 100%;
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px 10px;
-            margin-top: 50px;
-        }
+      .footer a {
+        color: #ffcc00;
+        margin: 0 10px;
+        text-decoration: none;
+      }
 
-        .footer a {
-            color: #ffcc00;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
+      .footer a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="card-registrarse">
-    <form>
+      <form>
         <h1>Registrarse</h1>
         <div class="form_group">
-            <label for="user">Usuario:</label>
-            <input type="text" id="user" placeholder="Usuario">
+          <label for="user">Usuario:</label>
+          <input type="text" id="user" placeholder="Usuario" />
         </div>
         <div class="form_group">
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" placeholder="example@gmail.com">
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" placeholder="example@gmail.com" />
         </div>
         <div class="form_group">
-            <label for="">Contraseña:</label>
-            <input type="password" placeholder="Contraseña">
+          <label for="">Contraseña:</label>
+          <input type="password" placeholder="Contraseña" />
         </div>
         <div class="form_group">
-            <a href="index.html" class="boton-register">Registrarse</a>
+          <a href="index.html" class="boton-register">Registrarse</a>
         </div>
         <div class="form_group">
-            <a href="login.html" class="boton-enlace">Iniciar Sesión</a>
+          <a href="login.html" class="boton-enlace">Iniciar Sesión</a>
         </div>
-    </form>
-    <div class="login_terceros">
+      </form>
+      <div class="login_terceros">
         <div class="login_google">
-            <div class="icon-google"></div>
-            <p>Registrarse con Google</p>
+          <div class="icon-google"></div>
+          <p>Registrarse con Google</p>
         </div>
         <div class="login_face">
-            <div class="icon_face"></div>
-            <p>Registrarse con Facebook</p>
+          <div class="icon_face"></div>
+          <p>Registrarse con Facebook</p>
         </div>
+      </div>
     </div>
-</div>
-<footer class="footer">
-    <div class="footer-content">
+    <footer class="footer">
+      <div class="footer-content">
         <p>© 2026 Pokémon Café</p>
         <div class="redes">
           <a href="#">Facebook</a>
@@ -166,7 +164,7 @@
           <a href="#">WhatsApp</a>
         </div>
         <p>Contacto: pokecafe@email.com</p>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

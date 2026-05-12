@@ -3,26 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pedidos | Pokémon Café</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .tabla-container {
+        margin-top: 40px auto;
+        width: 80%;
+        overflow-x: auto;
+      }
+      .tabla-pedidos {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      .tabla-pedidos thead{
+        background: linear-gradient(135deg, #ffcc00,#ff9f43);
+        color: #333;
+      }
+      .tabla-pedidos th,
+      .tabla-pedidos td {
+        padding: 18px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+      .estado-pedido {
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        color: white;
+        font-weight: bold;
+      }
+      .preparacion {
+        background-color: #f39c12;
+      }
+      .proceso {
+        background-color: #2980b9;
+      }
+      .enviado {
+        background-color: #27ae60;
+      }
+    </style>
 </head>
 <body>
+  <header class="nav-bar">
+      <div class="logo"></div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menu</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="formulario_pedido.html">Pedidos</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+    </header>
   <main class="contenido">
-  <h1>Realizar Pedido</h1>
-
-  <form>
-    <input type="text" placeholder="Nombre" required><br><br>
-    <input type="text" placeholder="Dirección" required><br><br>
-    <input type="tel" placeholder="Teléfono"><br><br>
-
-    <label>Selecciona productos:</label><br>
-    <input type="checkbox"> Pikachu Latte<br>
-    <input type="checkbox"> Pokebowl<br><br>
-
-    <input type="number" placeholder="Cantidad"><br><br>
-
-    <button type="submit">Enviar Pedido</button>
-  </form>
-
-</main>  
+   <section class="pedido-header">
+    <h1>Pedidos Realizados</h1>
+    <p>Consulta los pedidos que has realizado en Pokémon Café</p>
+   </section>
+   <section class="tabla-container">
+    <table class="tabla-pedidos">
+      <thead>
+        <tr>
+          <th>ID Pedido</th>
+          <th>Fecha</th>
+          <th>Productos</th>
+          <th>Total</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se agregarán dinámicamente los pedidos -->
+        <tr>
+          <td>#12345</td>
+          <td>2024-06-15</td>
+          <td>Pikachu Latte, Pokebowl</td>
+          <td>S/ 30.00</td>
+          <td><span class="estado-pedido preparacion">En preparación</span></td>
+        </tr>
+        <tr>
+          <td>#12346</td>
+          <td>2024-06-10</td>
+          <td>Postre Pikachu</td>
+          <td>S/ 10.00</td>
+          <td><span class="estado-pedido enviado">Entregado</span></td>
+        </tr>
+      </tbody>
+    </table>
+   </section>
+</main> 
+ <footer class="footer">
+      <p>&copy; 2024 Pokémon Café. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#"
+          ><img src="../main_Page/img/img_icons/icons8-facebook-nuevo-50.png" alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img src="../main_Page/img/instagram-icon.png" alt="Instagram"
+        /></a>
+      </div>
+    </footer> 
 </body>
 </html>

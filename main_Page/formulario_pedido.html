@@ -1,11 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido | Pokemón Café</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .pedido-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+      .pedido-form {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 20px;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+      .input-group label {
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .input-group input,
+      .input-group textarea {
+        padding: 14px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        font-family: "Montserrat", sans-serif;
+        outline: none;
+        transition: border 0.3s;
+      }
+      textarea {
+        resize: none;
+        height: 120px;
+      }
+      .pedido-button {
+        background: linear-gradient(135deg, #ffcc00, #ff6b6b);
+        padding: 14px;
+        border: none;
+        border-radius: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background-color 0.3s,
+          transform 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav-bar">
+      <div class="logo"></div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menu</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="formulario_pedido.html">Pedir</a>
+        <a href="pedidos.html">Mis Pedidos</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+    </header>
+    <main class="contenido">
+      <section class="pedido-header">
+        <h1>Realiza tu Pedido</h1>
+        <p>Llena el formulario para hacer tu pedido en línea</p>
+      </section>
+      <section class="pedido-container">
+        <form class="pedido-form">
+          <div class="input-group">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="Ingresa tu nombre"
+            />
+          </div>
+          <div class="input-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Ingresa tu email"
+            />
+          </div>
+          <div class="input-group">
+            <label for="telefono">Teléfono:</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              required
+              placeholder="Ingresa tu teléfono"
+            />
+          </div>
+          <div class="input-group">
+            <label for="direccion">Dirección:</label>
+            <textarea id="direccion" name="direccion" required></textarea>
+          </div>
+          <div class="input-group">
+            <label>Selecciona tu opción:</label>
+            <select>
+              <option>Pikachu Latte</option>
+              <option>Pokebowl</option>
+              <option>Postre Pikachu</option>
+              <option>Poke Cupcake</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="cantidad">Cantidad:</label>
+            <input
+              type="number"
+              id="cantidad"
+              name="cantidad"
+              min="1"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="comentarios">Comentarios adicionales:</label>
+            <textarea
+              id="comentarios"
+              name="comentarios"
+              placeholder="Escribe cualquier comentario adicional sobre tu pedido"
+            ></textarea>
+          </div>
+          <button type="submit" class="pedido-button">Realizar Pedido</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2026 Pokémon Café. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#"
+          ><img
+            src="../main_Page/img/img_icons/icons8-facebook-nuevo-50.png"
+            alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img src="../main_Page/img/instagram-icon.png" alt="Instagram"
+        /></a>
+        <p>Contacto: info@pokemoncafe.com</p>
+      </div>
+    </footer>
+  </body>
 </html>

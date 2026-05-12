@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+</head>
+<body>
+    <h1>Formulario</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Contacto</h2>
+            <div class="form-group">
+                <label for="rut">Rut</label>
+                <input type="text"><br/><br/>
+            </div>
+
+            <div class="form-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" placeholder="Nombres">
+            </div>
+
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" placeholder="Apellidos">
+            </div>
+
+            <div class="form-group">
+                <label for="nacimiento">Fecha Nacimiento</label>
+                <input type="date">
+            </div>
+
+            <div class="form-group">
+                <label for="numero">Numero Celular</label>
+                <input type="text" placeholder="+56987768598">
+            </div>
+
+            <div class="form-group">
+                <label>Sexo</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sexo">Masculino</label>
+                    <label><input type="radio" name="sexo" >Femenino</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label">Correo</label>
+                <input type="email" placeholder="nombre@algo.com">
+            </div>
+            <div class="form-group">
+                <label>Direccion</label>
+                <div class="inline">
+                    <input type="text" placeholder="direccion">
+                    <input type="text" placeholder="numero">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Localidad</label>
+                <select>
+                    <option>Elija...</option>
+                    <option>Lima</option>
+                    <option>Arequipa</option>
+                    <option>Cusco</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label">Instagram</label>
+                <input type="text" placeholder="instagram">
+            </div> 
+        </div>
+
+        <div class="card">
+            <h2>Contacto Adicional 1</h2>
+
+            <div class="form-group">
+                <label>Nombres</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email">
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <h2>Contacto Adicional 2</h2>
+            <div class="form-group">
+                <label>Nombres</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email">
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .container{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+     .card {
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    label {
+     
+        margin-bottom: 3px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+
+    .inline {
+        display: flex;
+        gap: 10px;
+    }
+
+    .inline input {
+        flex: 1;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 15px;
+        font-size: 13px;
+    }
+</style>
+</html>

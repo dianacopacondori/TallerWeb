@@ -1,20 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>OFERTAS ESPECIALES</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas | Pokemón Café</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<div class="ofertas">
-  <div class="card">
-    <h3>Pikachu Latte</h3>
-    <p>Antes: S/12</p>
-    <p>Ahora: S/8</p>
-    <span class="urgente">¡Últimas unidades!</span>
-  </div>
-</div>
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .titulo-ofertas {
+        text-align: center;
+        margin-bottom: 40px 0;
+      }
+      .badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: red;
+        color: white;
+        padding: 8px 14px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+      }
+      .oferta-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+      .card-content {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .urgente {
+        color: red;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+       .oferta-card:hover{
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      }
+      .original {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 10px;
+      }
+      .precio {
+        color: red;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav-bar">
+      <div class="logo"></div>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menu</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="formulario_pedido.html">Pedir</a>
+        <a href="pedidos.html">Mis Pedidos</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <section class="titulo-ofertas">
+        <h1>OFERTAS ESPECIALES</h1>
+
+        <p>
+          Descubre nuestras ofertas especiales y disfruta de productos
+          exclusivos a precios increíbles.
+        </p>
+      </section>
+
+      <section class="grid">
+        <div class="card oferta-card">
+          <span class="badge">-40%</span>
+          <img
+            src="../main_Page/img/img_menu/pikachu-latte.jpg"
+            alt="Pikachu Latte"
+          />
+          <h3>Pikachu Latte</h3>
+          <p>Café con espuma artística de Pikachu</p>
+
+          <div class="precio">
+            <span class="original">S/ 12</span>
+            <span class="descuento">S/ 7</span>
+          </div>
+          <p class="urgente">¡Últimas unidades!</p>
+          <button>Añadir al pedido</button>
+        </div>
+
+        <div class="card oferta-card">
+          <span class="badge">-35%</span>
+          <img src="../main_Page/img/img_menu/pokebowl.jpg" alt="Pokebowl" />
+          <h3>Pokebowl</h3>
+          <p>Arroz, pollo y vegetales frescos</p>
+
+          <div class="precio">
+            <span class="original">S/ 18</span>
+            <span class="descuento">S/ 12</span>
+          </div>
+          <p class="urgente">¡Oferta por tiempo limitado!</p>
+          <button>Añadir al pedido</button>
+        </div>
+
+        <div class="card oferta-card">
+          <span class="badge">-30%</span>
+          <img
+            src="../main_Page/img/img_menu/pikachu-dessert.jpg"
+            alt="Postre Pikachu"
+          />
+          <h3>Postre Pikachu</h3>
+          <p>Delicioso postre con forma de Pikachu</p>
+
+          <div class="precio">
+            <span class="original">S/ 10</span>
+            <span class="descuento">S/ 7</span>
+          </div>
+          <p class="urgente">¡Solo por hoy!</p>
+          <button>Añadir al pedido</button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2024 Pokémon Café. Todos los derechos reservados.</p>
+      <div class="redes">
+        <a href="#"
+          ><img src="../main_Page/img/img_icons/icons8-facebook-nuevo-50.png" alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img src="../main_Page/img/instagram-icon.png" alt="Instagram"
+        /></a>
+      </div>
+    </footer>
+  </body>
 </html>
