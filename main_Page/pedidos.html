@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedidos | Pokémon Café</title>
+    <link rel="icon" type="image/png" href="../main_Page/img/img_main/pokeCafe_logo.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,8 +27,8 @@
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
-      .tabla-pedidos thead{
-        background: linear-gradient(135deg, #ffcc00,#ff9f43);
+      .tabla-pedidos thead {
+        background: linear-gradient(135deg, #ffcc00, #ff9f43);
         color: #333;
       }
       .tabla-pedidos th,
@@ -53,9 +54,9 @@
         background-color: #27ae60;
       }
     </style>
-</head>
-<body>
-  <header class="nav-bar">
+  </head>
+  <body>
+    <header class="nav-bar">
       <div class="logo"></div>
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
@@ -65,52 +66,84 @@
         <a href="login.html">Mi cuenta</a>
       </nav>
     </header>
-  <main class="contenido">
-   <section class="pedido-header">
-    <h1>Pedidos Realizados</h1>
-    <p>Consulta los pedidos que has realizado en Pokémon Café</p>
-   </section>
-   <section class="tabla-container">
-    <table class="tabla-pedidos">
-      <thead>
-        <tr>
-          <th>ID Pedido</th>
-          <th>Fecha</th>
-          <th>Productos</th>
-          <th>Total</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Aquí se agregarán dinámicamente los pedidos -->
-        <tr>
-          <td>#12345</td>
-          <td>2024-06-15</td>
-          <td>Pikachu Latte, Pokebowl</td>
-          <td>S/ 30.00</td>
-          <td><span class="estado-pedido preparacion">En preparación</span></td>
-        </tr>
-        <tr>
-          <td>#12346</td>
-          <td>2024-06-10</td>
-          <td>Postre Pikachu</td>
-          <td>S/ 10.00</td>
-          <td><span class="estado-pedido enviado">Entregado</span></td>
-        </tr>
-      </tbody>
-    </table>
-   </section>
-</main> 
- <footer class="footer">
-      <p>&copy; 2024 Pokémon Café. Todos los derechos reservados.</p>
-      <div class="redes">
-        <a href="#"
-          ><img src="../main_Page/img/img_icons/icons8-facebook-nuevo-50.png" alt="Facebook"
-        /></a>
-        <a href="#"
-          ><img src="../main_Page/img/instagram-icon.png" alt="Instagram"
-        /></a>
+    <main class="contenido">
+      <section class="pedido-header">
+        <h1>Pedidos Realizados</h1>
+        <p>Consulta los pedidos que has realizado en Pokémon Café</p>
+      </section>
+      <section class="tabla-container">
+        <table class="tabla-pedidos">
+          <thead>
+            <tr>
+              <th>ID Pedido</th>
+              <th>Fecha</th>
+              <th>Productos</th>
+              <th>Total</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se agregarán dinámicamente los pedidos -->
+            <tr>
+              <td>#12345</td>
+              <td>2026-06-15</td>
+              <td>Pikachu Latte, Pokebowl</td>
+              <td>S/ 30.00</td>
+              <td>
+                <span class="estado-pedido preparacion">En preparación</span>
+              </td>
+            </tr>
+            <tr>
+              <td>#12346</td>
+              <td>2026-06-10</td>
+              <td>Postre Pikachu</td>
+              <td>S/ 10.00</td>
+              <td><span class="estado-pedido enviado">Entregado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>PokemónCafe</h3>
+          <img
+            src="../main_Page/img/img_main/pokeCafe_logo.png"
+            alt="Logo PokeCafe"
+            class="footer-logo"
+          />
+          <p>¡Donde cada bocado es una evolución de sabor!</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="menu.html">Menú PokéDex</a></li>
+            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="pedidos.html">Historial Pedidos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Siguenos!!</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
       </div>
-    </footer> 
-</body>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
+          <small
+            >Pokémon es marca registrada de Nintendo/Game Freak. Este es un
+            proyecto temático fan-made.</small
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

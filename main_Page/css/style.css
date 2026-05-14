@@ -246,20 +246,57 @@ input {
     border-radius: 15px;
     border: 1px solid #ccc;
 }
+input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
 .footer {
-    background: #333;
+    background-color: #333; 
     color: white;
-    text-align: center;
-    padding: 30px 10px;
-    margin-top: 50px;
+    padding: 40px 0 20px 0;
+    border-top: 8px solid #c24f4f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.footer a {
-    color: #ffcc00;
-    margin: 0 10px;
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer img {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.footer-section h4 {
+    color: #ffcb05; 
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a {
+    color: white;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.footer-section a:hover {
+    color: #3b4cca; 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 0.8rem;
 }
