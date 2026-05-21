@@ -126,6 +126,32 @@ body{
     55%{margin-left: -100%;}
     100%{margin-left: -100%;}
 }
+.conten{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.track{
+    display: flex;
+    width: max-content;
+    animation: scroll 10s linear infinite;
+}
+.cinta{
+    display: flex;
+    width: max-content;
+    animation: mover 30s linear infinite reverse;
+}
+.cinta img{
+    height: 80px;
+}
+@keyframes mover {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
 h1 {
     color: #ff6b6b;
     font-size: 2.5rem;
