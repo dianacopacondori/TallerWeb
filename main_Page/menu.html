@@ -19,23 +19,34 @@
       rel="stylesheet"
     />
     <style>
-    .menu-section{
-      margin-top: 70px;
-    }
-    .section-title{
+      .menu-section {
+        margin-top: 70px;
+      }
+      .section-title {
+        font-size: 35px;
 
-    font-size: 35px;
+        color: #ff9f43;
 
-    color: #ff9f43;
+        margin-bottom: 30px;
 
-    margin-bottom: 30px;
+        text-align: left;
 
-    text-align: left;
+        border-left: 8px solid #ffcc00;
 
-    border-left: 8px solid #ffcc00;
+        padding-left: 15px;
+      }
+      .card:hover {
+        animation: electricidad 0.2s alternate 5;
+      }
 
-    padding-left: 15px;
-    }
+      @keyframes electricidad {
+        from {
+          transform: translateX(-3px);
+        }
+        to {
+          transform: translateX(3px);
+        }
+      }
     </style>
   </head>
   <body>
@@ -50,390 +61,521 @@
         <a href="login.html">Mi cuenta</a>
       </nav>
     </header>
+
     <main class="contenido">
+      <div class="xp-bar">
+        <div class="xp-fill"></div>
+      </div>
       <h1>Menú Pokémon Café</h1>
       <p>Elige tus productos favoritos</p>
       <section class="menu-section">
         <h2 class="section-tittle">Platos Estrella</h2>
         <div class="grid">
-
           <div class="card">
-          <img src="../main_Page/img/img_menu/pokebowl.jpg" alt="Pokebowl" />
-          <h3>Pokebowl</h3>
-          <p>Arroz, pollo y vegetales frescos</p>
-          <div class="precio">
-            <span class="original">S/ 18</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-        
-          <div class="card">
-          <img  src="../main_Page/img/img_menu/ArcanineEmberWings.png"
-            alt="Arcanine Ember Wings"
-          />
-          <h3>Arcanine Ember Wings</h3>
-          <p>Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino.</p>
-          <div class="precio">
-            <span class="original">S/ 16</span>
-          </div>
-          <button>Añadir al pedido</button>
+            <img src="../main_Page/img/img_menu/pokebowl.jpg" alt="Pokebowl" />
+            <h3>Pokebowl</h3>
+            <p>Arroz, pollo y vegetales frescos</p>
+            <div class="precio">
+              <span class="original">S/ 18</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-          <img src="../main_Page/img/img_menu/ChanseyEggCustard.png" alt="Chansey Egg Custard" />
-          <h3>Chansey Egg Custard</h3>
-          <p>Flan de huevo al estilo japonés (chawanmushi) con dashi suave, camarón y ginkgo, textura sedosa y umami delicado.</p>  
-          <div class="precio">
-            <span class="original">S/ 9</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-          <div class="card">
-          <img src="../main_Page/img/img_menu/ElectrabuzzCitrusChicken.png" alt="Electrabuzz Citrus Chicken" />
-          <h3>Electrabuzz Citrus Chicken</h3> 
-          <p>Pechuga de pollo a la plancha con glaseado de naranja y mostaza, acompañada de puré de coliflor y ensalada verde.</p>
-          <div class="precio">
-            <span class="original">S/ 18</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-        
-          <div class="card">
-          <img src="../main_Page/img/img_menu/GardevoirRoyalTartine.png" alt="Gardevoir Royal Tartine" />
-          <h3>Gardevoir Royal Tartine</h3>
-          <p>Rebanada gruesa de brioche tostado con queso de cabra, pera caramelizada, nueces pecanas y un hilo de miel de lavanda.</p>
-          <div class="precio">
-            <span class="original">S/ 14</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-         <div class="card">
-          <img src="../main_Page/img/img_menu/GyaradosMarinaraPasta.png" alt="Gyarados Marinara Pasta" />
-          <h3>Gyarados Marinara Pasta</h3>
-          <p>Espagueti al dente con salsa de tomate casera, mejillones, calamares y un toque de vino blanco y perejil fresco.</p>
-          <div class="precio">
-            <span class="original">S/ 17</span>
-          </div>
-          <button>Añadir al pedido</button>
+            <img
+              src="../main_Page/img/img_menu/ArcanineEmberWings.png"
+              alt="Arcanine Ember Wings"
+            />
+            <h3>Arcanine Ember Wings</h3>
+            <p>
+              Bocaditos crujientes de coliflor o pollo marinado en especias
+              suaves, con salsa de yogur al limón y cebollino.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 16</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-          <img src="../main_Page/img/img_menu/KoffingCrispyBites.png" alt="Koffing Crispy Bites" />
-          <h3>Koffing Crispy Bites</h3>
-          <p>Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino</p>
-          <div class="precio">
-            <span class="original">S/ 8</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-         <div class="card">
-          <img src="../main_Page/img/img_menu/MagnezoneSparkFries.png" alt="Magnezone Spark Fries" />
-          <h3>Magnezone Spark Fries</h3>
-          <p>Papas rústicas con parmesano rallado, ajo confitado, pimentón ahumado y ralladura de limón.</p>
-          <div class="precio">
-            <span class="original">S/ 9</span>
-          </div>
-          <button>Añadir al pedido</button>
+            <img
+              src="../main_Page/img/img_menu/ChanseyEggCustard.png"
+              alt="Chansey Egg Custard"
+            />
+            <h3>Chansey Egg Custard</h3>
+            <p>
+              Flan de huevo al estilo japonés (chawanmushi) con dashi suave,
+              camarón y ginkgo, textura sedosa y umami delicado.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 9</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-          <img src="../main_Page/img/img_menu/MewtwoZenBowl.png" alt="Mewtwo Zen Bowl" />
-          <h3>Mewtwo Zen Bowl</h3>
-          <p>Bowl de arroz integral negro con tofu marinado en soja y jengibre, edamame, zanahoria rallada, aguacate y aderezo de miso blanco.</p>
-          <div class="precio">
-            <span class="original">S/ 13</span>
-          </div>
-          <button>Añadir al pedido</button>
-          </div>
-
-          <div class="card">
-          <img src="../main_Page/img/img_menu/OnixRockBurger.png" alt="Onix Rock Burger" />
-          <h3>Onix Rock Burger</h3>
-          <p>Hamburguesa de carne Angus (o portobello) sobre pan negro de carbón activado, queso cheddar fundido, cebolla caramelizada y salsa barbacoa ahumada.</p>
-          <div class="precio">
-            <span class="original">S/ 14</span>
-          </div>
-          <button>Añadir al pedido</button>
+            <img
+              src="../main_Page/img/img_menu/ElectrabuzzCitrusChicken.png"
+              alt="Electrabuzz Citrus Chicken"
+            />
+            <h3>Electrabuzz Citrus Chicken</h3>
+            <p>
+              Pechuga de pollo a la plancha con glaseado de naranja y mostaza,
+              acompañada de puré de coliflor y ensalada verde.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 18</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-          <img src="../main_Page/img/img_menu/RayquazaSkyRoll.png" alt="Rayquaza Sky Roll" />
-          <h3>Rayquaza Sky Roll</h3>
-          <p>Sushi roll de tempura crujiente con aguacate, salmón ahumado, queso crema y salsa teriyaki, coronado con un toque de wasabi suave.</p>
-          <div class="precio">
-            <span class="original">S/ 15</span>
-          </div>
-          <button>Añadir al pedido</button>
+            <img
+              src="../main_Page/img/img_menu/GardevoirRoyalTartine.png"
+              alt="Gardevoir Royal Tartine"
+            />
+            <h3>Gardevoir Royal Tartine</h3>
+            <p>
+              Rebanada gruesa de brioche tostado con queso de cabra, pera
+              caramelizada, nueces pecanas y un hilo de miel de lavanda.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 14</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-          <img src="../main_Page/img/img_menu/SnorlaxComfortMac&Cheese.png" alt="Snorlax Comfort Mac & Cheese" />
-          <h3>Snorlax Comfort Mac & Cheese</h3>
-          <p>Macarrones gratinados con tres quesos fundidos, migas de pan tostado y un toque de nuez moscada.</p>
-          <div class="precio">
-            <span class="original">S/ 16</span>
+            <img
+              src="../main_Page/img/img_menu/GyaradosMarinaraPasta.png"
+              alt="Gyarados Marinara Pasta"
+            />
+            <h3>Gyarados Marinara Pasta</h3>
+            <p>
+              Espagueti al dente con salsa de tomate casera, mejillones,
+              calamares y un toque de vino blanco y perejil fresco.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 17</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/KoffingCrispyBites.png"
+              alt="Koffing Crispy Bites"
+            />
+            <h3>Koffing Crispy Bites</h3>
+            <p>
+              Bocaditos crujientes de coliflor o pollo marinado en especias
+              suaves, con salsa de yogur al limón y cebollino
+            </p>
+            <div class="precio">
+              <span class="original">S/ 8</span>
+            </div>
+            <button>Añadir al pedido</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/MagnezoneSparkFries.png"
+              alt="Magnezone Spark Fries"
+            />
+            <h3>Magnezone Spark Fries</h3>
+            <p>
+              Papas rústicas con parmesano rallado, ajo confitado, pimentón
+              ahumado y ralladura de limón.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 9</span>
+            </div>
+            <button>Añadir al pedido</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/MewtwoZenBowl.png"
+              alt="Mewtwo Zen Bowl"
+            />
+            <h3>Mewtwo Zen Bowl</h3>
+            <p>
+              Bowl de arroz integral negro con tofu marinado en soja y jengibre,
+              edamame, zanahoria rallada, aguacate y aderezo de miso blanco.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 13</span>
+            </div>
+            <button>Añadir al pedido</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/OnixRockBurger.png"
+              alt="Onix Rock Burger"
+            />
+            <h3>Onix Rock Burger</h3>
+            <p>
+              Hamburguesa de carne Angus (o portobello) sobre pan negro de
+              carbón activado, queso cheddar fundido, cebolla caramelizada y
+              salsa barbacoa ahumada.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 14</span>
+            </div>
+            <button>Añadir al pedido</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/RayquazaSkyRoll.png"
+              alt="Rayquaza Sky Roll"
+            />
+            <h3>Rayquaza Sky Roll</h3>
+            <p>
+              Sushi roll de tempura crujiente con aguacate, salmón ahumado,
+              queso crema y salsa teriyaki, coronado con un toque de wasabi
+              suave.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 15</span>
+            </div>
+            <button>Añadir al pedido</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/SnorlaxComfortMac&Cheese.png"
+              alt="Snorlax Comfort Mac & Cheese"
+            />
+            <h3>Snorlax Comfort Mac & Cheese</h3>
+            <p>
+              Macarrones gratinados con tres quesos fundidos, migas de pan
+              tostado y un toque de nuez moscada.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 16</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
         </div>
-        </section>
+      </section>
 
       <section class="menu-section">
-      <h2 class="section-tittle">Postres</h2>
-      <div class="grid">
-        <div class="card">
-          <img
-            src="../main_Page/img/img_menu/pikachu-dessert.jpg"
-            alt="Postre Pikachu"
-          />
-          <h3>Postre pikachu</h3>
-          <p>Postre dulce de vainilla con crema</p>
+        <h2 class="section-tittle">Postres</h2>
+        <div class="grid">
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/pikachu-dessert.jpg"
+              alt="Postre Pikachu"
+            />
+            <h3>Postre pikachu</h3>
+            <p>Postre dulce de vainilla con crema</p>
 
-          <div class="precio">
-            <span class="original">S/ 10</span>
+            <div class="precio">
+              <span class="original">S/ 10</span>
+            </div>
+
+            <button>Añadir al pedido</button>
           </div>
 
-          <button>Añadir al pedido</button>
-        </div>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/ClefairyPancakes.png"
+              alt="Clefairy Fluffy Pancakes"
+            />
+            <h3>Clefairy Fluffy Pancakes</h3>
+            <p>
+              Tortitas esponjosas con sirope de arce, frutas de temporada y nube
+              de crema.
+            </p>
 
-        <div class="card">
-          <img
-            src="../main_Page/img/img_menu/ClefairyPancakes.png"
-            alt="Clefairy Fluffy Pancakes"
-          />
-          <h3>Clefairy Fluffy Pancakes</h3>
-          <p>Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.</p>
+            <div class="precio">
+              <span class="original">S/ 15</span>
+            </div>
 
-          <div class="precio">
-            <span class="original">S/ 15</span>
+            <button>Añadir al pedido</button>
           </div>
 
-          <button>Añadir al pedido</button>
-        </div>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/Pika-PikaCheesecake.png"
+              alt="Pika-Pika Cheesecake"
+            />
+            <h3>Pika-Pika Cheesecake</h3>
+            <p>
+              Cheesecake japonés esponjoso con glaseado amarillo y decoración de
+              cola de Pikachu.
+            </p>
 
-        <div class="card">
-          <img
-            src="../main_Page/img/img_menu/Pika-PikaCheesecake.png"
-            alt="Pika-Pika Cheesecake"
-          />
-          <h3>Pika-Pika Cheesecake</h3>
-          <p>Cheesecake japonés esponjoso con glaseado amarillo y decoración de cola de Pikachu.</p>
+            <div class="precio">
+              <span class="original">S/ 10</span>
+            </div>
 
-          <div class="precio">
-            <span class="original">S/ 10</span>
+            <button>Añadir al pedido</button>
           </div>
 
-          <button>Añadir al pedido</button>
-        </div>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/EeveelutionMacarons.png"
+              alt="Eeveelution Macarons"
+            />
+            <h3>Eeveelution Macarons</h3>
+            <p>
+              Set de 8 macarons con sabores inspirados en las evoluciones de
+              Eevee (presentados en caja coleccionable).
+            </p>
 
-        <div class="card">
-          <img
-            src="../main_Page/img/img_menu/EeveelutionMacarons.png"
-            alt="Eeveelution Macarons"
-          />
-          <h3>Eeveelution Macarons</h3>
-          <p>Set de 8 macarons con sabores inspirados en las evoluciones de Eevee (presentados en caja coleccionable).</p>
+            <div class="precio">
+              <span class="original">S/ 12</span>
+            </div>
 
-          <div class="precio">
-            <span class="original">S/ 12</span>
+            <button>Añadir al pedido</button>
           </div>
 
-          <button>Añadir al pedido</button>
-        </div>
-
-
-        <div class="card">
-          <img src="../main_Page/img/img_menu/GengarShadowBrownie.png" alt="Gengar Shadow Brownie" />
-          <h3>Gengar Shadow Brownie</h3>  
-          <p>Brownie denso de chocolate negro con nueces, acompañado de helado de vainilla negra y salsa de frambuesa.</p>
-          <div class="precio">
-            <span class="original">S/ 11</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/GengarShadowBrownie.png"
+              alt="Gengar Shadow Brownie"
+            />
+            <h3>Gengar Shadow Brownie</h3>
+            <p>
+              Brownie denso de chocolate negro con nueces, acompañado de helado
+              de vainilla negra y salsa de frambuesa.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 11</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-       
-
-        <div class="card">
-          <img src="../main_Page/img/img_menu/JynxFrostSorbetTrio.png" alt="Jynx Frost Sorbet  Trio" />
-          <h3>Jynx Frost Sorbet  Trio</h3>
-          <p>Tres bolas de sorbete artesanal (frambuesa, arándano y menta) con coulis de frutos rojos y hojas de menta fresca. ️</p>
-          <div class="precio">
-            <span class="original">S/ 10</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/JynxFrostSorbetTrio.png"
+              alt="Jynx Frost Sorbet  Trio"
+            />
+            <h3>Jynx Frost Sorbet Trio</h3>
+            <p>
+              Tres bolas de sorbete artesanal (frambuesa, arándano y menta) con
+              coulis de frutos rojos y hojas de menta fresca. ️
+            </p>
+            <div class="precio">
+              <span class="original">S/ 10</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        
-
-        <div class="card">
-          <img src="../main_Page/img/img_menu/MagcargoMoltenCake.png" alt="Magcargo Molten Cake" />
-          <h3>Magcargo Molten Cake</h3>
-          <p>Bizcocho individual de chocolate negro con centro fundido, servido con helado de vainilla bourbon y polvo de cacao.</p>
-          <div class="precio">
-            <span class="original">S/ 12</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/MagcargoMoltenCake.png"
+              alt="Magcargo Molten Cake"
+            />
+            <h3>Magcargo Molten Cake</h3>
+            <p>
+              Bizcocho individual de chocolate negro con centro fundido, servido
+              con helado de vainilla bourbon y polvo de cacao.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 12</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/EeveePancakes.png" alt="Eevee Pancakes" />
-          <h3>Eevee Pancakes</h3>
-          <p>Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.</p>
-          <div class="precio">
-            <span class="original">S/ 15</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/EeveePancakes.png"
+              alt="Eevee Pancakes"
+            />
+            <h3>Eevee Pancakes</h3>
+            <p>
+              Tortitas esponjosas con sirope de arce, frutas de temporada y nube
+              de crema.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 15</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/Donas.png" alt="Donas" />
-          <h3>PokeDonas</h3>
-          <p>Donas suaves con glaseado de azúcar y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 8</span>
+          <div class="card">
+            <img src="../main_Page/img/img_menu/Donas.png" alt="Donas" />
+            <h3>PokeDonas</h3>
+            <p>Donas suaves con glaseado de azúcar y una pizca de canela.</p>
+            <div class="precio">
+              <span class="original">S/ 8</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/GalletasDecoradas.png" alt="Galletas Decoradas" />
-          <h3>Galletas Decoradas</h3>
-          <p>Galletas crujientes con glaseado de azúcar y decoración de colores.</p>
-          <div class="precio">
-            <span class="original">S/ 5</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/GalletasDecoradas.png"
+              alt="Galletas Decoradas"
+            />
+            <h3>Galletas Decoradas</h3>
+            <p>
+              Galletas crujientes con glaseado de azúcar y decoración de
+              colores.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 5</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/GengarBrownie.png" alt="Gengar Brownie" />
-          <h3>Gengar Brownie</h3>
-          <p>Brownie de chocolate oscuro con nueces y un toque de chile para un sabor intenso.</p>
-          <div class="precio">
-            <span class="original">S/ 11</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/GengarBrownie.png"
+              alt="Gengar Brownie"
+            />
+            <h3>Gengar Brownie</h3>
+            <p>
+              Brownie de chocolate oscuro con nueces y un toque de chile para un
+              sabor intenso.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 11</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/Cupcakes.png" alt="Cupcakes" />
-          <h3>PokéCupcakes</h3>
-          <p>Cupcakes suaves con glaseado de azúcar y decoración de colores.</p>
-          <div class="precio">
-            <span class="original">S/ 9</span>
+          <div class="card">
+            <img src="../main_Page/img/img_menu/Cupcakes.png" alt="Cupcakes" />
+            <h3>PokéCupcakes</h3>
+            <p>
+              Cupcakes suaves con glaseado de azúcar y decoración de colores.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 9</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
         </div>
-      </div>
       </section>
 
       <section class="menu-section">
         <h2 class="section-tittle">Bebidas</h2>
         <div class="grid">
           <div class="card">
-          <img
-            src="../main_Page/img/img_menu/pikachu-latte.jpg"
-            alt="Pikachu Latte"
-          />
-          <h3>Pikachu Latte</h3>
-          <p>Café con espuma artística de Pikachu</p>
+            <img
+              src="../main_Page/img/img_menu/pikachu-latte.jpg"
+              alt="Pikachu Latte"
+            />
+            <h3>Pikachu Latte</h3>
+            <p>Café con espuma artística de Pikachu</p>
 
-          <div class="precio">
-            <span class="original">S/ 12</span>
+            <div class="precio">
+              <span class="original">S/ 12</span>
+            </div>
+
+            <button>Añadir al pedido</button>
           </div>
 
-          <button>Añadir al pedido</button>
-        </div>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/CharizardRoast.png"
+              alt="Charizard Roast"
+            />
+            <h3>Charizard Roast</h3>
+            <p>
+              Espresso intenso con leche vaporizada y un toque de canela
+              ahumada.
+            </p>
 
-        <div class="card">
-          <img
-            src="../main_Page/img/img_menu/CharizardRoast.png"
-            alt="Charizard Roast"
-          />
-          <h3>Charizard Roast</h3>
-          <p>Espresso intenso con leche vaporizada y un toque de canela ahumada.</p>
-
-          <div class="precio">
-            <span class="original">S/ 8</span>
+            <div class="precio">
+              <span class="original">S/ 8</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
-        <!-- card 3 -->
-        
+          <!-- card 3 -->
 
-       
-
-        
-
-        <div class="card">
-          <img src="../main_Page/img/img_menu/BulbasaurMatchaLatte.png" alt="Bulbasaur Matcha Latte" />
-          <h3>Bulbasaur Matcha Latte</h3>
-          <p>Latte de matcha con leche de avena y un toque de miel.</p>
-          <div class="precio">
-            <span class="original">S/ 10</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/BulbasaurMatchaLatte.png"
+              alt="Bulbasaur Matcha Latte"
+            />
+            <h3>Bulbasaur Matcha Latte</h3>
+            <p>Latte de matcha con leche de avena y un toque de miel.</p>
+            <div class="precio">
+              <span class="original">S/ 10</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        
-        <div class="card">
-          <img src="../main_Page/img/img_menu/GlaceonIceCrystalFrappé.png"  alt="Glaceon Ice Crystal Frappé" />
-          <h3>Glaceon Ice Crystal Frappé</h3>
-          <p>Frappé de hielo con sabor a cristal de hielo y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 12</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/GlaceonIceCrystalFrappé.png"
+              alt="Glaceon Ice Crystal Frappé"
+            />
+            <h3>Glaceon Ice Crystal Frappé</h3>
+            <p>
+              Frappé de hielo con sabor a cristal de hielo y una pizca de
+              canela.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 12</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/JigglypuffMelodySmoothie.png" alt="Jigglypuff Melody Smoothie" />
-          <h3>Jigglypuff Melody Smoothie</h3>
-          <p>Smoothie de frutas con sabor a melodía y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 13</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/JigglypuffMelodySmoothie.png"
+              alt="Jigglypuff Melody Smoothie"
+            />
+            <h3>Jigglypuff Melody Smoothie</h3>
+            <p>Smoothie de frutas con sabor a melodía y una pizca de canela.</p>
+            <div class="precio">
+              <span class="original">S/ 13</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/MewtwoGalaxyLatte.png" alt="Mewtwo Galaxy Latte" />
-          <h3>Mewtwo Galaxy Latte</h3>
-          <p>Latte con sabor a galaxia y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 14</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/MewtwoGalaxyLatte.png"
+              alt="Mewtwo Galaxy Latte"
+            />
+            <h3>Mewtwo Galaxy Latte</h3>
+            <p>Latte con sabor a galaxia y una pizca de canela.</p>
+            <div class="precio">
+              <span class="original">S/ 14</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/SnorlaxComfortChocolate.png" alt="Snorlax Comfort Chocolate" />
-          <h3>Snorlax Comfort Chocolate</h3>
-          <p>Delicioso chocolate con sabor a comodidad y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 16</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/SnorlaxComfortChocolate.png"
+              alt="Snorlax Comfort Chocolate"
+            />
+            <h3>Snorlax Comfort Chocolate</h3>
+            <p>
+              Delicioso chocolate con sabor a comodidad y una pizca de canela.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 16</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
 
-        <div class="card">
-          <img src="../main_Page/img/img_menu/SquirtleSmoothieBowl.png" alt="Squirtle Smoothie Bowl" />
-          <h3>Squirtle Smoothie Bowl</h3>
-          <p>Delicioso bowl de smoothie con sabor a tortuga y una pizca de canela.</p>
-          <div class="precio">
-            <span class="original">S/ 15</span>
+          <div class="card">
+            <img
+              src="../main_Page/img/img_menu/SquirtleSmoothieBowl.png"
+              alt="Squirtle Smoothie Bowl"
+            />
+            <h3>Squirtle Smoothie Bowl</h3>
+            <p>
+              Delicioso bowl de smoothie con sabor a tortuga y una pizca de
+              canela.
+            </p>
+            <div class="precio">
+              <span class="original">S/ 15</span>
+            </div>
+            <button>Añadir al pedido</button>
           </div>
-          <button>Añadir al pedido</button>
-        </div>
         </div>
       </section>
-
     </main>
     <footer class="footer">
       <div class="footer-container">
