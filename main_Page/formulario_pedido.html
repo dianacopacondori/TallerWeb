@@ -1,74 +1,285 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedido | Pokemón Café</title>
     <link rel="icon" type="image/png" href="../main_Page/img/img_main/pokeCafe_logo.png" />
-    
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    
     <style>
-      .pedido-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
+      /* =========================================
+         CONFIGURACIÓN BASE Y TIPOGRAFÍA
+         ========================================= */
+      body {
+          margin: 0;
+          padding: 0;
+          padding-top: 100px; /* Espacio para el navbar fijo */
+          font-family: "Montserrat", sans-serif;
+          background: linear-gradient(rgba(255, 248, 220, 0.85), rgba(255, 248, 220, 0.9)), url("img/fondo-pokemon-cafe.jpg");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
       }
+
+      h1 { color: #ff6b6b; font-size: 2.5rem; text-align: center; }
+      p { text-align: center; }
+      a { text-decoration: none; color: inherit; }
+
+      /* =========================================
+         SISTEMA DE NAVEGACIÓN (GRID)
+         ========================================= */
+      .nav-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background: rgb(236, 239, 207);
+          border-bottom: 1.6px solid rgb(132, 107, 72);
+          backdrop-filter: blur(10px);
+          height: 100px;
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          align-items: center;
+      }
+
+      .logo {
+          background-image: url('../main_Page/img/img_main/pokeCafe_logo.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 80px;
+          margin-left: 20px;
+      }
+
+      /* Icono Hamburguesa */
+      .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 6px;
+          margin-right: 30px;
+          justify-self: end;
+      }
+
+      .hamburger span {
+          width: 35px;
+          height: 4px;
+          background-color: rgb(132, 107, 72);
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .nav-links {
+          display: grid;
+          grid-auto-flow: column;
+          gap: 15px;
+          justify-content: end;
+          padding-right: 40px;
+      }
+
+      .nav-links a {
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+          color: rgb(108, 105, 105);
+          padding: 10px 20px;
+          border: 0.9px solid transparent;
+          border-radius: 40px;
+          transition: all 0.3s ease;
+          text-align: center;
+      }
+
+      .nav-links a:hover {
+          border-color: black;
+          background: rgb(247, 224, 110);
+          color: black;
+      }
+
+      /* =========================================
+         ESTRUCTURA DEL CONTENIDO PRINCIPAL
+         ========================================= */
+      .contenido {
+          width: 90%;
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 40px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      }
+
+      .pedido-header {
+          margin-bottom: 30px;
+      }
+
+      /* =========================================
+         FORMULARIO DE PEDIDO
+         ========================================= */
+      .pedido-container {
+        display: grid;
+        place-items: center; /* Centra el formulario de manera perfecta */
+        margin-top: 20px;
+      }
+      
       .pedido-form {
         background-color: #f9f9f9;
-        padding: 30px;
+        padding: 40px;
         border-radius: 25px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        width: 400px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        display: grid;
+        width: 100%;
+        max-width: 450px;
         gap: 20px;
+        box-sizing: border-box;
       }
+
       .input-group {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        gap: 8px; /* Separación entre label y el input */
         text-align: left;
       }
+
       .input-group label {
-        margin-bottom: 8px;
         font-weight: 600;
+        color: #333;
       }
+
       .input-group input,
-      .input-group textarea {
+      .input-group textarea,
+      .input-group select {
         padding: 14px;
         border: 1px solid #ccc;
         border-radius: 15px;
         font-family: "Montserrat", sans-serif;
+        font-size: 15px;
         outline: none;
-        transition: border 0.3s;
+        transition: border 0.3s, box-shadow 0.3s;
+        width: 100%;
+        box-sizing: border-box;
       }
+
+      .input-group input:focus,
+      .input-group textarea:focus,
+      .input-group select:focus {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+      }
+
       textarea {
         resize: none;
         height: 120px;
       }
+
       .pedido-button {
         background: linear-gradient(135deg, #ffcc00, #ff6b6b);
-        padding: 14px;
+        padding: 15px;
         border: none;
         border-radius: 15px;
         font-size: 16px;
+        font-family: "Montserrat", sans-serif;
         font-weight: 600;
+        color: #333;
         cursor: pointer;
-        transition:
-          background-color 0.3s,
-          transform 0.2s;
+        transition: background-color 0.3s, transform 0.2s;
+        margin-top: 10px;
+      }
+
+      .pedido-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+      }
+
+      /* =========================================
+         FOOTER (GRID)
+         ========================================= */
+      .footer { background-color: #333; color: white; padding: 40px 0 20px 0; border-top: 8px solid #c24f4f; }
+      .grid-footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
+      .footer-section h3, .footer-section h4 { color: #ffcb05; text-transform: uppercase; margin-bottom: 15px; }
+      .footer-section ul { list-style: none; padding: 0; }
+      .footer-section a:hover { color: #3b4cca; }
+      .footer-logo { width: 150px; margin: 10px auto; display: block; }
+      .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #555; padding-top: 20px; font-size: 0.8rem; }
+
+      /* =========================================
+         RESPONSIVE MEDIA QUERIES
+         ========================================= */
+
+      /* --- TABLETS (Pantallas hasta 900px) --- */
+      @media screen and (max-width: 900px) {
+          /* Navbar Hamburguesa */
+          .nav-bar { grid-template-columns: 200px 1fr; }
+          .hamburger { display: flex; }
+          
+          .nav-links {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              background: rgb(236, 239, 207);
+              flex-direction: column;
+              display: flex;
+              align-items: center;
+              padding: 0;
+              max-height: 0;
+              overflow: hidden;
+              box-sizing: border-box;
+              transition: all 0.4s ease-in-out;
+              border-bottom: none;
+          }
+          
+          .nav-links.active {
+              max-height: 500px;
+              border-bottom: 1.6px solid rgb(132, 107, 72);
+              padding: 20px 0;
+              box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+          }
+
+          .nav-links a { 
+              display: flex; 
+              justify-content: center;
+              align-items: center;
+              margin: 8px 0; 
+              width: 80%; 
+              box-sizing: border-box;
+          }
+
+          .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+          .hamburger.active span:nth-child(2) { opacity: 0; }
+          .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+          /* Footer a 2 columnas */
+          .grid-footer { grid-template-columns: repeat(2, 1fr); }
+          .footer-section:last-child { grid-column: span 2; }
+      }
+
+      /* --- CELULARES (Pantallas hasta 600px) --- */
+      @media screen and (max-width: 600px) {
+          .nav-bar { grid-template-columns: 150px 1fr; }
+          .logo { width: 120px; height: 60px; margin-left: 10px; }
+          
+          /* Contenedores principales */
+          .contenido { width: 90%; padding: 20px; margin: 20px auto; }
+          .pedido-form { padding: 25px 20px; }
+          
+          /* Footer apilado (1 columna) */
+          .grid-footer { grid-template-columns: 1fr; }
+          .footer-section:last-child { grid-column: span 1; }
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header class="nav-bar">
       <div class="logo"></div>
+      
+      <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menu</a>
@@ -78,50 +289,39 @@
         <a href="login.html">Mi cuenta</a>
       </nav>
     </header>
+
     <main class="contenido">
       <section class="pedido-header">
         <h1>Realiza tu Pedido</h1>
         <p>Llena el formulario para hacer tu pedido en línea</p>
       </section>
+
       <section class="pedido-container">
         <form class="pedido-form">
           <div class="input-group">
             <label for="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              required
-              placeholder="Ingresa tu nombre"
-            />
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre" />
           </div>
+
           <div class="input-group">
             <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Ingresa tu email"
-            />
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu email" />
           </div>
+
           <div class="input-group">
             <label for="telefono">Teléfono:</label>
-            <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              required
-              placeholder="Ingresa tu teléfono"
-            />
+            <input type="tel" id="telefono" name="telefono" required placeholder="Ingresa tu teléfono" />
           </div>
+
           <div class="input-group">
             <label for="direccion">Dirección:</label>
-            <textarea id="direccion" name="direccion" required></textarea>
+            <textarea id="direccion" name="direccion" placeholder="Ingresa tu dirección exacta" required></textarea>
           </div>
+
           <div class="input-group">
             <label>Selecciona tu opción:</label>
-            <select>
+            <select required>
+              <option value="" disabled selected>Elige un producto...</option>
               <option>Pikachu Latte</option>
               <option>Pokebowl</option>
               <option>Postre Pikachu</option>
@@ -132,37 +332,27 @@
               <option>Eeveelution Macarons</option>
             </select>
           </div>
+
           <div class="input-group">
             <label for="cantidad">Cantidad:</label>
-            <input
-              type="number"
-              id="cantidad"
-              name="cantidad"
-              min="1"
-              required
-            />
+            <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ej: 2" required />
           </div>
+
           <div class="input-group">
             <label for="comentarios">Comentarios adicionales:</label>
-            <textarea
-              id="comentarios"
-              name="comentarios"
-              placeholder="Escribe cualquier comentario adicional sobre tu pedido"
-            ></textarea>
+            <textarea id="comentarios" name="comentarios" placeholder="Escribe cualquier comentario o instrucción especial"></textarea>
           </div>
+
           <button type="submit" class="pedido-button">Realizar Pedido</button>
         </form>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="footer-container">
+      <div class="grid-footer">
         <div class="footer-section">
           <h3>PokemónCafe</h3>
-          <img
-            src="../main_Page/img/img_main/pokeCafe_logo.png"
-            alt="Logo PokeCafe"
-            class="footer-logo"
-          />
+          <img src="../main_Page/img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
           <p>¡Donde cada bocado es una evolución de sabor!</p>
         </div>
 
@@ -188,12 +378,19 @@
       <div class="footer-bottom">
         <p>
           &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
-          <small
-            >Pokémon es marca registrada de Nintendo/Game Freak. Este es un
-            proyecto temático fan-made.</small
-          >
+          <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
         </p>
       </div>
     </footer>
-  </body>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+      });
+    </script>
+</body>
 </html>
