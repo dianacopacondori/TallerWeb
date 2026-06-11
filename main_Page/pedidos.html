@@ -1,76 +1,271 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedidos | Pokémon Café</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Pedidos - Pokémon Café</title>
     <link rel="icon" type="image/png" href="../main_Page/img/img_main/pokeCafe_logo.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    
     <style>
+      /* =========================================
+         CONFIGURACIÓN BASE Y TIPOGRAFÍA
+         ========================================= */
+      body {
+          margin: 0;
+          padding: 0;
+          padding-top: 100px; /* Espacio para el navbar fijo */
+          font-family: "Montserrat", sans-serif;
+          background: linear-gradient(rgba(255, 248, 220, 0.85), rgba(255, 248, 220, 0.9)), url("img/fondo-pokemon-cafe.jpg");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+
+      h1 { color: #ff6b6b; font-size: 2.5rem; text-align: center; }
+      p { text-align: center; }
+      a { text-decoration: none; color: inherit; }
+
+      /* =========================================
+         SISTEMA DE NAVEGACIÓN (GRID)
+         ========================================= */
+      .nav-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background: rgb(236, 239, 207);
+          border-bottom: 1.6px solid rgb(132, 107, 72);
+          backdrop-filter: blur(10px);
+          height: 100px;
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          align-items: center;
+      }
+
+      .logo {
+          background-image: url('../main_Page/img/img_main/pokeCafe_logo.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 80px;
+          margin-left: 20px;
+      }
+
+      /* Icono Hamburguesa */
+      .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 6px;
+          margin-right: 30px;
+          justify-self: end;
+      }
+
+      .hamburger span {
+          width: 35px;
+          height: 4px;
+          background-color: rgb(132, 107, 72);
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .nav-links {
+          display: grid;
+          grid-auto-flow: column;
+          gap: 15px;
+          justify-content: end;
+          padding-right: 40px;
+      }
+
+      .nav-links a {
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+          color: rgb(108, 105, 105);
+          padding: 10px 20px;
+          border: 0.9px solid transparent;
+          border-radius: 40px;
+          transition: all 0.3s ease-in-out;
+          text-align: center;
+      }
+
+      .nav-links a:hover {
+          border-color: black;
+          background: rgb(247, 224, 110);
+          color: black;
+      }
+
+      /* =========================================
+         ESTRUCTURA DEL CONTENIDO PRINCIPAL
+         ========================================= */
+      .contenido {
+          width: 90%;
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 40px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+          box-sizing: border-box;
+      }
+
+      .pedido-header {
+          margin-bottom: 30px;
+      }
+
+      /* =========================================
+         TABLA DE PEDIDOS
+         ========================================= */
       .tabla-container {
-        margin-top: 40px auto;
-        width: 80%;
-        overflow-x: auto;
+          margin: 40px auto;
+          width: 100%;
+          /* Permite hacer scroll horizontal en celulares si la tabla es muy ancha */
+          overflow-x: auto; 
+          border-radius: 20px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
+
       .tabla-pedidos {
-        width: 100%;
-        border-collapse: collapse;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-      .tabla-pedidos thead {
-        background: linear-gradient(135deg, #ffcc00, #ff9f43);
-        color: #333;
+          width: 100%;
+          min-width: 600px; /* Evita que la tabla colapse y se vuelva ilegible */
+          border-collapse: collapse;
+          background: rgba(255, 255, 255, 0.95);
+          overflow: hidden;
       }
+
+      .tabla-pedidos thead {
+          background: linear-gradient(135deg, #ffcc00, #ff9f43);
+          color: #333;
+      }
+
       .tabla-pedidos th,
       .tabla-pedidos td {
-        padding: 18px;
-        text-align: center;
-        border-bottom: 1px solid #eee;
+          padding: 18px;
+          text-align: center;
+          border-bottom: 1px solid #eee;
       }
+
+      /* Estados del pedido */
       .estado-pedido {
-        padding: 8px 12px;
-        border-radius: 20px;
-        font-size: 14px;
-        color: white;
-        font-weight: bold;
+          padding: 8px 12px;
+          border-radius: 20px;
+          font-size: 14px;
+          color: white;
+          font-weight: bold;
+          display: inline-block;
       }
-      .preparacion {
-        background-color: #f39c12;
+
+      .preparacion { background-color: #f39c12; }
+      .proceso { background-color: #2980b9; }
+      .enviado { background-color: #27ae60; }
+
+      /* =========================================
+         FOOTER (GRID)
+         ========================================= */
+      .footer { background-color: #333; color: white; padding: 40px 0 20px 0; border-top: 8px solid #c24f4f; }
+      .grid-footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
+      .footer-section h3, .footer-section h4 { color: #ffcb05; text-transform: uppercase; margin-bottom: 15px; }
+      .footer-section ul { list-style: none; padding: 0; }
+      .footer-section a:hover { color: #3b4cca; }
+      .footer-logo { width: 150px; margin: 10px auto; display: block; }
+      .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #555; padding-top: 20px; font-size: 0.8rem; }
+
+      /* =========================================
+         RESPONSIVE MEDIA QUERIES
+         ========================================= */
+
+      /* --- TABLETS (Pantallas hasta 900px) --- */
+      @media screen and (max-width: 900px) {
+          /* Navbar Hamburguesa */
+          .nav-bar { grid-template-columns: 200px 1fr; }
+          .hamburger { display: flex; }
+          
+          .nav-links {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              background: rgb(236, 239, 207);
+              flex-direction: column;
+              display: flex;
+              align-items: center;
+              padding: 0;
+              max-height: 0;
+              overflow: hidden;
+              box-sizing: border-box;
+              transition: all 0.4s ease-in-out;
+              border-bottom: none;
+          }
+          
+          .nav-links.active {
+              max-height: 500px;
+              border-bottom: 1.6px solid rgb(132, 107, 72);
+              padding: 20px 0;
+              box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+          }
+
+          .nav-links a { 
+              display: flex; 
+              justify-content: center;
+              align-items: center;
+              margin: 8px 0; 
+              width: 80%; 
+              box-sizing: border-box;
+          }
+
+          .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+          .hamburger.active span:nth-child(2) { opacity: 0; }
+          .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+          /* Footer a 2 columnas */
+          .grid-footer { grid-template-columns: repeat(2, 1fr); }
+          .footer-section:last-child { grid-column: span 2; }
       }
-      .proceso {
-        background-color: #2980b9;
-      }
-      .enviado {
-        background-color: #27ae60;
+
+      /* --- CELULARES (Pantallas hasta 600px) --- */
+      @media screen and (max-width: 600px) {
+          .nav-bar { grid-template-columns: 150px 1fr; }
+          .logo { width: 120px; height: 60px; margin-left: 10px; }
+          
+          .contenido { width: 95%; padding: 20px; margin: 20px auto; }
+          h1 { font-size: 2rem; }
+          
+          /* Footer apilado (1 columna) */
+          .grid-footer { grid-template-columns: 1fr; }
+          .footer-section:last-child { grid-column: span 1; }
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header class="nav-bar">
       <div class="logo"></div>
+      
+      <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menu</a>
         <a href="ofertas.html">Ofertas</a>
-        <a href="formulario_pedido.html">Pedidos</a>
+        <a href="formulario_pedido.html">Pedir</a>
+        <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Mi cuenta</a>
       </nav>
     </header>
+
     <main class="contenido">
       <section class="pedido-header">
         <h1>Pedidos Realizados</h1>
         <p>Consulta los pedidos que has realizado en Pokémon Café</p>
       </section>
+
       <section class="tabla-container">
         <table class="tabla-pedidos">
           <thead>
@@ -83,7 +278,6 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Aquí se agregarán dinámicamente los pedidos -->
             <tr>
               <td>#12345</td>
               <td>2026-06-15</td>
@@ -104,15 +298,12 @@
         </table>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="footer-container">
+      <div class="grid-footer">
         <div class="footer-section">
           <h3>PokemónCafe</h3>
-          <img
-            src="../main_Page/img/img_main/pokeCafe_logo.png"
-            alt="Logo PokeCafe"
-            class="footer-logo"
-          />
+          <img src="../main_Page/img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
           <p>¡Donde cada bocado es una evolución de sabor!</p>
         </div>
 
@@ -138,12 +329,19 @@
       <div class="footer-bottom">
         <p>
           &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
-          <small
-            >Pokémon es marca registrada de Nintendo/Game Freak. Este es un
-            proyecto temático fan-made.</small
-          >
+          <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
         </p>
       </div>
     </footer>
-  </body>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+      });
+    </script>
+</body>
 </html>

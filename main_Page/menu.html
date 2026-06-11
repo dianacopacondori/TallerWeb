@@ -1,57 +1,293 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menú Pokemon Café</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="../main_Page/img/img_main/pokeCafe_logo.png"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Fuentes -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Pokémon Café</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    
     <style>
+      /* =========================================
+         CONFIGURACIÓN BASE Y TIPOGRAFÍA
+         ========================================= */
+      body {
+          margin: 0;
+          padding: 0;
+          padding-top: 100px; /* Espacio para el navbar fijo */
+          font-family: "Montserrat", sans-serif;
+          background: linear-gradient(rgba(255, 248, 220, 0.85), rgba(255, 248, 220, 0.9)), url("img/fondo-pokemon-cafe.jpg");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+      }
+
+      h1 { color: #ff6b6b; font-size: 2.5rem; text-align: center; }
+      p { text-align: center; }
+      a { text-decoration: none; color: inherit; }
+
+      /* =========================================
+         SISTEMA DE NAVEGACIÓN (GRID)
+         ========================================= */
+      .nav-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background: rgb(236, 239, 207);
+          border-bottom: 1.6px solid rgb(132, 107, 72);
+          backdrop-filter: blur(10px);
+          height: 100px;
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          align-items: center;
+      }
+
+      .logo {
+          background-image: url('../main_Page/img/img_main/pokeCafe_logo.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 80px;
+          margin-left: 20px;
+      }
+
+      /* Icono Hamburguesa */
+      .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 6px;
+          margin-right: 30px;
+          justify-self: end;
+      }
+
+      .hamburger span {
+          width: 35px;
+          height: 4px;
+          background-color: rgb(132, 107, 72);
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+      }
+
+      .nav-links {
+          display: grid;
+          grid-auto-flow: column;
+          gap: 15px;
+          justify-content: end;
+          padding-right: 40px;
+      }
+
+      .nav-links a {
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+          color: rgb(108, 105, 105);
+          padding: 10px 20px;
+          border: 0.9px solid transparent;
+          border-radius: 40px;
+          transition: all 0.3s ease;
+          text-align: center;
+      }
+
+      .nav-links a:hover {
+          border-color: black;
+          background: rgb(247, 224, 110);
+          color: black;
+      }
+
+      /* =========================================
+         ESTRUCTURA DEL CONTENIDO PRINCIPAL
+         ========================================= */
+      .contenido {
+          width: 90%;
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 40px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      }
+
       .menu-section {
-        margin-top: 70px;
+          margin-top: 70px;
       }
+
       .section-title {
-        font-size: 35px;
-
-        color: #ff9f43;
-
-        margin-bottom: 30px;
-
-        text-align: left;
-
-        border-left: 8px solid #ffcc00;
-
-        padding-left: 15px;
+          font-size: 35px;
+          color: #ff9f43;
+          margin-bottom: 30px;
+          text-align: left;
+          border-left: 8px solid #ffcc00;
+          padding-left: 15px;
       }
+
+      /* =========================================
+         SISTEMA DE TARJETAS (MICRO-GRID)
+         ========================================= */
+      .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+      }
+
+      .card {
+          background: white;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          padding-bottom: 15px;
+          
+          /* Grid interno para que el botón siempre quede abajo */
+          display: grid;
+          grid-template-rows: auto auto 1fr auto auto; 
+          align-items: start;
+          text-align: center;
+      }
+
       .card:hover {
-        animation: electricidad 0.2s alternate 5;
+          box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+          animation: electricidad 0.2s alternate 5;
       }
 
       @keyframes electricidad {
-        from {
-          transform: translateX(-3px);
-        }
-        to {
-          transform: translateX(3px);
-        }
+          from { transform: translateX(-3px); }
+          to { transform: translateX(3px); }
+      }
+
+      .card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+      }
+
+      .card h3 {
+          margin: 15px 15px 5px;
+          color: #333;
+      }
+
+      .card p {
+          font-size: 14px;
+          color: #666;
+          padding: 0 15px;
+          margin: 0 0 15px 0;
+      }
+
+      .precio {
+          margin: 10px 0;
+          font-size: 1.2rem;
+          font-weight: bold;
+      }
+
+      .original {
+          color: rgb(190, 82, 68);
+      }
+
+      button {
+          margin: auto 15px 15px;
+          background: linear-gradient(135deg, #ffcc00, #ff6b6b);
+          border: none;
+          padding: 10px 20px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: 0.3s;
+      }
+
+      button:hover {
+          transform: scale(1.05);
+      }
+
+      /* =========================================
+         FOOTER (GRID)
+         ========================================= */
+      .footer { background-color: #333; color: white; padding: 40px 0 20px 0; border-top: 8px solid #c24f4f; }
+      .grid-footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
+      .footer-section h3, .footer-section h4 { color: #ffcb05; text-transform: uppercase; margin-bottom: 15px; }
+      .footer-section ul { list-style: none; padding: 0; }
+      .footer-section a:hover { color: #3b4cca; }
+      .footer-logo { width: 150px; margin: 10px auto; display: block; }
+      .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #555; padding-top: 20px; font-size: 0.8rem; }
+
+      /* =========================================
+         RESPONSIVE MEDIA QUERIES
+         ========================================= */
+
+      /* --- TABLETS (Pantallas hasta 900px) --- */
+      @media screen and (max-width: 900px) {
+          /* Navbar Hamburguesa */
+          .nav-bar { grid-template-columns: 200px 1fr; }
+          .hamburger { display: flex; }
+          
+          .nav-links {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              background: rgb(236, 239, 207);
+              flex-direction: column;
+              display: flex;
+              align-items: center;
+              padding: 0;
+              max-height: 0;
+              overflow: hidden;
+              box-sizing: border-box;
+              transition: all 0.4s ease-in-out;
+              border-bottom: none;
+          }
+          
+          .nav-links.active {
+              max-height: 500px;
+              border-bottom: 1.6px solid rgb(132, 107, 72);
+              padding: 20px 0;
+              box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+          }
+
+          .nav-links a { 
+              display: flex; 
+              justify-content: center;
+              align-items: center;
+              margin: 8px 0; 
+              width: 80%; 
+              box-sizing: border-box;
+          }
+
+          .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+          .hamburger.active span:nth-child(2) { opacity: 0; }
+          .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+          /* Reducción de columnas de menú y footer */
+          .grid { grid-template-columns: repeat(2, 1fr); }
+          .grid-footer { grid-template-columns: repeat(2, 1fr); }
+          .footer-section:last-child { grid-column: span 2; }
+      }
+
+      /* --- CELULARES (Pantallas hasta 600px) --- */
+      @media screen and (max-width: 600px) {
+          .nav-bar { grid-template-columns: 150px 1fr; }
+          .logo { width: 120px; height: 60px; margin-left: 10px; }
+          
+          /* Layout apilado (1 columna) */
+          .grid, .grid-footer { grid-template-columns: 1fr; }
+          .footer-section:last-child { grid-column: span 1; }
+          
+          .contenido { width: 90%; padding: 20px; margin: 20px auto; }
+          .section-title { font-size: 26px; }
       }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header class="nav-bar">
       <div class="logo"></div>
+      
+      <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menu</a>
@@ -68,8 +304,9 @@
       </div>
       <h1>Menú Pokémon Café</h1>
       <p>Elige tus productos favoritos</p>
+      
       <section class="menu-section">
-        <h2 class="section-tittle">Platos Estrella</h2>
+        <h2 class="section-title">Platos Estrella</h2>
         <div class="grid">
           <div class="card">
             <img src="../main_Page/img/img_menu/pokebowl.jpg" alt="Pokebowl" />
@@ -82,15 +319,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/ArcanineEmberWings.png"
-              alt="Arcanine Ember Wings"
-            />
+            <img src="../main_Page/img/img_menu/ArcanineEmberWings.png" alt="Arcanine Ember Wings" />
             <h3>Arcanine Ember Wings</h3>
-            <p>
-              Bocaditos crujientes de coliflor o pollo marinado en especias
-              suaves, con salsa de yogur al limón y cebollino.
-            </p>
+            <p>Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino.</p>
             <div class="precio">
               <span class="original">S/ 16</span>
             </div>
@@ -98,15 +329,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/ChanseyEggCustard.png"
-              alt="Chansey Egg Custard"
-            />
+            <img src="../main_Page/img/img_menu/ChanseyEggCustard.png" alt="Chansey Egg Custard" />
             <h3>Chansey Egg Custard</h3>
-            <p>
-              Flan de huevo al estilo japonés (chawanmushi) con dashi suave,
-              camarón y ginkgo, textura sedosa y umami delicado.
-            </p>
+            <p>Flan de huevo al estilo japonés (chawanmushi) con dashi suave, camarón y ginkgo, textura sedosa y umami delicado.</p>
             <div class="precio">
               <span class="original">S/ 9</span>
             </div>
@@ -114,15 +339,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/ElectrabuzzCitrusChicken.png"
-              alt="Electrabuzz Citrus Chicken"
-            />
+            <img src="../main_Page/img/img_menu/ElectrabuzzCitrusChicken.png" alt="Electrabuzz Citrus Chicken" />
             <h3>Electrabuzz Citrus Chicken</h3>
-            <p>
-              Pechuga de pollo a la plancha con glaseado de naranja y mostaza,
-              acompañada de puré de coliflor y ensalada verde.
-            </p>
+            <p>Pechuga de pollo a la plancha con glaseado de naranja y mostaza, acompañada de puré de coliflor y ensalada verde.</p>
             <div class="precio">
               <span class="original">S/ 18</span>
             </div>
@@ -130,15 +349,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GardevoirRoyalTartine.png"
-              alt="Gardevoir Royal Tartine"
-            />
+            <img src="../main_Page/img/img_menu/GardevoirRoyalTartine.png" alt="Gardevoir Royal Tartine" />
             <h3>Gardevoir Royal Tartine</h3>
-            <p>
-              Rebanada gruesa de brioche tostado con queso de cabra, pera
-              caramelizada, nueces pecanas y un hilo de miel de lavanda.
-            </p>
+            <p>Rebanada gruesa de brioche tostado con queso de cabra, pera caramelizada, nueces pecanas y un hilo de miel de lavanda.</p>
             <div class="precio">
               <span class="original">S/ 14</span>
             </div>
@@ -146,15 +359,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GyaradosMarinaraPasta.png"
-              alt="Gyarados Marinara Pasta"
-            />
+            <img src="../main_Page/img/img_menu/GyaradosMarinaraPasta.png" alt="Gyarados Marinara Pasta" />
             <h3>Gyarados Marinara Pasta</h3>
-            <p>
-              Espagueti al dente con salsa de tomate casera, mejillones,
-              calamares y un toque de vino blanco y perejil fresco.
-            </p>
+            <p>Espagueti al dente con salsa de tomate casera, mejillones, calamares y un toque de vino blanco y perejil fresco.</p>
             <div class="precio">
               <span class="original">S/ 17</span>
             </div>
@@ -162,15 +369,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/KoffingCrispyBites.png"
-              alt="Koffing Crispy Bites"
-            />
+            <img src="../main_Page/img/img_menu/KoffingCrispyBites.png" alt="Koffing Crispy Bites" />
             <h3>Koffing Crispy Bites</h3>
-            <p>
-              Bocaditos crujientes de coliflor o pollo marinado en especias
-              suaves, con salsa de yogur al limón y cebollino
-            </p>
+            <p>Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino</p>
             <div class="precio">
               <span class="original">S/ 8</span>
             </div>
@@ -178,15 +379,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/MagnezoneSparkFries.png"
-              alt="Magnezone Spark Fries"
-            />
+            <img src="../main_Page/img/img_menu/MagnezoneSparkFries.png" alt="Magnezone Spark Fries" />
             <h3>Magnezone Spark Fries</h3>
-            <p>
-              Papas rústicas con parmesano rallado, ajo confitado, pimentón
-              ahumado y ralladura de limón.
-            </p>
+            <p>Papas rústicas con parmesano rallado, ajo confitado, pimentón ahumado y ralladura de limón.</p>
             <div class="precio">
               <span class="original">S/ 9</span>
             </div>
@@ -194,15 +389,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/MewtwoZenBowl.png"
-              alt="Mewtwo Zen Bowl"
-            />
+            <img src="../main_Page/img/img_menu/MewtwoZenBowl.png" alt="Mewtwo Zen Bowl" />
             <h3>Mewtwo Zen Bowl</h3>
-            <p>
-              Bowl de arroz integral negro con tofu marinado en soja y jengibre,
-              edamame, zanahoria rallada, aguacate y aderezo de miso blanco.
-            </p>
+            <p>Bowl de arroz integral negro con tofu marinado en soja y jengibre, edamame, zanahoria rallada, aguacate y aderezo de miso blanco.</p>
             <div class="precio">
               <span class="original">S/ 13</span>
             </div>
@@ -210,16 +399,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/OnixRockBurger.png"
-              alt="Onix Rock Burger"
-            />
+            <img src="../main_Page/img/img_menu/OnixRockBurger.png" alt="Onix Rock Burger" />
             <h3>Onix Rock Burger</h3>
-            <p>
-              Hamburguesa de carne Angus (o portobello) sobre pan negro de
-              carbón activado, queso cheddar fundido, cebolla caramelizada y
-              salsa barbacoa ahumada.
-            </p>
+            <p>Hamburguesa de carne Angus (o portobello) sobre pan negro de carbón activado, queso cheddar fundido, cebolla caramelizada y salsa barbacoa ahumada.</p>
             <div class="precio">
               <span class="original">S/ 14</span>
             </div>
@@ -227,16 +409,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/RayquazaSkyRoll.png"
-              alt="Rayquaza Sky Roll"
-            />
+            <img src="../main_Page/img/img_menu/RayquazaSkyRoll.png" alt="Rayquaza Sky Roll" />
             <h3>Rayquaza Sky Roll</h3>
-            <p>
-              Sushi roll de tempura crujiente con aguacate, salmón ahumado,
-              queso crema y salsa teriyaki, coronado con un toque de wasabi
-              suave.
-            </p>
+            <p>Sushi roll de tempura crujiente con aguacate, salmón ahumado, queso crema y salsa teriyaki, coronado con un toque de wasabi suave.</p>
             <div class="precio">
               <span class="original">S/ 15</span>
             </div>
@@ -244,15 +419,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/SnorlaxComfortMac&Cheese.png"
-              alt="Snorlax Comfort Mac & Cheese"
-            />
+            <img src="../main_Page/img/img_menu/SnorlaxComfortMac&Cheese.png" alt="Snorlax Comfort Mac & Cheese" />
             <h3>Snorlax Comfort Mac & Cheese</h3>
-            <p>
-              Macarrones gratinados con tres quesos fundidos, migas de pan
-              tostado y un toque de nuez moscada.
-            </p>
+            <p>Macarrones gratinados con tres quesos fundidos, migas de pan tostado y un toque de nuez moscada.</p>
             <div class="precio">
               <span class="original">S/ 16</span>
             </div>
@@ -262,87 +431,52 @@
       </section>
 
       <section class="menu-section">
-        <h2 class="section-tittle">Postres</h2>
+        <h2 class="section-title">Postres</h2>
         <div class="grid">
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/pikachu-dessert.jpg"
-              alt="Postre Pikachu"
-            />
+            <img src="../main_Page/img/img_menu/pikachu-dessert.jpg" alt="Postre Pikachu" />
             <h3>Postre pikachu</h3>
             <p>Postre dulce de vainilla con crema</p>
-
             <div class="precio">
               <span class="original">S/ 10</span>
             </div>
-
             <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/ClefairyPancakes.png"
-              alt="Clefairy Fluffy Pancakes"
-            />
+            <img src="../main_Page/img/img_menu/ClefairyPancakes.png" alt="Clefairy Fluffy Pancakes" />
             <h3>Clefairy Fluffy Pancakes</h3>
-            <p>
-              Tortitas esponjosas con sirope de arce, frutas de temporada y nube
-              de crema.
-            </p>
-
+            <p>Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.</p>
             <div class="precio">
               <span class="original">S/ 15</span>
             </div>
-
             <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/Pika-PikaCheesecake.png"
-              alt="Pika-Pika Cheesecake"
-            />
+            <img src="../main_Page/img/img_menu/Pika-PikaCheesecake.png" alt="Pika-Pika Cheesecake" />
             <h3>Pika-Pika Cheesecake</h3>
-            <p>
-              Cheesecake japonés esponjoso con glaseado amarillo y decoración de
-              cola de Pikachu.
-            </p>
-
+            <p>Cheesecake japonés esponjoso con glaseado amarillo y decoración de cola de Pikachu.</p>
             <div class="precio">
               <span class="original">S/ 10</span>
             </div>
-
             <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/EeveelutionMacarons.png"
-              alt="Eeveelution Macarons"
-            />
+            <img src="../main_Page/img/img_menu/EeveelutionMacarons.png" alt="Eeveelution Macarons" />
             <h3>Eeveelution Macarons</h3>
-            <p>
-              Set de 8 macarons con sabores inspirados en las evoluciones de
-              Eevee (presentados en caja coleccionable).
-            </p>
-
+            <p>Set de 8 macarons con sabores inspirados en las evoluciones de Eevee (presentados en caja coleccionable).</p>
             <div class="precio">
               <span class="original">S/ 12</span>
             </div>
-
             <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GengarShadowBrownie.png"
-              alt="Gengar Shadow Brownie"
-            />
+            <img src="../main_Page/img/img_menu/GengarShadowBrownie.png" alt="Gengar Shadow Brownie" />
             <h3>Gengar Shadow Brownie</h3>
-            <p>
-              Brownie denso de chocolate negro con nueces, acompañado de helado
-              de vainilla negra y salsa de frambuesa.
-            </p>
+            <p>Brownie denso de chocolate negro con nueces, acompañado de helado de vainilla negra y salsa de frambuesa.</p>
             <div class="precio">
               <span class="original">S/ 11</span>
             </div>
@@ -350,15 +484,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/JynxFrostSorbetTrio.png"
-              alt="Jynx Frost Sorbet  Trio"
-            />
+            <img src="../main_Page/img/img_menu/JynxFrostSorbetTrio.png" alt="Jynx Frost Sorbet Trio" />
             <h3>Jynx Frost Sorbet Trio</h3>
-            <p>
-              Tres bolas de sorbete artesanal (frambuesa, arándano y menta) con
-              coulis de frutos rojos y hojas de menta fresca. ️
-            </p>
+            <p>Tres bolas de sorbete artesanal (frambuesa, arándano y menta) con coulis de frutos rojos y hojas de menta fresca. ️</p>
             <div class="precio">
               <span class="original">S/ 10</span>
             </div>
@@ -366,15 +494,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/MagcargoMoltenCake.png"
-              alt="Magcargo Molten Cake"
-            />
+            <img src="../main_Page/img/img_menu/MagcargoMoltenCake.png" alt="Magcargo Molten Cake" />
             <h3>Magcargo Molten Cake</h3>
-            <p>
-              Bizcocho individual de chocolate negro con centro fundido, servido
-              con helado de vainilla bourbon y polvo de cacao.
-            </p>
+            <p>Bizcocho individual de chocolate negro con centro fundido, servido con helado de vainilla bourbon y polvo de cacao.</p>
             <div class="precio">
               <span class="original">S/ 12</span>
             </div>
@@ -382,15 +504,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/EeveePancakes.png"
-              alt="Eevee Pancakes"
-            />
+            <img src="../main_Page/img/img_menu/EeveePancakes.png" alt="Eevee Pancakes" />
             <h3>Eevee Pancakes</h3>
-            <p>
-              Tortitas esponjosas con sirope de arce, frutas de temporada y nube
-              de crema.
-            </p>
+            <p>Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.</p>
             <div class="precio">
               <span class="original">S/ 15</span>
             </div>
@@ -408,15 +524,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GalletasDecoradas.png"
-              alt="Galletas Decoradas"
-            />
+            <img src="../main_Page/img/img_menu/GalletasDecoradas.png" alt="Galletas Decoradas" />
             <h3>Galletas Decoradas</h3>
-            <p>
-              Galletas crujientes con glaseado de azúcar y decoración de
-              colores.
-            </p>
+            <p>Galletas crujientes con glaseado de azúcar y decoración de colores.</p>
             <div class="precio">
               <span class="original">S/ 5</span>
             </div>
@@ -424,15 +534,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GengarBrownie.png"
-              alt="Gengar Brownie"
-            />
+            <img src="../main_Page/img/img_menu/GengarBrownie.png" alt="Gengar Brownie" />
             <h3>Gengar Brownie</h3>
-            <p>
-              Brownie de chocolate oscuro con nueces y un toque de chile para un
-              sabor intenso.
-            </p>
+            <p>Brownie de chocolate oscuro con nueces y un toque de chile para un sabor intenso.</p>
             <div class="precio">
               <span class="original">S/ 11</span>
             </div>
@@ -442,9 +546,7 @@
           <div class="card">
             <img src="../main_Page/img/img_menu/Cupcakes.png" alt="Cupcakes" />
             <h3>PokéCupcakes</h3>
-            <p>
-              Cupcakes suaves con glaseado de azúcar y decoración de colores.
-            </p>
+            <p>Cupcakes suaves con glaseado de azúcar y decoración de colores.</p>
             <div class="precio">
               <span class="original">S/ 9</span>
             </div>
@@ -454,46 +556,30 @@
       </section>
 
       <section class="menu-section">
-        <h2 class="section-tittle">Bebidas</h2>
+        <h2 class="section-title">Bebidas</h2>
         <div class="grid">
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/pikachu-latte.jpg"
-              alt="Pikachu Latte"
-            />
+            <img src="../main_Page/img/img_menu/pikachu-latte.jpg" alt="Pikachu Latte" />
             <h3>Pikachu Latte</h3>
             <p>Café con espuma artística de Pikachu</p>
-
             <div class="precio">
               <span class="original">S/ 12</span>
             </div>
-
             <button>Añadir al pedido</button>
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/CharizardRoast.png"
-              alt="Charizard Roast"
-            />
+            <img src="../main_Page/img/img_menu/CharizardRoast.png" alt="Charizard Roast" />
             <h3>Charizard Roast</h3>
-            <p>
-              Espresso intenso con leche vaporizada y un toque de canela
-              ahumada.
-            </p>
-
+            <p>Espresso intenso con leche vaporizada y un toque de canela ahumada.</p>
             <div class="precio">
               <span class="original">S/ 8</span>
             </div>
             <button>Añadir al pedido</button>
           </div>
-          <!-- card 3 -->
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/BulbasaurMatchaLatte.png"
-              alt="Bulbasaur Matcha Latte"
-            />
+            <img src="../main_Page/img/img_menu/BulbasaurMatchaLatte.png" alt="Bulbasaur Matcha Latte" />
             <h3>Bulbasaur Matcha Latte</h3>
             <p>Latte de matcha con leche de avena y un toque de miel.</p>
             <div class="precio">
@@ -503,15 +589,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/GlaceonIceCrystalFrappé.png"
-              alt="Glaceon Ice Crystal Frappé"
-            />
+            <img src="../main_Page/img/img_menu/GlaceonIceCrystalFrappé.png" alt="Glaceon Ice Crystal Frappé" />
             <h3>Glaceon Ice Crystal Frappé</h3>
-            <p>
-              Frappé de hielo con sabor a cristal de hielo y una pizca de
-              canela.
-            </p>
+            <p>Frappé de hielo con sabor a cristal de hielo y una pizca de canela.</p>
             <div class="precio">
               <span class="original">S/ 12</span>
             </div>
@@ -519,10 +599,7 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/JigglypuffMelodySmoothie.png"
-              alt="Jigglypuff Melody Smoothie"
-            />
+            <img src="../main_Page/img/img_menu/JigglypuffMelodySmoothie.png" alt="Jigglypuff Melody Smoothie" />
             <h3>Jigglypuff Melody Smoothie</h3>
             <p>Smoothie de frutas con sabor a melodía y una pizca de canela.</p>
             <div class="precio">
@@ -532,10 +609,7 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/MewtwoGalaxyLatte.png"
-              alt="Mewtwo Galaxy Latte"
-            />
+            <img src="../main_Page/img/img_menu/MewtwoGalaxyLatte.png" alt="Mewtwo Galaxy Latte" />
             <h3>Mewtwo Galaxy Latte</h3>
             <p>Latte con sabor a galaxia y una pizca de canela.</p>
             <div class="precio">
@@ -545,14 +619,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/SnorlaxComfortChocolate.png"
-              alt="Snorlax Comfort Chocolate"
-            />
+            <img src="../main_Page/img/img_menu/SnorlaxComfortChocolate.png" alt="Snorlax Comfort Chocolate" />
             <h3>Snorlax Comfort Chocolate</h3>
-            <p>
-              Delicioso chocolate con sabor a comodidad y una pizca de canela.
-            </p>
+            <p>Delicioso chocolate con sabor a comodidad y una pizca de canela.</p>
             <div class="precio">
               <span class="original">S/ 16</span>
             </div>
@@ -560,15 +629,9 @@
           </div>
 
           <div class="card">
-            <img
-              src="../main_Page/img/img_menu/SquirtleSmoothieBowl.png"
-              alt="Squirtle Smoothie Bowl"
-            />
+            <img src="../main_Page/img/img_menu/SquirtleSmoothieBowl.png" alt="Squirtle Smoothie Bowl" />
             <h3>Squirtle Smoothie Bowl</h3>
-            <p>
-              Delicioso bowl de smoothie con sabor a tortuga y una pizca de
-              canela.
-            </p>
+            <p>Delicioso bowl de smoothie con sabor a tortuga y una pizca de canela.</p>
             <div class="precio">
               <span class="original">S/ 15</span>
             </div>
@@ -577,15 +640,12 @@
         </div>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="footer-container">
+      <div class="grid-footer">
         <div class="footer-section">
           <h3>PokemónCafe</h3>
-          <img
-            src="../main_Page/img/img_main/pokeCafe_logo.png"
-            alt="Logo PokeCafe"
-            class="footer-logo"
-          />
+          <img src="../main_Page/img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
           <p>¡Donde cada bocado es una evolución de sabor!</p>
         </div>
 
@@ -611,12 +671,19 @@
       <div class="footer-bottom">
         <p>
           &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
-          <small
-            >Pokémon es marca registrada de Nintendo/Game Freak. Este es un
-            proyecto temático fan-made.</small
-          >
+          <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
         </p>
       </div>
     </footer>
-  </body>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+      });
+    </script>
+</body>
 </html>
