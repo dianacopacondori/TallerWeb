@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="css/style.css" />
     <style>
       /* =========================================
          CONFIGURACIÓN BASE Y TIPOGRAFÍA
@@ -23,7 +23,7 @@
           background-attachment: fixed;
       }
 
-      h1 { color: #ff6b6b; font-size: 2.5rem; text-align: center; }
+      h1 { color: #ff9f43; font-size: 2.5rem; text-align: center; }
       p { text-align: center; }
       a { text-decoration: none; color: inherit; }
 
@@ -276,6 +276,35 @@
           .contenido { width: 90%; padding: 20px; margin: 20px auto; }
           .section-title { font-size: 26px; }
       }
+        /* =========================================
+          CINTA ANIMADA
+          ========================================= */
+       .conten {
+        width : 100%;
+        overflow: hidden;
+        padding: 10px 0;
+      }
+      .track {
+        display: flex;
+        width: max-content;
+        animation: scroll 10s linear infinite;
+      }
+      .cinta {
+        display: flex;
+        width: max-content;
+        animation: mover 30s linear infinite reverse;
+      }
+      .cinta img {
+        height: 60px;
+      }
+      @keyframes mover {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
     </style>
 </head>
 <body>
@@ -287,7 +316,6 @@
           <span></span>
           <span></span>
       </div>
-
       <nav class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menu</a>
@@ -296,8 +324,29 @@
         <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Mi cuenta</a>
       </nav>
+      <div class="theme-switch">
+        <span>☀️</span>
+        <label class="theme-toggle">
+          <input type="checkbox" id="modoOscuro" />
+          <span class="theme-slider"></span>
+        </label>
+        <span>🌙</span>
+      </div>
     </header>
-
+<div class="conten">
+      <div class="track">
+        <div class="cinta">
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+        </div>
+        <div class="cinta">
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
+        </div>
+      </div>
+    </div>
     <main class="contenido">
       <div class="xp-bar">
         <div class="xp-fill"></div>
@@ -685,5 +734,6 @@
           hamburger.classList.toggle('active');
       });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
