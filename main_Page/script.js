@@ -9,16 +9,52 @@ if (localStorage.getItem("modo") === "oscuro") {
 }
 
 // Cambiar de modo al mover el interruptor
-interruptor.addEventListener("change", () => {
+interruptor.addEventListener("change",()=>{
 
-    if (interruptor.checked) {
+    if(interruptor.checked){
+
         document.body.classList.add("dark-mode");
-        localStorage.setItem("modo", "oscuro");
-    } else {
+
+        localStorage.setItem("modo","oscuro");
+
+    }else{
+
         document.body.classList.remove("dark-mode");
-        localStorage.setItem("modo", "claro");
+
+        localStorage.setItem("modo","claro");
+
     }
 
-    console.log(document.body.classList);
+    crearDestellos();
 
 });
+
+function crearDestellos() {
+
+    const slider = document.querySelector(".theme-slider");
+
+    const rect = slider.getBoundingClientRect();
+
+    for(let i = 0; i < 12; i++){
+
+        const estrella = document.createElement("div");
+
+        estrella.classList.add("sparkle");
+
+        estrella.style.left =
+            rect.left + rect.width/2 + (Math.random()*80-40) + "px";
+
+        estrella.style.top =
+            rect.top + rect.height/2 + (Math.random()*60-30) + "px";
+
+        document.body.appendChild(estrella);
+
+        setTimeout(() => {
+
+            estrella.remove();
+
+        },800);
+
+    }
+
+}

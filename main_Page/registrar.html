@@ -8,192 +8,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: 1fr auto;
-        font-family: "Montserrat", sans-serif;
-        background-image: url(../main_Page/img/img_login/login_imgjpg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .register-container {
-        display: grid;
-        place-items: center;
-        padding: 20px;
-      }
-
-      .card-registrarse {
-        backdrop-filter: blur(8px);
-        background: rgba(0, 0, 0, 0.4); 
-        width: 100%;
-        max-width: 400px;
-        border: 3px solid blanchedalmond;
-        border-radius: 15px;
-        padding: 40px;
-        box-sizing: border-box;
-        display: grid;
-        gap: 25px; 
-      }
-
-      form {
-        display: grid;
-        gap: 15px;
-      }
-
-      h1 {
-        text-align: center;
-        color: #bcbf32;
-        margin: 0 0 10px 0;
-      }
-
-      .form_group {
-        display: grid;
-        gap: 8px; 
-      }
-
-      .form_group label {
-        font-size: 15px;
-        font-weight: bold;
-        color: #f0f0f0;
-      }
-
-      input[type="password"],
-      input[type="text"],
-      input[type="email"] {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 12px;
-        width: 100%;
-        box-sizing: border-box;
-        font-family: "Montserrat", sans-serif;
-      }
-
-      input[type="password"]:focus,
-      input[type="text"]:focus,
-      input[type="email"]:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-      }
-
-      .botones-acciones {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-top: 10px;
-      }
-
-      .boton-enlace,
-      .boton-register {
-        text-decoration: none;
-        background-color: white;
-        color: black;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .boton-enlace:hover, .boton-register:hover {
-        background-color: #e2e8f0;
-        transform: scale(1.03);
-      }
-
-      .login_terceros {
-        display: grid;
-        gap: 15px;
-      }
-
-      .login_google,
-      .login_face {
-        border: 2px solid rgb(124, 120, 120);
-        border-radius: 10px;
-        background-color: aliceblue;
-        cursor: pointer;
-        transition: 0.3s;
-        display: grid;
-        grid-template-columns: 60px 1fr;
-        align-items: center;
-      }
-
-      .login_google:hover, .login_face:hover {
-        background-color: #d1d5db;
-      }
-
-      .icon-google, .icon_face {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 25px;
-        height: 25px;
-        justify-self: center;
-      }
-      
+</head>
+<style>
       .icon-google { background-image: url(../main_Page/img/img_icons/icons8-logo-de-google-48.png); }
       .icon_face { background-image: url(../main_Page/img/img_icons/icons8-facebook-nuevo-50.png); }
-
-      .login_terceros p {
-        margin: 0;
-        font-weight: bold;
-        font-size: 14px;
-        color: #333;
-      }
-
-      .footer { 
-        background: #333; 
-        color: white; 
-        padding: 30px 20px; 
-        border-top: 8px solid #c24f4f; 
-      }
-      
-      .footer-content { 
-        display: grid; 
-        grid-template-columns: repeat(3, 1fr); 
-        align-items: center;
-        max-width: 1200px; 
-        margin: 0 auto; 
-        text-align: center; 
-        gap: 20px;
-      }
-
-      .redes {
-        display: grid;
-        grid-auto-flow: column;
-        gap: 15px;
-        justify-content: center;
-      }
-
-      .footer a { 
-        color: #ffcc00; 
-        text-decoration: none; 
-        transition: 0.3s;
-      }
-      
-      .footer a:hover { 
-        color: #3b4cca; 
-      }
-
-      @media screen and (max-width: 600px) {
-        .footer-content { grid-template-columns: 1fr; gap: 15px; }
-        .card-registrarse { padding: 30px 20px; }
-        .botones-acciones { grid-template-columns: 1fr; }
-      }
     </style>
-</head>
 <body>
+  <header class="nav-bar">
+      <div class="logo"></div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menu</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="formulario_pedido.html">Pedir</a>
+        <a href="pedidos.html">Mis Pedidos</a>
+        <a href="login.html">Mi cuenta</a>
+      </nav>
+      <div class="theme-switch">
+        <span>☀️</span>
+        <label class="theme-toggle">
+          <input type="checkbox" id="modoOscuro" />
+          <span class="theme-slider"></span>
+        </label>
+        <span>🌙</span>
+      </div>
+    </header>
 
     <main class="register-container">
         <div class="card-registrarse">
