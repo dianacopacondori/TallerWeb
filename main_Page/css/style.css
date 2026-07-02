@@ -424,7 +424,72 @@ button:hover {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
 }
+/* Animación sencilla para login y registro de aparacion de card*/
+.card-login,
+.card-registrarse {
+  animation: aparecerCard 0.8s ease both;
+}
 
+.card-login form > *,
+.card-registrarse form > *,
+.login_terceros > * {
+  animation: aparecerElemento 0.6s ease both;
+}
+
+/* Aparición escalonada */
+.card-login form > *:nth-child(1),
+.card-registrarse form > *:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.card-login form > *:nth-child(2),
+.card-registrarse form > *:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.card-login form > *:nth-child(3),
+.card-registrarse form > *:nth-child(3) {
+  animation-delay: 0.35s;
+}
+
+.card-login form > *:nth-child(4),
+.card-registrarse form > *:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.login_terceros > *:nth-child(1) {
+  animation-delay: 0.55s;
+}
+
+.login_terceros > *:nth-child(2) {
+  animation-delay: 0.65s;
+}
+
+/* Movimiento de entrada de la tarjeta */
+@keyframes aparecerCard {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Movimiento de entrada de los elementos internos */
+@keyframes aparecerElemento {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .card-login form,
 .card-registrarse form {
   display: grid;
