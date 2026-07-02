@@ -319,8 +319,133 @@ h2 {
 }
 .bienvenida,
 .proposito {
-  margin-bottom: 40px;
+   width:85%;
+    max-width:1100px;
+    margin:50px auto;
+    padding:45px;
+    background:rgba(255,255,255,.92);
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
 }
+.bienvenida::before,
+.proposito::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:8px;
+    background:linear-gradient(
+        90deg,
+        #ffcb05,
+        #ff6b6b,
+        #3b4cca
+    );
+}
+.bienvenida:hover,
+.proposito:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.2);
+}
+/*=========================================
+            TÍTULOS
+=========================================*/
+
+.bienvenida h1{
+
+    font-size:42px;
+
+    color:#3b4cca;
+
+    margin-bottom:20px;
+
+    text-shadow:2px 2px 5px rgba(0,0,0,.15);
+
+}
+
+.proposito h2{
+
+    color:#4caf50;
+
+    margin-bottom:15px;
+
+    font-size:30px;
+
+}
+
+/* El segundo h2 con el emoji */
+
+.proposito h2:last-of-type{
+
+    color:#ff6b6b;
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+/*=========================================
+              PÁRRAFOS
+=========================================*/
+
+.bienvenida p,
+.proposito p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#555;
+
+    text-align:justify;
+
+}
+
+/*=========================================
+        PEQUEÑOS ICONOS DECORATIVOS
+=========================================*/
+
+.bienvenida::after{
+    content:"⚡";
+    position:absolute;
+    right:30px;
+    bottom:20px;
+    font-size:45px;
+    opacity:.15;
+}
+
+.proposito::after{
+    content:"🌱";
+    position:absolute;
+    right:30px;
+    bottom:20px;
+    font-size:45px;
+    opacity:.15;
+}
+body.dark-mode .bienvenida,
+body.dark-mode .proposito{
+    background:#2f2f2f;
+    color:white;
+}
+
+body.dark-mode .bienvenida h1{
+    color:#ffcb05;
+}
+
+body.dark-mode .proposito h2{
+    color:#8de26f;
+}
+body.dark-mode .bienvenida p,
+body.dark-mode .proposito p{
+
+    color:#f2f2f2;
+}
+
 .acciones {
   display: flex;
   justify-content: center;
