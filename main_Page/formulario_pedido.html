@@ -16,7 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
+    <link rel="stylesheet" href="css/paginas/formulario_pedido.css" />
+</head>
   <body>
     <header class="nav-bar">
       <div class="logo"></div>
@@ -35,13 +36,11 @@
         <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Mi cuenta</a>
       </nav>
-      <div class="theme-switch">
-        <span>☀️</span>
-        <label class="theme-toggle">
+      <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
+        <label class="theme-toggle" title="Cambiar modo claro/oscuro">
           <input type="checkbox" id="modoOscuro" />
-          <span class="theme-slider"></span>
+          <span class="theme-slider" aria-hidden="true"></span>
         </label>
-        <span>🌙</span>
       </div>
     </header>
     <div class="conten">
@@ -191,16 +190,6 @@
         </p>
       </div>
     </footer>
-
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>

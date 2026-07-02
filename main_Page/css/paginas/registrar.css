@@ -1,0 +1,22 @@
+/* =========================================
+   REGISTRO: fondo específico de la página
+   ========================================= */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 0;
+  background-image: url("../../img/img_login/login_imgjpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+body.dark-mode {
+  background:
+    linear-gradient(rgba(20, 20, 20, 0.55), rgba(20, 20, 20, 0.55)),
+    url("../../img/img_login/login_imgjpg.jpg");
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,66 @@
+/* =========================================
+   HISTORIAL DE PEDIDOS
+   ========================================= */
+
+.pedido-header {
+  margin-bottom: 30px;
+}
+
+.tabla-container {
+  width: 100%;
+  margin: 40px auto;
+  overflow-x: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-pedidos {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.tabla-pedidos thead {
+  background: linear-gradient(135deg, #ffcc00, #ff9f43);
+  color: #333;
+}
+
+.tabla-pedidos th,
+.tabla-pedidos td {
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.estado-pedido {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.preparacion {
+  background-color: #f39c12;
+}
+
+.proceso {
+  background-color: #2980b9;
+}
+
+.enviado {
+  background-color: #27ae60;
+}
+
+@media screen and (max-width: 600px) {
+  .contenido {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}

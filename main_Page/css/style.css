@@ -1,906 +1,275 @@
+/* =====================================================
+   STYLE GENERAL
+   Base compartida: tipografía, navegación, modo oscuro,
+   footer, botones comunes, cinta y responsive general.
+   ===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   padding-top: 100px;
   font-family: "Montserrat", sans-serif;
-
   background:
     linear-gradient(rgba(255, 248, 220, 0.85), rgba(255, 248, 220, 0.9)),
-    url("img/fondo-pokemon-cafe.jpg");
-
+    url("../img/img_main/pokemon-cafe.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  color: #202020;
 }
-.logo {
-  background-image: url("../img/img_main/pokeCafe_logo.png");
-  background-repeat: no-repeat;
-  background-position: center; /* Centra la imagen dentro del espacio */
-  background-size: contain; /* Escala la imagen para que quepa completa */
-  /* Ajusta estos valores para cambiar el tamaño total */
-  width: 160px;
-  height: 80px;
-  margin: 10px 20px;
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
-.nav-bar {
-  position: fixed;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  align-items: center;
-  height: 100px;
-  background: rgb(236, 239, 207);
-  border-bottom: 1.6px solid rgb(132, 107, 72);
-}
-.nav-links {
-  display: flex;
-  gap: 10px;
-  margin-left: auto;
-}
-.nav-links a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  color: rgb(108, 105, 105);
-  margin-right: 0;
-  padding: 10px 20px;
-  text-decoration: none;
-  border: 0.9px solid transparent;
-  border-radius: 40px;
-  transition: border-color 0.3s ease;
-}
-.nav-links a:hover {
-  border-color: black;
-  background: rgb(247, 224, 110);
-  color: black;
-}
-/* =========================================
-   CAJA MISTERIOSA
-   ========================================= */
-.mystery-link {
-  text-decoration: none;
+
+a {
   color: inherit;
+  text-decoration: none;
 }
 
-.mystery-box {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 180px;
-  background: rgba(255, 211, 79, 0.948);
-  border-radius: 20px;
-  padding: 15px;
+p {
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.mystery-box:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.mystery-box img {
-  width: 80px;
-  animation: balanceo 1s infinite ease-in-out;
-}
-@keyframes balanceo {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(6deg);
-  }
-  75% {
-    transform: rotate(-6deg);
-  }
-}
-
-.oferta-tag {
-  position: absolute;
-  top: -12px;
-  right: -10px;
-  background: red;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-}
-
-@keyframes slide {
-  0%,
-  45% {
-    margin-left: 0;
-  }
-  55%,
-  100% {
-    margin-left: -100%;
-  }
-}
-
-/*SLIDER Y ANIMACIONES*/
-.slider-box {
-  width: 100%;
-  overflow: hidden;
-  height: 600px;
-  position: relative; /* Sigue siendo importante para que el hijo no se escape */
-  /* Eliminamos: display: flex, justify-content y align-items */
-}
-.slider-box ul {
-  display: flex;
-  padding: 0;
-  width: 200%;
-  animation: slide 4s infinite alternate ease-in-out;
-}
-.slider-box li {
-  width: 100%;
-  list-style: none;
-  position: relative;
-}
-.slider-box .banner {
-  width: 100%;
-  height: 700px;
-  background-image: url(../img/img_main/pokemon-cafe.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slider-box .banner2 {
-  width: 100%;
-  height: 700px;
-  background-image: url(../img/img_main/pokemon-cafe-entrada.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.capa-concepto {
-  position: absolute;
-  z-index: 10;
-
-  /* Nuevas coordenadas de centrado infalible */
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  background-color: rgba(200, 165, 85, 0.75);
-  width: 70%;
-  max-width: 900px;
-  padding: 60px 40px;
-  text-align: center;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-}
-
-.capa-concepto h2 {
-  font-size: 35px;
-  letter-spacing: 5px;
-  margin-bottom: 30px;
-  font-weight: 300;
-}
-@keyframes slide {
-  0% {
-    margin-left: 0;
-  }
-  45% {
-    margin-left: 0%;
-  }
-  55% {
-    margin-left: -100%;
-  }
-  100% {
-    margin-left: -100%;
-  }
-}
-.capa-concepto {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(200, 165, 85, 0.85);
-  width: 70%;
-  max-width: 900px;
-  padding: 40px;
-  text-align: center;
-  color: white;
-  border-radius: 15px;
-}
-.capa-concepto h2 {
-  font-size: 35px;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-/* =========================================
-   ESTRUCTURA DE CONTENIDO PRINCIPAL (MACRO-GRID)
-   ========================================= */
-
-.main-grid {
-  display: grid;
-  gap: 60px;
-}
-
-/* Sistemas de Tarjetas (Micro-Grids) */
-.grid-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-.grid-testimonios {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-/* Cinta animada */
-.conten {
-  width: 100%;
-  overflow: hidden;
-  padding: 10px 0;
-}
-.track {
-  display: flex;
-  width: max-content;
-  animation: scroll 10s linear infinite;
-}
-.cinta {
-  display: flex;
-  width: max-content;
-  animation: mover 30s linear infinite reverse;
-}
-.cinta img {
-  height: 80px;
-}
-@keyframes mover {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.conten {
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 10px;
-}
-.track {
-  display: flex;
-  width: max-content;
-  animation: scroll 10s linear infinite;
-}
-.cinta {
-  display: flex;
-  width: max-content;
-  animation: mover 30s linear infinite reverse;
-}
-.cinta img {
-  height: 80px;
-}
-@keyframes mover {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 h1 {
   color: #ff6b6b;
   font-size: 2.5rem;
+  text-align: center;
 }
 
 h2 {
   color: #202020;
 }
-.bienvenida,
-.proposito {
-   width:85%;
-    max-width:1100px;
-    margin:50px auto;
-    padding:45px;
-    background:rgba(255,255,255,.92);
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    transition:.4s;
-}
-.bienvenida::before,
-.proposito::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:8px;
-    background:linear-gradient(
-        90deg,
-        #ffcb05,
-        #ff6b6b,
-        #3b4cca
-    );
-}
-.bienvenida:hover,
-.proposito:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.2);
-}
-/*=========================================
-            TÍTULOS
-=========================================*/
-
-.bienvenida h1{
-
-    font-size:42px;
-
-    color:#3b4cca;
-
-    margin-bottom:20px;
-
-    text-shadow:2px 2px 5px rgba(0,0,0,.15);
-
-}
-
-.proposito h2{
-
-    color:#4caf50;
-
-    margin-bottom:15px;
-
-    font-size:30px;
-
-}
-
-/* El segundo h2 con el emoji */
-
-.proposito h2:last-of-type{
-
-    color:#ff6b6b;
-
-    font-size:34px;
-
-    margin-bottom:25px;
-
-}
-
-/*=========================================
-              PÁRRAFOS
-=========================================*/
-
-.bienvenida p,
-.proposito p{
-
-    font-size:18px;
-
-    line-height:1.9;
-
-    color:#555;
-
-    text-align:justify;
-
-}
-
-/*=========================================
-        PEQUEÑOS ICONOS DECORATIVOS
-=========================================*/
-
-.bienvenida::after{
-    content:"⚡";
-    position:absolute;
-    right:30px;
-    bottom:20px;
-    font-size:45px;
-    opacity:.15;
-}
-
-.proposito::after{
-    content:"🌱";
-    position:absolute;
-    right:30px;
-    bottom:20px;
-    font-size:45px;
-    opacity:.15;
-}
-body.dark-mode .bienvenida,
-body.dark-mode .proposito{
-    background:#2f2f2f;
-    color:white;
-}
-
-body.dark-mode .bienvenida h1{
-    color:#ffcb05;
-}
-
-body.dark-mode .proposito h2{
-    color:#8de26f;
-}
-body.dark-mode .bienvenida p,
-body.dark-mode .proposito p{
-
-    color:#f2f2f2;
-}
-
-.acciones {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.tabla-menu {
-  width: 90%;
-  margin: auto;
-  border-collapse: collapse;
-  font-family: "Montserrat";
-}
-
-.tabla-menu th,
-.tabla-menu td {
-  border: 1px solid #ccc;
-  padding: 15px;
-}
-
-.tabla-menu th {
-  background: #f5cb24;
-}
 
 button {
-  margin: 15px auto;
   background: linear-gradient(135deg, #ffcc00, #ff6b6b);
   border: none;
-  padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
-  display: block;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 button:hover {
   transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
 }
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-.card img {
+
+/* =========================
+   NAVBAR GENERAL
+   ========================= */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.grid {
+  height: 100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.precio {
-  margin: 10px 0;
-}
-
-.original {
-  color: rgb(190, 82, 68);
-  margin-right: 10px;
-}
-
-.urgente {
-  color: red;
-  font-weight: bold;
-}
-.contenido {
-  width: 85%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px;
-
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-  text-align: center;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  grid-template-columns: minmax(135px, 180px) minmax(0, 1fr) auto;
   align-items: center;
+  gap: 12px;
+  padding: 0 24px 0 12px;
+  overflow: visible;
+  background: rgb(236, 239, 207);
+  border-bottom: 1.6px solid rgb(132, 107, 72);
+  backdrop-filter: blur(10px);
 }
 
-input {
-  width: 70%;
-  padding: 12px;
-  border-radius: 15px;
-  border: 1px solid #ccc;
-}
-input:focus {
-  outline: none;
-  border-color: #ff6b6b;
-  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+.logo {
+  width: 160px;
+  max-width: 100%;
+  height: 80px;
+  margin: 0;
+  background-image: url("../img/img_main/pokeCafe_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
-/* Footer */
-.footer {
-  background-color: #333;
-  color: rgb(255, 249, 249);
-  padding: 40px 0 20px 0;
-  border-top: 8px solid #c24f4f;
-}
-.grid-footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-.footer-section h4 {
-  color: #fdce10;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-.footer-section ul {
-  list-style: none;
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(8px, 1.5vw, 28px);
+  width: 100%;
+  min-width: 0;
+  margin: 0;
   padding: 0;
 }
-.footer-section a:hover {
-  color: #3b4cca;
-}
-.footer-logo {
-  width: 150px;
-  margin: 10px auto;
-  display: block;
-}
-.footer-bottom {
+
+.nav-links a {
+  margin: 0;
+  padding: 8px clamp(8px, 1vw, 16px);
+  font-size: clamp(14px, 1.08vw, 18px);
+  line-height: 1.15;
+  white-space: nowrap;
   text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #555;
-  padding-top: 20px;
-  font-size: 0.8rem;
-}
-footer a {
-  text-decoration: none;
-  color: inherit;
+  color: rgb(108, 105, 105);
+  border: 0.9px solid transparent;
+  border-radius: 40px;
+  transition: all 0.3s ease;
 }
 
-/* =========================================
-         FORMULARIO DE PEDIDO
-         ========================================= */
-.pedido-container {
-  display: grid;
-  place-items: center; /* Centra el formulario de manera perfecta */
-  margin-top: 20px;
-}
-
-.pedido-form {
-  background-color: #f9f9f9;
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: grid;
-  width: 100%;
-  max-width: 450px;
-  gap: 20px;
-  box-sizing: border-box;
-}
-.input-group {
-  display: grid;
-  gap: 8px; /* Separación entre label y el input */
-  text-align: left;
-}
-
-.input-group label {
-  font-weight: 600;
-  color: #333;
-}
-
-.input-group input,
-.input-group textarea,
-.input-group select {
-  padding: 14px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  outline: none;
-  transition:
-    border 0.3s,
-    box-shadow 0.3s;
-  width: 100%;
-  box-sizing: border-box;
-}
-.pedido-button {
-  background: linear-gradient(135deg, #ffcc00, #ff6b6b);
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-  font-size: 16px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  color: #333;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
-  margin-top: 10px;
-}
-
-.pedido-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
-}
-
-.switch input:checked + .slider {
-  background: #3b4cca;
-}
-.switch .slider::before {
-  background: #ffcb05;
-}
-/* =========================================
-         LOGIN
-         ========================================= */
-.login-container {
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-
-.card-login {
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  max-width: 400px;
-  border: 3px solid rgb(253, 190, 96);
-  border-radius: 15px;
-  padding: 40px;
-  box-sizing: border-box;
-  display: grid;
-  gap: 25px;
-}
-.card-login h1 {
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form {
-  display: grid;
-  gap: 15px;
-}
-
-.form_group label {
-  font-size: 15px;
-  font-weight: bold;
-  color: #f0f0f0;
-}
-
-input[type="password"],
-input[type="text"] {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 12px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-input[type="password"]:focus,
-input[type="text"]:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.botones-acciones {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-/* CSS unificado para que botones y enlaces luzcan igual */
-.boton-enlace,
-.boton-register {
-  text-decoration: none;
-  background-color: white;
+.nav-links a:hover {
+  border-color: black;
+  background: rgb(247, 224, 110);
   color: black;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 34px;
+  height: 4px;
+  background-color: #8b7149;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* =========================
+   BOTÓN MODO OSCURO - DISEÑO POKÉBOLA
+   ========================= */
+.theme-switch {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex: 0 0 88px;
+  width: 88px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  z-index: 1003;
 }
 
-.boton-enlace:hover,
-.boton-register:hover {
-  background-color: #e2e8f0;
-  transform: scale(1.03);
+.theme-switch > span {
+  display: none;
 }
 
-.login_terceros {
-  display: grid;
-  gap: 15px;
-}
-.login_google,
-.login_face {
-  border: 2px solid rgb(124, 120, 120);
-  border-radius: 10px;
-  background-color: aliceblue;
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  margin: 0;
   cursor: pointer;
-  transition: 0.3s;
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  align-items: center;
-}
-.login_google:hover,
-.login_face:hover {
-  background-color: #d1d5db;
-}
-.icon-google,
-.icon_face {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 25px;
-  height: 25px;
-  justify-self: center;
 }
 
-.icon-google {
-  background-image: url(../img/img_icons/icons8-logo-de-google-48.png);
-}
-.icon_face {
-  background-image: url(../main_Page/img/img_icons/icons8-facebook-nuevo-50.png);
-}
-
-.login_terceros p {
+.theme-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
   margin: 0;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
-}
-/* =========================================
-         REGISTRO
-         ========================================= */
-.register-container {
-  display: grid;
-  place-items: center;
-  padding: 20px;
+  padding: 0;
 }
 
-.card-registrarse {
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  max-width: 400px;
-  border: 3px solid rgb(253, 190, 96);
-  border-radius: 15px;
-  padding: 40px;
-  box-sizing: border-box;
-  display: grid;
-  gap: 25px;
-}
-.card-registrarse h1 {
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-input[type="password"],
-input[type="text"],
-input[type="email"] {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 12px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+.theme-slider {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50px;
+  background:
+    linear-gradient(
+      to bottom,
+      #e53935 0%,
+      #e53935 48%,
+      #222 48%,
+      #222 52%,
+      #fff 52%,
+      #fff 100%
+    );
+  box-shadow:
+    inset 0 0 8px rgba(0, 0, 0, 0.25),
+    0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-input[type="password"]:focus,
-input[type="text"]:focus,
-input[type="email"]:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.theme-slider::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      to bottom,
+      #ef5350 0%,
+      #ef5350 47%,
+      #222 47%,
+      #222 53%,
+      #fff 53%,
+      #fff 100%
+    );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.5s ease;
 }
 
-.login_google:hover,
-.login_face:hover {
-  background-color: #d1d5db;
+.theme-slider::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 4;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.5s ease;
 }
 
-.icon-google,
-.icon_face {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 25px;
-  height: 25px;
-  justify-self: center;
+.theme-toggle input:checked + .theme-slider {
+  background:
+    linear-gradient(
+      to bottom,
+      #243b6b 0%,
+      #243b6b 48%,
+      #111 48%,
+      #111 52%,
+      #394867 52%,
+      #394867 100%
+    );
 }
 
-.icon-google {
-  background-image: url(../main_Page/img/img_icons/icons8-logo-de-google-48.png);
-}
-.icon_face {
-  background-image: url(../main_Page/img/img_icons/icons8-facebook-nuevo-50.png);
+.theme-toggle input:checked + .theme-slider::before {
+  transform: translateX(40px) rotate(180deg);
 }
 
-.login_terceros p {
-  margin: 0;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
+.theme-toggle input:checked + .theme-slider::after {
+  transform: translateX(40px);
 }
 
-.footer {
-  background: #333;
-  color: white;
-  padding: 30px 20px;
-  border-top: 8px solid #c24f4f;
+.theme-toggle:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  gap: 20px;
-}
-
-.redes {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 15px;
-  justify-content: center;
-}
-
-.footer a {
-  color: #ffcc00;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer a:hover {
-  color: #3b4cca;
-}
-/* =========================================
-        MENU PRINCIPAL
-         ========================================= */
+/* =========================
+   CONTENEDOR GENERAL
+   ========================= */
 .contenido {
   width: 90%;
   max-width: 1200px;
@@ -911,315 +280,329 @@ input[type="email"]:focus {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.menu-section {
-  margin-top: 70px;
-}
-
-.section-title {
-  font-size: 35px;
-  color: #ff9f43;
-  margin-bottom: 30px;
-  text-align: left;
-  border-left: 8px solid #ffcc00;
-  padding-left: 15px;
-}
-
-/* =========================================
-         SISTEMA DE TARJETAS (MICRO-GRID)
-         ========================================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  padding-bottom: 15px;
-
-  /* Grid interno para que el botón siempre quede abajo */
-  display: grid;
-  grid-template-rows: auto auto 1fr auto auto;
-  align-items: start;
-  text-align: center;
-}
-.card a{
-    display:flex;
-    justify-content:center;
-}
-
-.card button{
-    margin:15px auto 0;
-}
-
-.card:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  animation: electricidad 0.2s alternate 5;
-}
-
-@keyframes electricidad {
-  from {
-    transform: translateX(-3px);
-  }
-  to {
-    transform: translateX(3px);
-  }
-}
-
-.card h3 {
-  margin: 15px 15px 5px;
-  color: #333;
-}
-
-.card p {
-  font-size: 14px;
-  color: #666;
-  padding: 0 15px;
-  margin: 0 0 15px 0;
-}
-
-.precio {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.original {
-  color: rgb(190, 82, 68);
-}
-
-button {
-  margin: auto 15px 15px;
-  background: linear-gradient(135deg, #ffcc00, #ff6b6b);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-/* =========================================
-         OFERTAS
-         ========================================= */
-
-.oferta-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  padding-bottom: 15px;
-  position: relative;
-
-  /* Grid interno para alinear elementos perfectamente */
-  display: grid;
-  grid-template-rows: auto auto 1fr auto auto auto;
-  align-items: start;
-  text-align: center;
-}
-
-.oferta-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
-.oferta button{
-    justify-self:center;
-}
-
-.badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: red;
-  color: white;
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 20px;
-  z-index: 2; /* Para que quede encima de la imagen */
-}
-
-.precio {
-  margin: 10px 0;
-  color: red;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.original {
-  text-decoration: line-through;
-  color: #888;
-  font-size: 16px;
-  font-weight: normal;
-  margin-right: 10px;
-}
-
-/* Sobrescribimos el color de p para el texto urgente */
-.oferta-card p.urgente {
-  color: red;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-/* =========================================
-         TABLA DE PEDIDOS
-         ========================================= */
-.tabla-container {
-  margin: 40px auto;
-  width: 100%;
-  /* Permite hacer scroll horizontal en celulares si la tabla es muy ancha */
-  overflow-x: auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.tabla-pedidos {
-  width: 100%;
-  min-width: 600px; /* Evita que la tabla colapse y se vuelva ilegible */
-  border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.95);
-  overflow: hidden;
-}
-
-.tabla-pedidos thead {
-  background: linear-gradient(135deg, #ffcc00, #ff9f43);
-  color: #333;
-}
-
-.tabla-pedidos th,
-.tabla-pedidos td {
-  padding: 18px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-/* Estados del pedido */
-.estado-pedido {
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: white;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.preparacion {
-  background-color: #f39c12;
-}
-.proceso {
-  background-color: #2980b9;
-}
-.enviado {
-  background-color: #27ae60;
-}
-
-/* =========================================
-          CINTA ANIMADA
-          ========================================= */
+/* =========================
+   CINTA ANIMADA GENERAL
+   ========================= */
 .conten {
   width: 100%;
   overflow: hidden;
   padding: 10px 0;
 }
-.track {
-  display: flex;
-  width: max-content;
-  animation: scroll 10s linear infinite;
-}
+
+.track,
 .cinta {
   display: flex;
   width: max-content;
+}
+
+.track {
+  animation: scroll 10s linear infinite;
+}
+
+.cinta {
   animation: mover 30s linear infinite reverse;
 }
+
 .cinta img {
   height: 60px;
 }
+
 @keyframes mover {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
---MODO OSCURO-- #modoOscuro {
-  margin-right: 20px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 30px;
+
+/* =========================
+   FOOTER GENERAL
+   ========================= */
+.footer {
+  background: #2f2f2f;
+  color: white;
+  padding: 40px 0 20px;
+  border-top: 8px solid #a8874e;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  align-items: start;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #ffcb05;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer a,
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover,
+.footer-section a:hover {
+  color: #ffcb05;
+}
+
+.footer .footer-logo {
+  display: block;
+  width: 150px;
+  max-width: 70%;
+  height: auto;
+  margin: 12px auto;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #555;
+  padding: 20px 15px 0;
+  font-size: 0.8rem;
+}
+
+.redes {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-content a {
+  color: #ffcc00;
+}
+
+/* =========================
+   LOGIN Y REGISTRO COMPARTIDOS
+   ========================= */
+.login-container,
+.register-container {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.card-login,
+.card-registrarse {
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  gap: 25px;
+  padding: 40px;
+  box-sizing: border-box;
+  border: 3px solid blanchedalmond;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.card-login form,
+.card-registrarse form {
+  display: grid;
+  gap: 15px;
+}
+
+.card-login h1,
+.card-registrarse h1 {
+  margin: 0 0 10px;
+  color: blanchedalmond;
+}
+
+.form_group {
+  display: grid;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.form_group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.form_group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.botones-acciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.boton-enlace,
+.boton-register {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
   cursor: pointer;
-  background: #ffcc00;
-  font-size: 18px;
   transition: 0.3s;
 }
 
-button#modoOscuro:hover {
-  transform: scale(1.1);
+.boton-enlace:hover,
+.boton-register:hover {
+  background: #e2e8f0;
+  transform: scale(1.03);
 }
+
+.botones-acciones button {
+  appearance: none;
+}
+
+.login_terceros {
+  display: grid;
+  gap: 15px;
+}
+
+.login_google,
+.login_face {
+  min-height: 50px;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  column-gap: 8px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #1f2937;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login_google:hover,
+.login_face:hover {
+  background: #e5e7eb;
+}
+
+.icon-google,
+.icon_face {
+  width: 25px;
+  height: 25px;
+  justify-self: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.icon-google {
+  background-image: url("../img/img_icons/icons8-logo-de-google-48.png");
+}
+
+.icon_face {
+  background-image: url("../img/img_icons/icons8-facebook-nuevo-50.png");
+}
+
+.login_google p,
+.login_face p,
+.login_terceros p {
+  margin: 0;
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* =========================
+   MODO OSCURO GENERAL
+   ========================= */
 body.dark-mode {
   background:
-    linear-gradient(rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0.95)),
-    url("../img/img_login/login_imgjpg.jpg");
-
+    linear-gradient(rgba(38, 33, 27, 0.90), rgba(38, 33, 27, 0.92)),
+    url("../img/img_main/pokemon-cafe.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  color: #fff4df;
+}
 
-  color: white;
-}
-body.dark-mode .contenido {
-  background: #1c1c1c;
-  color: white;
-}
 body.dark-mode .nav-bar {
-  background: rgba(35, 35, 35, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(31, 29, 26, 0.96);
+  border-bottom: 1.6px solid #a8874e;
 }
-body.dark-mode .nav-links{
-    background:rgba(35, 35, 35, 0.95);
+
+body.dark-mode .contenido,
+body.dark-mode .card,
+body.dark-mode .oferta-card,
+body.dark-mode .pedido-container,
+body.dark-mode .tabla-container,
+body.dark-mode .pedido-form {
+  background: rgba(49, 44, 38, 0.94);
+  color: #fff4df;
 }
-body.dark-mode .nav-links a {
-  color: #f5f5f5;
-}
-body.dark-mode .card {
-  background: #303030;
-  color: white;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-body.dark-mode .card h3,
-body.dark-mode .card p {
-  color: white;
-}
+
+body.dark-mode .nav-links a,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
-body.dark-mode p {
-  color: white;
-}
-body.dark-mode .nav-links a {
-  color: #f5f5f5;
+body.dark-mode p,
+body.dark-mode label {
+  color: #fff4df;
 }
 
 body.dark-mode .nav-links a:hover {
-  background: #ffcc00;
+  background: #ffcc33;
+  color: #1d1a17;
+}
 
-  color: black;
-}
 body.dark-mode .footer {
-  background: #202020;
-  color: white;
+  background: #292929;
 }
+
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
@@ -1227,199 +610,106 @@ body.dark-mode select {
   color: white;
   border: 1px solid #777;
 }
-body.dark-mode table {
-  background: #353432;
+
+body.dark-mode table,
+body.dark-mode .tabla-pedidos {
+  background: #2f2f2f;
   color: white;
 }
+
 body.dark-mode th {
-  background: #b18e50;
-}
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 20px;
-}
-.theme-toggle {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 40px;
-}
-.theme-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.theme-slider {
-  position: absolute;
-  inset: 0;
-  cursor: pointer;
-overflow: hidden;
-  transition: 0.5s;
-  border-radius: 50px;
-  background:
-        linear-gradient(
-            to bottom,
-            #e53935 0%,
-            #e53935 48%,
-            #222 48%,
-            #222 52%,
-            white 52%,
-            white 100%
-        );
-
-    box-shadow:
-        inset 0 0 8px rgba(0,0,0,.25),
-        0 3px 10px rgba(0,0,0,.2);
-}
-.theme-slider::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:30px;
-    height:30px;
-
-    left:5px;
-    top:5px;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ef5350 0%,
-            #ef5350 47%,
-            #222 47%,
-            #222 53%,
-            #ffffff 53%,
-            #ffffff 100%
-        );
-
-    border:2px solid #222;
-
-    box-shadow:0 2px 6px rgba(0,0,0,.35);
-
-    transition:.5s;
-
-    z-index:3;
+  background: #4d4235;
 }
 
-.theme-slider::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:8px;
-    height:8px;
-
-    left:16px;
-    top:16px;
-
-    background:white;
-
-    border:2px solid #222;
-
-    border-radius:50%;
-
-    transition:.5s;
-
-    z-index:4;
+body.dark-mode .login_google,
+body.dark-mode .login_face {
+  background: #f8fafc;
+  border-color: #d1d5db;
+  color: #1f2937;
 }
 
-/* Modo oscuro */
-
-.theme-toggle input:checked + .theme-slider{
-    background:
-        linear-gradient(
-            to bottom,
-            #243B6B 0%,
-            #243B6B 48%,
-            #111 48%,
-            #111 52%,
-            #394867 52%,
-            #394867 100%
-        );
+body.dark-mode .login_google p,
+body.dark-mode .login_face p,
+body.dark-mode .login_terceros p {
+  color: #1f2937;
 }
 
-/* Movimiento */
-.theme-toggle input:checked + .theme-slider::before{
-    transform:translateX(40px) rotate(180deg);
-}
+/* =========================
+   RESPONSIVE GENERAL
+   ========================= */
+@media screen and (max-width: 1100px) {
+  body {
+    padding-top: 90px;
+  }
 
-.theme-toggle input:checked + .theme-slider::after{
-    transform:translateX(40px);
-}
-/* Hover */
-.theme-toggle:hover{
-    transform:scale(1.05);
-}
-
-/* Icono Hamburguesa */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
-  margin-right: 30px;
-  justify-self: end;
-}
-
-.hamburger span {
-  width: 35px;
-  height: 4px;
-  background-color: rgb(132, 107, 72);
-  border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Media Queries para pantallas pequeñas */
-/* =========================================
-   TABLET (hasta 900px)
-========================================= */
-@media screen and (max-width: 900px) {
-  /* Navbar */
-  .hamburger {
+  .nav-bar {
     display: flex;
+    height: 90px;
+    padding: 0 18px;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex: 0 0 145px;
+    width: 145px;
+    height: 70px;
   }
 
   .theme-switch {
-    margin-right: 20px;
+    order: 2;
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .hamburger {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1004;
   }
 
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 90px;
     left: 0;
+    right: 0;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background: rgb(236, 239, 207);
-
+    gap: 0;
     max-height: 0;
     overflow: hidden;
-
-    transition: 0.4s;
+    padding: 0;
+    background: rgba(236, 239, 207, 0.98);
+    border-bottom: none;
+    box-shadow: none;
+    transition: max-height 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+    z-index: 1001;
   }
 
   .nav-links.active {
-    max-height: 500px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgb(132, 107, 72);
+    max-height: 540px;
+    padding: 16px 0;
+    border-bottom: 1.6px solid rgb(132, 107, 72);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
   }
 
   .nav-links a {
-    width: 80%;
-    margin: 8px 0;
+    width: min(82%, 360px);
+    margin: 6px 0;
+    padding: 12px 18px;
+    color: #4a3c2f;
+    font-size: 18px;
   }
 
-  /* Animación hamburguesa */
   .hamburger.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
@@ -1432,58 +722,96 @@ overflow: hidden;
     transform: translateY(-10px) rotate(-45deg);
   }
 
-  /* Grids */
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  body.dark-mode .nav-links {
+    background: rgba(70, 58, 43, 0.98);
   }
 
-  .grid-footer {
+  body.dark-mode .nav-links.active {
+    border-bottom: 1.6px solid #a8874e;
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.28);
+  }
+
+  body.dark-mode .nav-links a {
+    color: #fff4df;
+  }
+
+  .grid-footer,
+  .footer-content {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-section:last-child {
     grid-column: span 2;
   }
-
-  /* Banner */
-  .capa-concepto {
-    width: 85%;
-    padding: 30px;
-  }
-
-  .capa-concepto h2 {
-    font-size: 28px;
-  }
-
-  /* Caja misteriosa */
-  .mystery-box {
-    width: 140px;
-  }
-
-  .mystery-box img {
-    width: 80px;
-  }
 }
-/* =========================================
-   CELULAR (hasta 600px)
-========================================= */
-@media screen and (max-width: 600px) {
-  .logo {
-    width: 120px;
-    height: 60px;
+
+@media screen and (max-width: 700px) {
+  body {
+    padding-top: 86px;
   }
 
-  .theme-switch span {
-    display: none;
+  .nav-bar {
+    height: 86px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    flex-basis: 120px;
+    width: 120px;
+    height: 62px;
   }
 
   .theme-switch {
-    margin-right: 15px;
+    flex-basis: 70px;
+    width: 70px;
+    height: 34px;
+    margin-right: 4px;
   }
 
-  .grid,
+  .theme-toggle {
+    width: 64px;
+    height: 32px;
+  }
+
+  .theme-slider::before {
+    left: 4px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .theme-slider::after {
+    left: 13px;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .theme-toggle input:checked + .theme-slider::before,
+  .theme-toggle input:checked + .theme-slider::after {
+    transform: translateX(32px) rotate(180deg);
+  }
+
+  .hamburger {
+    width: 36px;
+  }
+
+  .hamburger span {
+    width: 31px;
+  }
+
+  .nav-links {
+    top: 86px;
+  }
+
+  .contenido {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
   .grid-footer,
-  .grid-testimonios {
+  .footer-content {
     grid-template-columns: 1fr;
   }
 
@@ -1491,72 +819,12 @@ overflow: hidden;
     grid-column: span 1;
   }
 
-  .slider-box,
-  .banner,
-  .banner2 {
-    height: 400px;
+  .card-login,
+  .card-registrarse {
+    padding: 30px 20px;
   }
 
-  .capa-concepto {
-    width: 90%;
-    padding: 20px;
+  .botones-acciones {
+    grid-template-columns: 1fr;
   }
-
-  .capa-concepto h2 {
-    font-size: 20px;
-  }
-
-  .contenido {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .mystery-box {
-    width: 110px;
-  }
-
-  .mystery-box img {
-    width: 60px;
-  }
-}
-/* =========================================
-   ANIMACIONES DE BRILLO
-   ========================================= */
-.sparkle{
-
-    position:fixed;
-
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#ffeb3b;
-
-    pointer-events:none;
-
-    animation:brillo .8s ease-out forwards;
-
-    z-index:9999;
-
-}
-
-@keyframes brillo{
-
-    0%{
-
-        opacity:1;
-
-        transform:scale(0);
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:scale(4);
-
-    }
-
 }

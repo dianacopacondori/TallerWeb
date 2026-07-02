@@ -16,7 +16,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
+    <link rel="stylesheet" href="css/paginas/index.css" />
+</head>
   <body>
     <header class="nav-bar">
       <div class="logo"></div>
@@ -35,13 +36,11 @@
         <a href="pedidos.html">Mis Pedidos</a>
         <a href="login.html">Mi cuenta</a>
       </nav>
-      <div class="theme-switch">
-        <span>☀️</span>
-        <label class="theme-toggle">
+      <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
+        <label class="theme-toggle" title="Cambiar modo claro/oscuro">
           <input type="checkbox" id="modoOscuro" />
-          <span class="theme-slider"></span>
+          <span class="theme-slider" aria-hidden="true"></span>
         </label>
-        <span>🌙</span>
       </div>
     </header>
 
@@ -51,14 +50,12 @@
         <li><div class="banner2"></div></li>
       </ul>
       <div class="capa-concepto">
-        <h2>UNA EXPERIENCIA PARA LOS ENTRENADORES</h2>
+        <h2>COMIDA APROVECHADA, PRECIO ACCESIBLE</h2>
         <p>
-          Descubre el espacio oficial donde la pasión por Pokémon cobra vida.
-          Sumérgete en un ambiente acogedor y divertido mientras disfrutas de
-          creaciones culinarias inspiradas en el mundo de tus criaturas
-          favoritas. Un lugar único diseñado para compartir, celebrar y crear
-          nuevos recuerdos con tu familia y amigos. ¡Conviértete en el
-          protagonista de tu propia aventura Pokémon!
+          En Pokémon Café conectamos a restaurantes y negocios con personas que
+          desean comprar alimentos próximos a vencer a menor precio. Así
+          evitamos que comida en buen estado termine desperdiciada y promovemos
+          un consumo más responsable.
         </p>
       </div>
     </section>
@@ -94,10 +91,13 @@
       <section class="bienvenida">
         <h1>Conviértete en un Héroe del Planeta.</h1>
         <p>
-          En nuestro rincón del universo Pokémon, no solo servimos las bebidas más energizantes y los postres más deliciosos, 
-          sino que también tenemos una misión legendaria: ¡capturar el desperdicio de alimentos antes de que sea tarde!
-          Explora nuestro menú, descubre nuestras ofertas especiales y únete a la aventura de salvar deliciosos platillos a precios 
-          increíblemente accesibles. ¡Cada bocado cuenta para proteger nuestro entorno!
+          En nuestro rincón del universo Pokémon, no solo servimos las bebidas
+          más energizantes y los postres más deliciosos, sino que también
+          tenemos una misión legendaria: ¡capturar el desperdicio de alimentos
+          antes de que sea tarde! Explora nuestro menú, descubre nuestras ofertas
+          especiales y únete a la aventura de salvar deliciosos platillos a
+          precios increíblemente accesibles. ¡Cada bocado cuenta para proteger
+          nuestro entorno!
         </p>
       </section>
 
@@ -105,35 +105,42 @@
         <h2>Nuestra Misión Eco-Friendly</h2>
         <h2>🌎 ¡Salvemos Comida Juntos!</h2>
         <p>
-          En Poké Café creemos que la comida deliciosa no debería desperdiciarse jamás. Al igual que un Centro Pokémon cuida de tus criaturas, nosotros cuidamos de nuestro planeta reduciendo el impacto ambiental de los excedentes de comida.
-          ¿Cómo funciona nuestro sistema?
-          Comida en Oferta: Todos los días, nuestros deliciosos platos, postres y bebidas que están próximos a vencer se publican en nuestra sección de Ofertas Especiales.
-          Precios Accesibles: Reducimos drásticamente los precios para que puedas disfrutar de la mejor calidad gastronómica de forma económica.
-          Consumo Responsable: Al hacer tu pedido, evitas que alimentos en perfecto estado terminen en la basura, reduciendo la huella de carbono mientras disfrutas de un banquete digno de un campeón.
+          En Poké Café creemos que la comida deliciosa no debería desperdiciarse
+          jamás. Al igual que un Centro Pokémon cuida de tus criaturas, nosotros
+          cuidamos de nuestro planeta reduciendo el impacto ambiental de los
+          excedentes de comida. ¿Cómo funciona nuestro sistema? Comida en
+          Oferta: Todos los días, nuestros deliciosos platos, postres y bebidas
+          que están próximos a vencer se publican en nuestra sección de Ofertas
+          Especiales. Precios Accesibles: Reducimos drásticamente los precios
+          para que puedas disfrutar de la mejor calidad gastronómica de forma
+          económica. Consumo Responsable: Al hacer tu pedido, evitas que
+          alimentos en perfecto estado terminen en la basura, reduciendo la
+          huella de carbono mientras disfrutas de un banquete digno de un
+          campeón.
         </p>
       </section>
 
       <section class="grid-cards">
         <div class="card">
           <h3>Ver Menú</h3>
-          <p>Explora nuestros productos disponibles</p>
+          <p>Revisa alimentos disponibles antes de que se desperdicien</p>
           <a href="menu.html"><button>Ir al menú</button></a>
         </div>
         <div class="card">
           <h3>Realizar Pedido</h3>
-          <p>Haz tu pedido fácilmente</p>
+          <p>Compra fácil y ayuda a aprovechar comida en buen estado</p>
           <a href="formulario_pedido.html"><button>Hacer pedido</button></a>
         </div>
         <div class="card">
           <h3>Ofertas</h3>
-          <p>Aprovecha descuentos especiales</p>
+          <p>Encuentra precios bajos de negocios y restaurantes aliados</p>
           <a href="ofertas.html"><button>Ver ofertas</button></a>
         </div>
       </section>
 
       <section class="destacados">
         <h2>Productos Destacados</h2>
-        <p>Descubre nuestros productos más populares.</p>
+        <p>Productos publicados para aprovecharlos a tiempo.</p>
         <div class="grid-cards">
           <div class="card">
             <img
@@ -141,7 +148,7 @@
               alt="Snorlax Comfort Chocolate"
             />
             <h3>Snorlax Comfort Chocolate</h3>
-            <p>El favorito de todos los entrenadores</p>
+            <p>Disponible en oferta para evitar desperdicio</p>
           </div>
           <div class="card">
             <img
@@ -149,7 +156,7 @@
               alt="Electrabuzz Citrus Chicken"
             />
             <h3>Electrabuzz Citrus Chicken</h3>
-            <p>Un plato lleno de energía y sabor</p>
+            <p>Una opción sabrosa a precio accesible</p>
           </div>
           <div class="card">
             <img
@@ -157,30 +164,30 @@
               alt="Galletas Decoradas"
             />
             <h3>Galletas Decoradas</h3>
-            <p>Deliciosas galletas con diseños de tus Pokémon favoritos</p>
+            <p>Postres listos para venderse antes de vencer</p>
           </div>
         </div>
       </section>
 
       <section class="oferta">
-        <h2>¡Aprovecha nuestras ofertas especiales!</h2>
+        <h2>¡Aprovecha ofertas antes de que caduquen!</h2>
         <p>
-          Descubre nuestras ofertas especiales y disfruta de productos
-          exclusivos a precios increíbles.
+          Cada oferta ayuda a reducir pérdidas de alimentos y permite que más
+          personas compren comida de calidad a precios accesibles.
         </p>
         <a href="ofertas.html"><button>Ver ofertas</button></a>
       </section>
 
       <section class="testimonios">
-        <h2>💬 Opiniones</h2>
+        <h2>💬 Comentarios</h2>
         <div class="grid-testimonios">
           <div class="card">
-            <p>“La mejor cafetería temática que he visitado.”</p>
-            <h3>- Ash Ketchum</h3>
+            <p>“Compré comida rica a menor precio y ayudé a que no se desperdicie.”</p>
+            <h3>- Cliente responsable</h3>
           </div>
           <div class="card">
-            <p>“Excelente iniciativa contra el desperdicio.”</p>
-            <h3>- Misty</h3>
+            <p>“Publicar excedentes nos permite venderlos a tiempo y reducir pérdidas.”</p>
+            <h3>- Negocio aliado</h3>
           </div>
         </div>
       </section>
@@ -239,18 +246,6 @@
         </p>
       </div>
     </footer>
-
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-
-      hamburger.addEventListener("click", () => {
-        // Alterna la clase 'active' para abrir/cerrar el menú
-        navLinks.classList.toggle("active");
-        // Alterna la clase 'active' para animar el icono de hamburguesa a una X
-        hamburger.classList.toggle("active");
-      });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
