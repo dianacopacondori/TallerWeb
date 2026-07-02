@@ -179,7 +179,7 @@ button:hover {
   margin: 0;
   padding: 0;
 }
-
+/*Transición del botón modo oscuro tipo Pokébola*/
 .theme-slider {
   position: absolute;
   inset: 0;
@@ -774,7 +774,7 @@ body.dark-mode .login_terceros p {
     color: #4a3c2f;
     font-size: 18px;
   }
-
+/*el ícono hamburguesa se convierte en una “X”.*/
   .hamburger.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
@@ -786,7 +786,7 @@ body.dark-mode .login_terceros p {
   .hamburger.active span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
-
+/*el ícono hamburguesa se convierte en una “X”.*/
   body.dark-mode .nav-links {
     background: rgba(70, 58, 43, 0.98);
   }
