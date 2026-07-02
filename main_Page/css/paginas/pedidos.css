@@ -64,3 +64,73 @@
     font-size: 2rem;
   }
 }
+
+/*=============================
+      IMPACTO DEL PEDIDO
+=============================*/
+
+.impacto-pedido{
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+    padding:35px;
+    background:rgba(255,255,255,.92);
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.impacto-pedido h2{
+    color:#4caf50;
+    margin-bottom:30px;
+}
+.impacto-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+.impacto-card{
+    background:#fdf8e4;
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+    border:2px solid #ffcb05;
+}
+.impacto-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+.impacto-icono{
+    font-size:45px;
+    margin-bottom:15px;
+}
+.impacto-card h3{
+    font-size:32px;
+    color:#3b4cca;
+    margin:10px 0;
+}
+.impacto-card p{
+    color:#555;
+    font-weight:600;
+}
+.mensaje-impacto{
+    margin-top:35px;
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+}
+/*=============================
+      MODO OSCURO */
+body.dark-mode .impacto-pedido{
+    background:#2b2b2b;
+    color:white;
+}
+body.dark-mode .impacto-card{
+    background:#3a3a3a;
+    border-color:#ffcb05;
+}
+body.dark-mode .impacto-card p{
+    color:#f2f2f2;
+}
+body.dark-mode .mensaje-impacto{
+    color:#f5f5f5;
+}

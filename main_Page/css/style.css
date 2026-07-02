@@ -618,7 +618,7 @@ body.dark-mode .tabla-pedidos {
 }
 
 body.dark-mode th {
-  background: #4d4235;
+  background: #c2b88c;
 }
 
 body.dark-mode .login_google,
@@ -744,7 +744,27 @@ body.dark-mode .login_terceros p {
     grid-column: span 2;
   }
 }
-
+/*destellos */
+.sparkle{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ffeb3b;
+    pointer-events:none;
+    animation:brillo .8s ease-out forwards;
+    z-index:9999;
+}
+@keyframes brillo{
+    0%{
+        opacity:1;
+        transform:scale(0);
+    }
+    100%{
+        opacity:0;
+        transform:scale(4);
+    }
+}
 @media screen and (max-width: 700px) {
   body {
     padding-top: 86px;
