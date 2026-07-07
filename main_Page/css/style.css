@@ -913,3 +913,19 @@ body.dark-mode .login_terceros p {
     grid-template-columns: 1fr;
   }
 }
+
+.mensaje-auth {
+  min-height: 20px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mensaje-auth.ok {
+  color: #48ff8b;
+}
+
+.mensaje-auth.error {
+  color: #ff6b6b;
+}
