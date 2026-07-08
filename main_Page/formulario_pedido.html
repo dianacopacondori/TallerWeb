@@ -1,195 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedido | Pokemón Café</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="../main_Page/img/img_main/pokeCafe_logo.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/paginas/formulario_pedido.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido - Pokémon Café</title>
+  <link rel="icon" type="image/png" href="img/img_main/pokeCafe_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paginas/shop.css" />
 </head>
-  <body>
-    <header class="nav-bar">
-      <div class="logo"></div>
+<body data-page="pedido">
+  <!-- REQUISITO: formulario con validación básica y JavaScript relacionado a esta vista. -->
+  <header class="nav-bar">
+    <!-- REQUISITO: navbar original del proyecto con enlaces y botón de modo oscuro. -->
+    <div class="logo"></div>
 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menu</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="formulario_pedido.html">Pedir</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html">Mi cuenta</a>
-      </nav>
-      <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
-        <label class="theme-toggle" title="Cambiar modo claro/oscuro">
-          <input type="checkbox" id="modoOscuro" />
-          <span class="theme-slider" aria-hidden="true"></span>
-        </label>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menu</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="formulario_pedido.html" class="active">Pedir</a>
+      <a href="pedidos.html">Mis Pedidos</a>
+      <a href="login.html" id="accountLink">Mi cuenta</a>
+    </nav>
+
+    <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
+      <label class="theme-toggle" title="Cambiar modo claro/oscuro">
+        <!-- REQUISITO: evento onchange controlado desde script.js para cambiar modo claro/oscuro. -->
+        <input type="checkbox" id="modoOscuro" />
+        <span class="theme-slider" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  <!-- REQUISITO: cinta Pokémon restaurada del diseño original. -->
+  <div class="conten">
+    <div class="track">
+      <div class="cinta">
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
       </div>
-    </header>
-    <div class="conten">
-      <div class="track">
-        <div class="cinta">
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-        </div>
-        <div class="cinta">
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-        </div>
+      <div class="cinta">
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
       </div>
     </div>
-    <main class="contenido">
-      <section class="pedido-header">
-        <h1>Realiza tu Pedido</h1>
-        <p>Llena el formulario para hacer tu pedido en línea</p>
+  </div>
+
+  <main class="order-layout">
+    <form id="orderForm" class="order-form">
+      <section class="form-card">
+        <h2>Información del cliente</h2>
+        <div class="form-grid">
+          <!-- REQUISITO: oninput valida el campo nombre en tiempo real. -->
+          <label>Nombre del cliente *<input id="cliente" name="cliente" type="text" required minlength="3" placeholder="Ej: Ash Ketchum" oninput="validarCampoPedidoDesdeHTML('cliente')" /></label>
+          <!-- REQUISITO: oninput valida el teléfono. -->
+          <label>Teléfono *<input id="telefono" name="telefono" type="tel" required pattern="[0-9 ]{9,}" placeholder="Ej: 999 999 999" oninput="validarCampoPedidoDesdeHTML('telefono')" /></label>
+          <!-- REQUISITO: oninput valida la dirección. -->
+          <label class="span-2">Dirección *<input id="direccion" name="direccion" type="text" required minlength="8" placeholder="Av./calle, número, distrito" oninput="validarCampoPedidoDesdeHTML('direccion')" /></label>
+        </div>
       </section>
 
-      <section class="pedido-container">
-        <form class="pedido-form">
-          <div class="input-group">
-            <label for="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              required
-              placeholder="Ingresa tu nombre"
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Ingresa tu email"
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="telefono">Teléfono:</label>
-            <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              required
-              placeholder="Ingresa tu teléfono"
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="direccion">Dirección:</label>
-            <textarea
-              id="direccion"
-              name="direccion"
-              placeholder="Ingresa tu dirección exacta"
-              required
-            ></textarea>
-          </div>
-
-          <div class="input-group">
-            <label>Selecciona tu opción:</label>
-            <select required>
-              <option value="" disabled selected>Elige un producto...</option>
-              <option>Pikachu Latte</option>
-              <option>Pokebowl</option>
-              <option>Postre Pikachu</option>
-              <option>Poke Cupcake</option>
-              <option>Charizard Roast</option>
-              <option>Clefairy Fluffy Pancakes</option>
-              <option>Pika-Pika Cheesecake</option>
-              <option>Eeveelution Macarons</option>
-            </select>
-          </div>
-
-          <div class="input-group">
-            <label for="cantidad">Cantidad:</label>
-            <input
-              type="number"
-              id="cantidad"
-              name="cantidad"
-              min="1"
-              placeholder="Ej: 2"
-              required
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="comentarios">Comentarios adicionales:</label>
-            <textarea
-              id="comentarios"
-              name="comentarios"
-              placeholder="Escribe cualquier comentario o instrucción especial"
-            ></textarea>
-          </div>
-
-          <button type="submit" class="pedido-button">Realizar Pedido</button>
-        </form>
+      <section class="form-card">
+        <h2>Método de entrega y pago</h2>
+        <div class="option-grid">
+          <!-- REQUISITO: onchange recalcula el resumen cuando cambia la entrega. -->
+          <label class="option-card"><input type="radio" name="metodo_entrega" value="delivery" checked onchange="validarCampoPedidoDesdeHTML('metodo_entrega')" /> 🛵 Entrega a domicilio <small>S/ 4.90</small></label>
+          <label class="option-card"><input type="radio" name="metodo_entrega" value="tienda" onchange="validarCampoPedidoDesdeHTML('metodo_entrega')" /> 🛍️ Retiro en tienda <small>Gratis</small></label>
+          <label class="option-card"><input type="radio" name="metodo_pago" value="tarjeta" checked /> 💳 Tarjeta</label>
+          <label class="option-card"><input type="radio" name="metodo_pago" value="efectivo" /> 💵 Efectivo al recibir</label>
+        </div>
       </section>
-    </main>
 
-    <footer class="footer">
-      <div class="grid-footer">
-        <div class="footer-section">
-          <h3>PokemónCafe</h3>
-          <img
-            src="../main_Page/img/img_main/pokeCafe_logo.png"
-            alt="Logo PokeCafe"
-            class="footer-logo"
-          />
-          <p>¡Donde cada bocado es una evolución de sabor!</p>
-        </div>
+      <section class="form-card">
+        <h2>Selecciona tus platos</h2>
+        <div id="orderItems" class="order-items"></div>
+      </section>
 
-        <div class="footer-section">
-          <h4>Secciones</h4>
-          <ul>
-            <li><a href="menu.html">Menú PokéDex</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Historial Pedidos</a></li>
-          </ul>
-        </div>
+      <section class="form-card">
+        <h2>Notas del pedido</h2>
+        <!-- REQUISITO: oninput controla la longitud máxima de notas. -->
+        <textarea id="notas" name="notas" maxlength="250" placeholder="Ej: sin cebolla, salsa aparte, entregar en portería..." oninput="validarCampoPedidoDesdeHTML('notas')"></textarea>
+      </section>
 
-        <div class="footer-section">
-          <h4>Siguenos!!</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
+      <div class="return-actions"><a href="index.html">← Volver al inicio</a><a href="menu.html">Volver al menú</a></div>
+    </form>
+
+    <aside class="summary-card">
+      <h2>Resumen de tu pedido</h2>
+      <div id="orderSummary"></div>
+      <!-- REQUISITO: onclick valida antes de enviar el pedido. -->
+      <button id="submitOrder" class="send-order" form="orderForm" type="submit" onclick="return validarFormularioPedidoDesdeHTML()">Enviar pedido</button>
+      <small>🔒 Tu información se guarda solo en tu cuenta.</small>
+    </aside>
+  </main>
+  <!-- REQUISITO: footer restaurado del diseño original del proyecto. -->
+  <footer class="footer">
+    <div class="grid-footer">
+      <div class="footer-section">
+        <h3>PokemónCafe</h3>
+        <img src="img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
+        <p>¡Donde cada bocado es una evolución de sabor!</p>
       </div>
 
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
-          <small
-            >Pokémon es marca registrada de Nintendo/Game Freak. Este es un
-            proyecto temático fan-made.</small
-          >
-        </p>
+      <div class="footer-section">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="menu.html">Menú PokéDex</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Historial Pedidos</a></li>
+        </ul>
       </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+      <div class="footer-section">
+        <h4>Siguenos!!</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
+        <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
+      </p>
+    </div>
+  </footer>
+<!-- REQUISITO: JavaScript incorporado en la página. -->
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
 </html>

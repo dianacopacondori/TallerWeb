@@ -1,160 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Pedidos - Pokémon Café</title>
-    <link rel="icon" type="image/png" href="../main_Page/img/img_main/pokeCafe_logo.png" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/paginas/pedidos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis pedidos - Pokémon Café</title>
+  <link rel="icon" type="image/png" href="img/img_main/pokeCafe_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paginas/shop.css" />
 </head>
-<body>
-    <header class="nav-bar">
-      <div class="logo"></div>
-      
-      <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-      </div>
+<body data-page="pedidos">
+  <!-- REQUISITO: página con JavaScript para tabla, filtros e historial de compras. -->
+  <header class="nav-bar">
+    <!-- REQUISITO: navbar original del proyecto con enlaces y botón de modo oscuro. -->
+    <div class="logo"></div>
 
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menu</a>
-        <a href="ofertas.html">Ofertas</a>
-        <a href="formulario_pedido.html">Pedir</a>
-        <a href="pedidos.html">Mis Pedidos</a>
-        <a href="login.html">Mi cuenta</a>
-      </nav>
-      <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
-        <label class="theme-toggle" title="Cambiar modo claro/oscuro">
-          <input type="checkbox" id="modoOscuro" />
-          <span class="theme-slider" aria-hidden="true"></span>
-        </label>
-      </div>
-    </header>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menu</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="formulario_pedido.html">Pedir</a>
+      <a href="pedidos.html" class="active">Mis Pedidos</a>
+      <a href="login.html" id="accountLink">Mi cuenta</a>
+    </nav>
+
+    <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
+      <label class="theme-toggle" title="Cambiar modo claro/oscuro">
+        <!-- REQUISITO: evento onchange controlado desde script.js para cambiar modo claro/oscuro. -->
+        <input type="checkbox" id="modoOscuro" />
+        <span class="theme-slider" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  <!-- REQUISITO: cinta Pokémon restaurada del diseño original. -->
   <div class="conten">
-      <div class="track">
-        <div class="cinta">
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-        </div>
-        <div class="cinta">
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-          <img src="../main_Page/img/img_main/pokeCinta.jpeg" alt="" />
-        </div>
+    <div class="track">
+      <div class="cinta">
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+      </div>
+      <div class="cinta">
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
+        <img src="img/img_main/pokeCinta.jpeg" alt="Cinta decorativa Pokémon" />
       </div>
     </div>
-    <main class="contenido">
-      <section class="pedido-header">
-        <h1>Pedidos Realizados</h1>
-        <p>Consulta los pedidos que has realizado en Pokémon Café</p>
-      </section>
+  </div>
 
-      <section class="tabla-container">
-        <table class="tabla-pedidos">
-          <thead>
-            <tr>
-              <th>ID Pedido</th>
-              <th>Fecha</th>
-              <th>Productos</th>
-              <th>Total</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#12345</td>
-              <td>2026-06-15</td>
-              <td>Pikachu Latte, Pokebowl</td>
-              <td>S/ 30.00</td>
-              <td>
-                <span class="estado-pedido preparacion">En preparación</span>
-              </td>
-            </tr>
-            <tr>
-              <td>#12346</td>
-              <td>2026-06-10</td>
-              <td>Postre Pikachu</td>
-              <td>S/ 10.00</td>
-              <td><span class="estado-pedido enviado">Entregado</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="impacto-pedido">
-    <h2>🌱 Tu impacto ambiental</h2>
+  <main class="history-layout">
+    <aside class="account-card">
+      <img src="img/img_main/pokeCafe_logo.png" alt="Avatar cuenta">
+      <h2 id="historyUser">Usuario</h2>
+      <p id="historyEmail">correo</p>
+      <a href="menu.html">Menú PokéDex</a><a href="formulario_pedido.html">Nuevo pedido</a><button id="logoutButton" type="button">Cerrar sesión</button>
+    </aside>
 
-    <div class="impacto-grid">
+    <section class="history-panel">
+      <div class="stats-grid"><div><span>Total pedidos</span><strong id="statOrders">0</strong></div><div><span>Total gastado</span><strong id="statSpent">S/ 0.00</strong></div><div><span>Ticket promedio</span><strong id="statAverage">S/ 0.00</strong></div></div>
+      <!-- REQUISITO: oninput y onchange para filtrar la tabla de pedidos. -->
+      <div class="history-toolbar"><input id="orderSearch" type="search" placeholder="Buscar por número de pedido o producto..." oninput="filtrarHistorialDesdeHTML()"><select id="orderStatus" onchange="filtrarHistorialDesdeHTML()"><option value="all">Todos los estados</option><option>Preparando</option><option>En proceso</option><option>Enviado</option></select><button type="button" onclick="limpiarFiltrosHistorial()">Limpiar filtros</button></div>
+      <div class="table-wrap"><table class="orders-table"><thead><tr><th>Número de pedido</th><th>Cliente</th><th>Productos seleccionados</th><th>Cantidad</th><th>Total</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="ordersBody"><tr><td colspan="7">Cargando pedidos...</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <!-- REQUISITO: footer restaurado del diseño original del proyecto. -->
+  <footer class="footer">
+    <div class="grid-footer">
+      <div class="footer-section">
+        <h3>PokemónCafe</h3>
+        <img src="img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
+        <p>¡Donde cada bocado es una evolución de sabor!</p>
+      </div>
 
-        <div class="impacto-card">
-            <div class="impacto-icono">🍽️</div>
-            <h3 id="productosRescatados">3</h3>
-            <p>Productos rescatados</p>
-        </div>
+      <div class="footer-section">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="menu.html">Menú PokéDex</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Historial Pedidos</a></li>
+        </ul>
+      </div>
 
-        <div class="impacto-card">
-            <div class="impacto-icono">♻️</div>
-            <h3 id="desperdicioEvitado">2.4 kg</h3>
-            <p>Desperdicio evitado</p>
-        </div>
-
-        <div class="impacto-card">
-            <div class="impacto-icono">💰</div>
-            <h3 id="ahorroObtenido">S/ 18.50</h3>
-            <p>Ahorro obtenido</p>
-        </div>
-
+      <div class="footer-section">
+        <h4>Siguenos!!</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
     </div>
 
-    <p class="mensaje-impacto">
-        Gracias por elegir <strong>Poké Café</strong>. Con cada compra ayudas a reducir
-        el desperdicio de alimentos y apoyas un consumo más responsable.
-    </p>
-
-</section>
-    </main>
-
-    <footer class="footer">
-      <div class="grid-footer">
-        <div class="footer-section">
-          <h3>PokemónCafe</h3>
-          <img src="../main_Page/img/img_main/pokeCafe_logo.png" alt="Logo PokeCafe" class="footer-logo" />
-          <p>¡Donde cada bocado es una evolución de sabor!</p>
-        </div>
-
-        <div class="footer-section">
-          <h4>Secciones</h4>
-          <ul>
-            <li><a href="menu.html">Menú PokéDex</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Historial Pedidos</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Siguenos!!</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
-          <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
-        </p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 PokéRestaurante - Todos los derechos reservados. <br />
+        <small>Pokémon es marca registrada de Nintendo/Game Freak. Este es un proyecto temático fan-made.</small>
+      </p>
+    </div>
+  </footer>
+<!-- REQUISITO: JavaScript incorporado en la página. -->
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
 </body>
 </html>

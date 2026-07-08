@@ -1,0 +1,31 @@
+GUÍA RÁPIDA PARA TOMAR CAPTURAS DEL INFORME
+
+1. JavaScript incorporado en cada página:
+   - Busca el comentario: "REQUISITO: JavaScript incorporado en la página."
+   - Archivos: index.html, registrar.html, login.html, menu.html, ofertas.html, formulario_pedido.html, pedidos.html.
+
+2. Eventos onclick, onchange, oninput:
+   - menu.html: productSearch usa oninput; sortProducts usa onchange; Continuar pedido usa onclick.
+   - ofertas.html: filtros usan onclick; sortOffers usa onchange.
+   - formulario_pedido.html: inputs usan oninput; método de entrega usa onchange; Enviar pedido usa onclick.
+   - pedidos.html: búsqueda usa oninput; estado usa onchange; limpiar filtros usa onclick.
+   - registrar.html y login.html: validación usa oninput; botones Google/Facebook usan onclick.
+
+3. Manipulación del DOM:
+   - shop.js: busca "manipulación del DOM".
+   - auth.js: mostrarMensaje() crea o modifica el mensaje de error/éxito.
+   - script.js: crearDestellos() crea elementos con document.createElement().
+
+4. Validación básica de formularios:
+   - auth.js: validarRegistro() y validarLogin().
+   - shop.js: validarCampoPedido() y validarFormularioPedido().
+
+5. Variables, constantes, funciones, condicionales y arreglos:
+   - shop.js: PRODUCTS es un arreglo de objetos.
+   - shop.js: activeCategory, activeOfferFilter y currentOrders son variables de estado.
+   - shop.js: getFilteredProducts(), renderMenu(), renderOffers(), renderOrdersTable().
+
+6. Conexión a BD relacional y SQL:
+   - db.js: conexión a MySQL/Aiven.
+   - database.sql: tablas usuarios, pedidos y pedido_detalles.
+   - server.js: rutas /api/register, /api/login y /api/orders.

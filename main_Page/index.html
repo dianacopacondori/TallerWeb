@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/paginas/index.css" />
 </head>
   <body>
+    <!-- REQUISITO: index.html también incorpora JavaScript mediante script.js. -->
     <header class="nav-bar">
       <div class="logo"></div>
 
@@ -38,6 +39,7 @@
       </nav>
       <div class="theme-switch" aria-label="Cambiar tema claro u oscuro">
         <label class="theme-toggle" title="Cambiar modo claro/oscuro">
+          <!-- REQUISITO: evento onchange controlado desde script.js para modo oscuro. -->
           <input type="checkbox" id="modoOscuro" />
           <span class="theme-slider" aria-hidden="true"></span>
         </label>
@@ -257,6 +259,7 @@
         </p>
       </div>
     </footer>
+    <!-- REQUISITO: JavaScript incorporado en la página. -->
     <script src="script.js"></script>
   </body>
 </html>
