@@ -14,90 +14,25 @@
      Este arreglo funciona como catálogo de productos del menú. */
   const PRODUCTS = [
     {
-        "id": "pokebowl",
-        "nombre": "Pokebowl",
-        "categoria": "Platos",
-        "img": "img/img_menu/pokebowl.jpg",
-        "descripcion": "Arroz, pollo, vegetales frescos y salsa especial del Café.",
-        "precioOriginal": 18,
-        "precio": 12,
-        "popular": true,
-        "stock": 6,
-        "etiqueta": "Más vendido",
-        "oferta": true
-    },
-    {
-        "id": "charizard-roast",
-        "nombre": "Charizard Roast",
-        "categoria": "Bebidas",
-        "img": "img/img_menu/CharizardRoast.png",
-        "descripcion": "Espresso intenso con leche vaporizada y canela ahumada.",
-        "precioOriginal": 14,
-        "precio": 9.9,
-        "popular": true,
-        "stock": 5,
-        "etiqueta": "Flash sale"
-    },
-    {
-        "id": "pika-cheesecake",
-        "nombre": "Pika-Pika Cheesecake",
-        "categoria": "Postres",
-        "img": "img/img_menu/Pika-PikaCheesecake.png",
-        "descripcion": "Cheesecake japonés esponjoso con glaseado amarillo y decoración de cola de Pikachu.",
-        "precioOriginal": 20,
-        "precio": 12,
-        "popular": true,
-        "stock": 4,
-        "etiqueta": "Últimas unidades",
-        "oferta": true
-    },
-    {
-        "id": "mewtwo-zen",
-        "nombre": "Mewtwo Zen Bowl",
-        "categoria": "Platos",
-        "img": "img/img_menu/MewtwoZenBowl.png",
-        "descripcion": "Bowl de arroz integral, tofu, edamame, aguacate y aderezo de miso blanco.",
-        "precioOriginal": 18,
-        "precio": 13,
-        "popular": true,
-        "stock": 7,
-        "etiqueta": "Proteico"
-    },
-    {
-        "id": "snorlax-mac",
-        "nombre": "Snorlax Comfort Mac & Cheese",
-        "categoria": "Platos",
-        "img": "img/img_menu/SnorlaxComfortMac&Cheese.png",
-        "descripcion": "Macarrones gratinados con tres quesos fundidos, migas tostadas y nuez moscada.",
-        "precioOriginal": 21,
-        "precio": 16,
-        "popular": true,
-        "stock": 6,
-        "etiqueta": "Clásico"
-    },
-    {
-        "id": "pikachu-latte",
-        "nombre": "Pikachu Latte",
-        "categoria": "Bebidas",
-        "img": "img/img_menu/pikachu-latte.jpg",
-        "descripcion": "Café suave con espuma artística inspirada en Pikachu.",
-        "precioOriginal": 12,
-        "precio": 9,
-        "popular": true,
-        "stock": 10,
-        "etiqueta": "Favorito"
-    },
-    {
         "id": "galletas",
         "nombre": "Galletas Decoradas",
         "categoria": "Postres",
         "img": "img/img_menu/GalletasDecoradas.png",
-        "descripcion": "Galletas con glaseado y decoraciones de Pokémon.",
+        "descripcion": "Galletas crujientes con glaseado de azúcar y decoración de colores.",
         "precioOriginal": 8,
         "precio": 4,
-        "popular": false,
-        "stock": 2,
-        "etiqueta": "Próximo a vencer",
+        "stock": 8,
+        "oferta": true
+    },
+    {
+        "id": "pokebowl",
+        "nombre": "Pokebowl",
+        "categoria": "Platos",
+        "img": "img/img_menu/pokebowl.jpg",
+        "descripcion": "Arroz, pollo y vegetales frescos.",
+        "precioOriginal": 18,
+        "precio": 12,
+        "stock": 10,
         "oferta": true
     },
     {
@@ -105,12 +40,10 @@
         "nombre": "Eeveelution Macarons",
         "categoria": "Postres",
         "img": "img/img_menu/EeveelutionMacarons.png",
-        "descripcion": "Set de macarons con sabores inspirados en las evoluciones de Eevee.",
+        "descripcion": "Macarons inspirados en las evoluciones de Eevee.",
         "precioOriginal": 15,
         "precio": 7.5,
-        "popular": true,
-        "stock": 3,
-        "etiqueta": "Próximo a vencer",
+        "stock": 8,
         "oferta": true
     },
     {
@@ -118,12 +51,21 @@
         "nombre": "Postre Pikachu",
         "categoria": "Postres",
         "img": "img/img_menu/pikachu-dessert.jpg",
-        "descripcion": "Postre dulce de vainilla con crema y forma de Pikachu.",
+        "descripcion": "Delicioso postre con forma de Pikachu.",
         "precioOriginal": 10,
         "precio": 7,
-        "popular": true,
-        "stock": 4,
-        "etiqueta": "Solo por hoy",
+        "stock": 8,
+        "oferta": true
+    },
+    {
+        "id": "pika-cheesecake",
+        "nombre": "Pika-Pika Cheesecake",
+        "categoria": "Postres",
+        "img": "img/img_menu/Pika-PikaCheesecake.png",
+        "descripcion": "Cheesecake con cobertura de caramelo y chocolate.",
+        "precioOriginal": 20,
+        "precio": 12,
+        "stock": 8,
         "oferta": true
     },
     {
@@ -131,12 +73,10 @@
         "nombre": "Clefairy Fluffy Pancakes",
         "categoria": "Postres",
         "img": "img/img_menu/ClefairyPancakes.png",
-        "descripcion": "Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.",
+        "descripcion": "Pancakes esponjosos con sirope de fresa y crema batida.",
         "precioOriginal": 18,
         "precio": 15,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Favorito",
+        "stock": 8,
         "oferta": true
     },
     {
@@ -144,48 +84,44 @@
         "nombre": "Gengar Shadow Brownie",
         "categoria": "Postres",
         "img": "img/img_menu/GengarShadowBrownie.png",
-        "descripcion": "Brownie denso de chocolate negro con helado y salsa de frutos rojos.",
-        "precioOriginal": 16,
+        "descripcion": "Brownie denso de chocolate negro con nueces, acompañado de helado de vainilla negra y salsa de frambuesa.",
+        "precioOriginal": 11,
         "precio": 11,
-        "popular": false,
-        "stock": 3,
-        "etiqueta": "Últimas unidades"
+        "stock": 8,
+        "oferta": false
     },
     {
         "id": "jynx-sorbet",
         "nombre": "Jynx Frost Sorbet Trio",
         "categoria": "Postres",
         "img": "img/img_menu/JynxFrostSorbetTrio.png",
-        "descripcion": "Tres bolas de sorbete artesanal con coulis de frutos rojos y menta fresca.",
+        "descripcion": "Tres bolas de sorbete artesanal con coulis de frutos rojos y hojas de menta fresca.",
         "precioOriginal": 10,
-        "precio": 8.5,
-        "popular": false,
+        "precio": 10,
         "stock": 8,
-        "etiqueta": "Helado"
+        "oferta": false
     },
     {
         "id": "magcargo-cake",
         "nombre": "Magcargo Molten Cake",
         "categoria": "Postres",
         "img": "img/img_menu/MagcargoMoltenCake.png",
-        "descripcion": "Bizcocho individual de chocolate negro con centro fundido y helado de vainilla.",
+        "descripcion": "Bizcocho individual de chocolate negro con centro fundido, servido con helado de vainilla bourbon.",
         "precioOriginal": 12,
-        "precio": 9.9,
-        "popular": false,
-        "stock": 7,
-        "etiqueta": "Caliente"
+        "precio": 12,
+        "stock": 8,
+        "oferta": false
     },
     {
         "id": "eevee-pancakes",
         "nombre": "Eevee Pancakes",
         "categoria": "Postres",
         "img": "img/img_menu/EeveePancakes.png",
-        "descripcion": "Tortitas esponjosas con sirope de arce, frutas y crema.",
+        "descripcion": "Tortitas esponjosas con sirope de arce, frutas de temporada y nube de crema.",
         "precioOriginal": 15,
-        "precio": 10.5,
-        "popular": false,
+        "precio": 15,
         "stock": 8,
-        "etiqueta": "Oferta"
+        "oferta": false
     },
     {
         "id": "pokedonas",
@@ -194,22 +130,20 @@
         "img": "img/img_menu/Donas.png",
         "descripcion": "Donas suaves con glaseado de azúcar y una pizca de canela.",
         "precioOriginal": 8,
-        "precio": 6.5,
-        "popular": false,
-        "stock": 9,
-        "etiqueta": "Dulce"
+        "precio": 8,
+        "stock": 8,
+        "oferta": false
     },
     {
         "id": "gengar-brownie",
         "nombre": "Gengar Brownie",
         "categoria": "Postres",
         "img": "img/img_menu/GengarBrownie.png",
-        "descripcion": "Brownie de chocolate oscuro con nueces y un toque de chile.",
+        "descripcion": "Brownie de chocolate oscuro con nueces y un toque de chile para un sabor intenso.",
         "precioOriginal": 11,
-        "precio": 8.8,
-        "popular": false,
-        "stock": 5,
-        "etiqueta": "Intenso"
+        "precio": 11,
+        "stock": 8,
+        "oferta": false
     },
     {
         "id": "pokecupcakes",
@@ -218,10 +152,31 @@
         "img": "img/img_menu/Cupcakes.png",
         "descripcion": "Cupcakes suaves con glaseado de azúcar y decoración de colores.",
         "precioOriginal": 9,
-        "precio": 7.2,
-        "popular": false,
-        "stock": 7,
-        "etiqueta": "Dulce"
+        "precio": 9,
+        "stock": 8,
+        "oferta": false
+    },
+    {
+        "id": "pikachu-latte",
+        "nombre": "Pikachu Latte",
+        "categoria": "Bebidas",
+        "img": "img/img_menu/pikachu-latte.jpg",
+        "descripcion": "Café con espuma artística de Pikachu.",
+        "precioOriginal": 12,
+        "precio": 12,
+        "stock": 10,
+        "oferta": false
+    },
+    {
+        "id": "charizard-roast",
+        "nombre": "Charizard Roast",
+        "categoria": "Bebidas",
+        "img": "img/img_menu/CharizardRoast.png",
+        "descripcion": "Espresso intenso con leche vaporizada y un toque de canela ahumada.",
+        "precioOriginal": 8,
+        "precio": 8,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "bulbasaur-matcha",
@@ -229,185 +184,192 @@
         "categoria": "Bebidas",
         "img": "img/img_menu/BulbasaurMatchaLatte.png",
         "descripcion": "Latte de matcha con leche de avena y un toque de miel.",
-        "precioOriginal": 13,
+        "precioOriginal": 10,
         "precio": 10,
-        "popular": false,
-        "stock": 9,
-        "etiqueta": "Vegano"
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "glaceon-frappe",
         "nombre": "Glaceon Ice Crystal Frappé",
         "categoria": "Bebidas",
         "img": "img/img_menu/GlaceonIceCrystalFrapp%23U00e9.png",
-        "descripcion": "Frappé helado con sabor suave, hielo triturado y toque dulce.",
+        "descripcion": "Frappé de hielo con sabor a cristal de hielo y una pizca de canela.",
         "precioOriginal": 12,
-        "precio": 9.8,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Frío"
+        "precio": 12,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "jigglypuff-smoothie",
         "nombre": "Jigglypuff Melody Smoothie",
         "categoria": "Bebidas",
         "img": "img/img_menu/JigglypuffMelodySmoothie.png",
-        "descripcion": "Smoothie de frutas con textura cremosa y presentación temática.",
+        "descripcion": "Smoothie de frutas con sabor a melodía y una pizca de canela.",
         "precioOriginal": 13,
-        "precio": 10.5,
-        "popular": false,
-        "stock": 8,
-        "etiqueta": "Suave"
+        "precio": 13,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "mewtwo-latte",
         "nombre": "Mewtwo Galaxy Latte",
         "categoria": "Bebidas",
         "img": "img/img_menu/MewtwoGalaxyLatte.png",
-        "descripcion": "Latte de colores galácticos con leche cremosa y toque dulce.",
+        "descripcion": "Latte con sabor a galaxia y una pizca de canela.",
         "precioOriginal": 14,
-        "precio": 11.2,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Especial"
+        "precio": 14,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "snorlax-chocolate",
         "nombre": "Snorlax Comfort Chocolate",
         "categoria": "Bebidas",
         "img": "img/img_menu/SnorlaxComfortChocolate.png",
-        "descripcion": "Chocolate caliente cremoso con sabor profundo y reconfortante.",
+        "descripcion": "Delicioso chocolate con sabor a comodidad y una pizca de canela.",
         "precioOriginal": 16,
-        "precio": 12.5,
-        "popular": false,
-        "stock": 7,
-        "etiqueta": "Clásico"
+        "precio": 16,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "squirtle-smoothie",
         "nombre": "Squirtle Smoothie Bowl",
         "categoria": "Bebidas",
         "img": "img/img_menu/SquirtleSmoothieBowl.png",
-        "descripcion": "Smoothie bowl refrescante con frutas, crema y decoración marina.",
+        "descripcion": "Delicioso bowl de smoothie con sabor a tortuga y una pizca de canela.",
         "precioOriginal": 15,
-        "precio": 12,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Refrescante"
+        "precio": 15,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "arcanine-wings",
         "nombre": "Arcanine Ember Wings",
         "categoria": "Platos",
         "img": "img/img_menu/ArcanineEmberWings.png",
-        "descripcion": "Bocaditos crujientes de coliflor o pollo marinado con salsa de yogur al limón.",
+        "descripcion": "Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino.",
         "precioOriginal": 16,
-        "precio": 12.8,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Picante"
+        "precio": 16,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "chansey-custard",
         "nombre": "Chansey Egg Custard",
         "categoria": "Platos",
         "img": "img/img_menu/ChanseyEggCustard.png",
-        "descripcion": "Flan de huevo al estilo japonés con dashi suave, camarón y textura sedosa.",
+        "descripcion": "Flan de huevo al estilo japonés con dashi suave, camarón y ginkgo, textura sedosa y umami delicado.",
         "precioOriginal": 9,
-        "precio": 7.2,
-        "popular": false,
-        "stock": 8,
-        "etiqueta": "Suave"
+        "precio": 9,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "electrabuzz-chicken",
         "nombre": "Electrabuzz Citrus Chicken",
         "categoria": "Platos",
         "img": "img/img_menu/ElectrabuzzCitrusChicken.png",
-        "descripcion": "Pechuga de pollo con glaseado de naranja y mostaza, puré y ensalada verde.",
+        "descripcion": "Pechuga de pollo a la plancha con glaseado de naranja y mostaza, acompañada de puré de coliflor y ensalada verde.",
         "precioOriginal": 18,
-        "precio": 14.5,
-        "popular": false,
-        "stock": 5,
-        "etiqueta": "Cítrico"
+        "precio": 18,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "gardevoir-tartine",
         "nombre": "Gardevoir Royal Tartine",
         "categoria": "Platos",
         "img": "img/img_menu/GardevoirRoyalTartine.png",
-        "descripcion": "Brioche tostado con queso de cabra, pera caramelizada, pecanas y miel.",
+        "descripcion": "Rebanada gruesa de brioche tostado con queso de cabra, pera caramelizada, nueces pecanas y un hilo de miel de lavanda.",
         "precioOriginal": 14,
-        "precio": 11.2,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Royal"
+        "precio": 14,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "gyarados-pasta",
         "nombre": "Gyarados Marinara Pasta",
         "categoria": "Platos",
         "img": "img/img_menu/GyaradosMarinaraPasta.png",
-        "descripcion": "Espagueti al dente con salsa de tomate casera, mariscos y perejil fresco.",
+        "descripcion": "Espagueti al dente con salsa de tomate casera, mejillones, calamares y un toque de vino blanco y perejil fresco.",
         "precioOriginal": 17,
-        "precio": 13.6,
-        "popular": false,
-        "stock": 5,
-        "etiqueta": "Marino"
+        "precio": 17,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "koffing-bites",
         "nombre": "Koffing Crispy Bites",
         "categoria": "Platos",
         "img": "img/img_menu/KoffingCrispyBites.png",
-        "descripcion": "Bocaditos crujientes marinados en especias suaves con salsa fresca.",
+        "descripcion": "Bocaditos crujientes de coliflor o pollo marinado en especias suaves, con salsa de yogur al limón y cebollino.",
         "precioOriginal": 8,
-        "precio": 6.4,
-        "popular": false,
-        "stock": 7,
-        "etiqueta": "Crocante"
+        "precio": 8,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "magnezone-fries",
         "nombre": "Magnezone Spark Fries",
         "categoria": "Platos",
         "img": "img/img_menu/MagnezoneSparkFries.png",
-        "descripcion": "Papas rústicas con parmesano, ajo confitado, pimentón y ralladura de limón.",
+        "descripcion": "Papas rústicas con parmesano rallado, ajo confitado, pimentón ahumado y ralladura de limón.",
         "precioOriginal": 9,
-        "precio": 7.2,
-        "popular": false,
+        "precio": 9,
         "stock": 10,
-        "etiqueta": "Clásico"
+        "oferta": false
+    },
+    {
+        "id": "mewtwo-zen",
+        "nombre": "Mewtwo Zen Bowl",
+        "categoria": "Platos",
+        "img": "img/img_menu/MewtwoZenBowl.png",
+        "descripcion": "Bowl de arroz integral negro con tofu marinado en soya y jengibre, edamame, zanahoria rallada, aguacate y aderezo de miso blanco.",
+        "precioOriginal": 13,
+        "precio": 13,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "onix-burger",
         "nombre": "Onix Rock Burger",
         "categoria": "Platos",
         "img": "img/img_menu/OnixRockBurger.png",
-        "descripcion": "Hamburguesa en pan negro con cheddar fundido, cebolla caramelizada y BBQ.",
+        "descripcion": "Hamburguesa de carne Angus o portobello sobre pan negro de carbón activado, queso cheddar fundido, cebolla caramelizada y salsa barbacoa ahumada.",
         "precioOriginal": 14,
-        "precio": 11.2,
-        "popular": false,
-        "stock": 6,
-        "etiqueta": "Fuerte"
+        "precio": 14,
+        "stock": 10,
+        "oferta": false
     },
     {
         "id": "rayquaza-roll",
         "nombre": "Rayquaza Sky Roll",
         "categoria": "Platos",
         "img": "img/img_menu/RayquazaSkyRoll.png",
-        "descripcion": "Sushi roll de tempura con aguacate, salmón ahumado, queso crema y teriyaki.",
-        "precioOriginal": 22,
+        "descripcion": "Sushi roll de tempura crujiente con aguacate, salmón ahumado, queso crema y salsa teriyaki, coronado con un toque de wasabi suave.",
+        "precioOriginal": 15,
         "precio": 15,
-        "popular": false,
-        "stock": 5,
-        "etiqueta": "Especial"
+        "stock": 10,
+        "oferta": false
+    },
+    {
+        "id": "snorlax-mac",
+        "nombre": "Snorlax Comfort Mac & Cheese",
+        "categoria": "Platos",
+        "img": "img/img_menu/SnorlaxComfortMac&Cheese.png",
+        "descripcion": "Macarrones gratinados con tres quesos fundidos, migas de pan tostado y un toque de nuez moscada.",
+        "precioOriginal": 16,
+        "precio": 16,
+        "stock": 10,
+        "oferta": false
     }
 ];
 
   /* REQUISITO: variables y constantes para controlar el estado de la página. */
   const CART_KEY = 'pokecafe_cart';
-  let activeCategory = 'Todos';
+  let activeCategory = 'Postres';
   let currentOrders = [];
 
   /* REQUISITO: funciones cortas para manipular el DOM. */
@@ -432,13 +394,9 @@
         if (!productoLocal) return;
         productoLocal.nombre = productoBD.nombre;
         productoLocal.categoria = productoBD.categoria;
-        productoLocal.img = productoBD.img;
-        productoLocal.descripcion = productoBD.descripcion;
         productoLocal.precioOriginal = Number(productoBD.precio_original);
         productoLocal.precio = Number(productoBD.precio);
-        productoLocal.popular = Boolean(productoBD.popular);
         productoLocal.stock = Number(productoBD.stock);
-        productoLocal.etiqueta = productoBD.etiqueta;
         productoLocal.oferta = Boolean(productoBD.oferta);
       });
     } catch {
@@ -547,19 +505,23 @@
   function productCard(product, offer = false) {
     const agotado = Number(product.stock) <= 0;
     const cantidadEnCarrito = getCart()[product.id] || 0;
+    const esOferta = offer && product.oferta === true;
 
     /* REQUISITO: plantilla HTML generada con JavaScript para cambiar el contenido de la página. */
     return `
-      <article class="product-card ${offer ? 'offer' : ''} ${agotado ? 'sold-out' : ''}">
-        <div class="badge-row"><span class="badge-yellow">${agotado ? 'Agotado' : product.etiqueta}</span><span class="badge-red">-${discountPercent(product)}%</span></div>
+      <article class="product-card ${esOferta ? 'offer' : ''} ${agotado ? 'sold-out' : ''}">
+        ${esOferta ? `<div class="badge-row"><span class="badge-red">-${discountPercent(product)}%</span></div>` : ''}
         <img src="${product.img}" alt="${product.nombre}" loading="lazy">
         <div class="product-body">
           <h3>${product.nombre}</h3>
           <p>${product.descripcion}</p>
-          <div class="price-row"><span class="old-price">${soles(product.precioOriginal)}</span><strong>${soles(product.precio)}</strong></div>
-          <small class="stock-text">${agotado ? 'Producto agotado' : `Stock disponible: ${product.stock}`}${cantidadEnCarrito ? ` · En pedido: ${cantidadEnCarrito}` : ''}</small>
-          ${offer ? `<div class="stock-line"><span style="width:${Math.min(100, product.stock * 12)}%"></span></div><small>Últimas ${product.stock} unidades</small>` : ''}
-          <button type="button" data-add="${product.id}" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : '🛒 Añadir al pedido'}</button>
+          <div class="price-row">
+            ${esOferta ? `<span class="old-price">${soles(product.precioOriginal)}</span>` : ''}
+            <strong>${soles(product.precio)}</strong>
+          </div>
+          ${agotado ? '<small class="stock-text agotado-text">Producto agotado</small>' : cantidadEnCarrito ? `<small class="stock-text">En pedido: ${cantidadEnCarrito}</small>` : ''}
+          ${esOferta ? '<small class="offer-note">¡Precio especial por tiempo limitado!</small>' : ''}
+          <button type="button" data-add="${product.id}" ${agotado ? 'disabled' : ''}>${agotado ? 'Agotado' : 'Añadir al pedido'}</button>
         </div>
       </article>`;
   }
@@ -574,7 +536,7 @@
     if (!filters) return;
 
     /* REQUISITO: arreglo dinámico de categorías usando Set. */
-    const categories = ['Todos', 'Platos', 'Bebidas', 'Postres'];
+    const categories = ['Postres', 'Bebidas', 'Platos'];
     filters.innerHTML = categories.map((category) => `<button type="button" class="chip ${category === activeCategory ? 'active' : ''}" data-category="${category}">${category}</button>`).join('');
 
     /* REQUISITO: eventos onclick para cambiar categoría. */
@@ -585,11 +547,11 @@
   }
 
   function getFilteredProducts() {
-    let products = [...PRODUCTS];
+    let products = PRODUCTS.filter((product) => product.oferta !== true);
 
     /* REQUISITO: condicional para filtrar el menú por categoría.
-       Se retiraron el buscador y el ordenamiento porque ya no se muestran en la vista. */
-    if (activeCategory !== 'Todos') {
+       En el menú no se muestran productos en oferta, porque esos están en ofertas.html. */
+    if (activeCategory) {
       products = products.filter((product) => product.categoria === activeCategory);
     }
 

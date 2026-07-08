@@ -81,38 +81,43 @@ async function crearTablasSiNoExisten() {
     id VARCHAR(80) PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     categoria VARCHAR(60) NOT NULL,
-    img VARCHAR(255) NOT NULL,
-    descripcion TEXT,
     precio_original DECIMAL(10,2) NOT NULL,
     precio DECIMAL(10,2) NOT NULL,
-    popular TINYINT(1) NOT NULL DEFAULT 0,
     stock INT NOT NULL DEFAULT 0,
-    etiqueta VARCHAR(80),
     oferta TINYINT(1) NOT NULL DEFAULT 0,
     activo TINYINT(1) NOT NULL DEFAULT 1
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci`);
+
+  /* REQUISITO BD: si la tabla productos ya existía con campos visuales,
+     se eliminan para dejar la BD más limpia. Los errores se ignoran si la columna ya no existe. */
+  const columnasVisuales = ['descripcion', 'img', 'popular', 'etiqueta'];
+  for (const columna of columnasVisuales) {
+    try {
+      await pool.execute(`ALTER TABLE productos DROP COLUMN ${columna}`);
+    } catch {}
+  }
 
   /* REQUISITO BD: se insertan productos iniciales sin reiniciar el stock si ya existen. */
   for (const producto of PRODUCTOS_BASE) {
     await pool.execute(
       `INSERT INTO productos
-       (id, nombre, categoria, img, descripcion, precio_original, precio, popular, stock, etiqueta, oferta, activo)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+       (id, nombre, categoria, precio_original, precio, stock, oferta, activo)
+       VALUES (?, ?, ?, ?, ?, ?, ?, 1)
        ON DUPLICATE KEY UPDATE
         nombre = VALUES(nombre),
         categoria = VALUES(categoria),
-        img = VALUES(img),
-        descripcion = VALUES(descripcion),
         precio_original = VALUES(precio_original),
         precio = VALUES(precio),
-        popular = VALUES(popular),
-        etiqueta = VALUES(etiqueta),
         oferta = VALUES(oferta),
         activo = 1`,
       [
-        producto.id, producto.nombre, producto.categoria, producto.img, producto.descripcion,
-        producto.precioOriginal, producto.precio, producto.popular ? 1 : 0,
-        producto.stock, producto.etiqueta || '', producto.oferta ? 1 : 0
+        producto.id,
+        producto.nombre,
+        producto.categoria,
+        producto.precioOriginal,
+        producto.precio,
+        producto.stock,
+        producto.oferta ? 1 : 0
       ]
     );
   }
@@ -238,12 +243,22 @@ app.get('/api/session', (req, res) => {
 app.get('/api/products', async (req, res) => {
   try {
     const [productos] = await pool.execute(
-      `SELECT id, nombre, categoria, img, descripcion, precio_original, precio, popular, stock, etiqueta, oferta
+      `SELECT id, nombre, categoria, precio_original, precio, stock, oferta
        FROM productos
        WHERE activo = 1
        ORDER BY nombre ASC`
     );
-    return res.json({ productos });
+
+    const productosConDatosVisuales = productos.map((producto) => {
+      const base = PRODUCTOS_BASE.find((item) => item.id === producto.id) || {};
+      return {
+        ...producto,
+        img: base.img || '',
+        descripcion: base.descripcion || ''
+      };
+    });
+
+    return res.json({ productos: productosConDatosVisuales });
   } catch (error) {
     console.error('Error leyendo productos:', error);
     return res.status(500).json({ error: 'No se pudo cargar el catálogo.' });

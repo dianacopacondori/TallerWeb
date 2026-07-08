@@ -72,3 +72,12 @@ ACTUALIZACIÓN DE CARRITO Y STOCK
 ACTUALIZACIÓN VISUAL:
 - Se restauró la cinta Pokémon original en menu.html, ofertas.html, formulario_pedido.html y pedidos.html.
 - Se restauró el footer original del proyecto en esas mismas páginas.
+
+
+ACTUALIZACIÓN DE PRODUCTOS Y PRECIOS
+-----------------------------------
+Si tu base de datos ya tenía la tabla productos antigua, ejecuta en Aiven el archivo:
+
+actualizar_productos.sql
+
+Ese archivo actualiza precios, separa productos del menú y ofertas, y simplifica la tabla productos quitando descripcion, img, popular y etiqueta.

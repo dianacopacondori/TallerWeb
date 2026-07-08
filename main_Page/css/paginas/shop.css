@@ -14,7 +14,12 @@
 }
 body[data-page]{
   padding-top:100px;
-  background:linear-gradient(180deg,#fff8e6 0%,#fff2d0 100%);
+  background:
+    linear-gradient(rgba(255, 248, 220, 0.85), rgba(255, 248, 220, 0.9)),
+    url("../../img/img_main/pokemon-cafe.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color:var(--ink);
 }
 body[data-page] p{text-align:left}
@@ -500,4 +505,176 @@ body.dark-mode[data-page="pedido"] .summary-card .totals p {
 body.dark-mode[data-page="pedido"] .summary-card .totals .total,
 body.dark-mode[data-page="pedido"] .summary-card .totals .total span {
   color: #fff4df !important;
+}
+
+
+/* =====================================================
+   AJUSTE FINAL MENÚ / OFERTAS
+   - Recupera el fondo con imagen del diseño anterior.
+   - El menú muestra precios normales.
+   - Ofertas muestra precio original y precio con descuento.
+   - Se mantiene solo Postres, Bebidas y Platos; se retiró "Todos".
+   ===================================================== */
+body[data-page="menu"] .shop-layout-full,
+body[data-page="ofertas"] .shop-layout-full {
+  width: min(1120px, 88vw);
+  margin: 46px auto 42px;
+}
+
+body[data-page="menu"] .catalog-panel,
+body[data-page="ofertas"] .catalog-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 55px rgba(70, 46, 10, 0.10);
+}
+
+.catalog-heading {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.catalog-heading h1 {
+  margin: 0 0 22px !important;
+  color: #ff9f43 !important;
+  text-align: center !important;
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.catalog-heading p {
+  margin: 0;
+  color: #262338;
+  text-align: center !important;
+  font-size: 16px;
+}
+
+.menu-toolbar {
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.menu-toolbar .filters {
+  justify-content: center;
+}
+
+.menu-toolbar .chip {
+  min-width: 130px;
+  padding: 12px 22px;
+  background: #fff7de;
+  color: #4a3210;
+}
+
+.menu-toolbar .chip.active,
+.menu-toolbar .chip:hover {
+  background: linear-gradient(135deg, #ffcc00, #ff7b00);
+  color: #18110a;
+}
+
+body[data-page="menu"] .product-card,
+body[data-page="ofertas"] .product-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10);
+}
+
+body[data-page="menu"] .product-card > img,
+body[data-page="ofertas"] .product-card > img {
+  height: 210px;
+  object-fit: cover;
+}
+
+body[data-page="menu"] .product-body,
+body[data-page="ofertas"] .product-body {
+  text-align: center;
+}
+
+body[data-page="menu"] .product-body h3,
+body[data-page="ofertas"] .product-body h3 {
+  color: #2a2a2a !important;
+  text-align: center !important;
+}
+
+body[data-page="menu"] .product-body p,
+body[data-page="ofertas"] .product-body p {
+  min-height: 54px;
+  color: #666;
+  text-align: center !important;
+}
+
+body[data-page="menu"] .price-row,
+body[data-page="ofertas"] .price-row {
+  justify-content: center;
+}
+
+body[data-page="menu"] .price-row strong,
+body[data-page="ofertas"] .price-row strong {
+  color: #c8462e;
+  font-size: 22px;
+}
+
+body[data-page="menu"] .stock-text,
+body[data-page="ofertas"] .stock-text {
+  text-align: center;
+}
+
+body[data-page="menu"] .product-body button,
+body[data-page="ofertas"] .product-body button {
+  max-width: 100%;
+  margin-top: 4px;
+  color: #111;
+  background: linear-gradient(135deg, #ffcc00, #ff6b6b);
+}
+
+body[data-page="ofertas"] .panel-title {
+  margin: 0 0 28px !important;
+  color: #ff9f43 !important;
+  text-align: center !important;
+  font-size: clamp(30px, 4vw, 40px);
+}
+
+body[data-page="ofertas"] .badge-row {
+  justify-content: flex-start;
+}
+
+body[data-page="ofertas"] .offer-note {
+  display: block;
+  margin: -4px 0 12px;
+  color: #ff0000;
+  text-align: center;
+  font-weight: 900;
+}
+
+body.dark-mode[data-page="menu"],
+body.dark-mode[data-page="ofertas"] {
+  background:
+    linear-gradient(rgba(20, 16, 12, 0.86), rgba(20, 16, 12, 0.92)),
+    url("../../img/img_main/pokemon-cafe.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.dark-mode[data-page="menu"] .catalog-panel,
+body.dark-mode[data-page="ofertas"] .catalog-panel {
+  background: rgba(30, 24, 18, 0.94);
+  border: 1px solid #5b4320;
+}
+
+body.dark-mode[data-page="menu"] .catalog-heading p {
+  color: #fff4df;
+}
+
+@media(max-width:900px){
+  body[data-page="menu"] .shop-layout-full,
+  body[data-page="ofertas"] .shop-layout-full {
+    width: 94vw;
+  }
+
+  body[data-page="menu"] .catalog-panel,
+  body[data-page="ofertas"] .catalog-panel {
+    padding: 26px 18px;
+  }
 }
