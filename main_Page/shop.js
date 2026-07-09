@@ -639,7 +639,7 @@
     const subtotal = cartSubtotal();
     const entrega = document.querySelector('input[name="metodo_entrega"]:checked')?.value || 'delivery';
     const envio = entrega === 'tienda' ? 0 : 4.9;
-    const descuento = subtotal >= 35 ? subtotal * 0.1 : 0;
+    const descuento = subtotal >= 35 ? subtotal * 0.15 : 0;
     return { subtotal, envio, descuento, total: subtotal + envio - descuento };
   }
 
