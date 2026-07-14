@@ -203,28 +203,29 @@ button:hover {
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-.theme-slider::before {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  z-index: 3;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #222;
-  border-radius: 50%;
-  background:
-    linear-gradient(
-      to bottom,
-      #ef5350 0%,
-      #ef5350 47%,
-      #222 47%,
-      #222 53%,
-      #fff 53%,
-      #fff 100%
-    );
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-  transition: transform 0.5s ease;
+.theme-slider::before{
+
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+    left:5px;
+    top:5px;
+    border-radius:50%;
+    background:
+        linear-gradient(
+            to bottom,
+            #ef5350 0%,
+            #ef5350 47%,
+            #222 47%,
+            #222 53%,
+            #ffffff 53%,
+            #ffffff 100%
+        );
+    border:2px solid #222;
+    box-shadow:0 2px 6px rgba(0,0,0,.35);
+    transition:.5s;
+    z-index:3;
 }
 
 .theme-slider::after {
@@ -253,7 +254,7 @@ button:hover {
       #394867 100%
     );
 }
-
+/*Movimiento*/
 .theme-toggle input:checked + .theme-slider::before {
   transform: translateX(40px) rotate(180deg);
 }
@@ -318,44 +319,40 @@ button:hover {
 .footer {
   background: #2f2f2f;
   color: white;
-  padding: 40px 0 20px;
-  border-top: 8px solid #a8874e;
+  padding: 12px 0 6px;
+  border-top: 6px solid #a8874e;
 }
 
-.grid-footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-  align-items: start;
+.grid-footer{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    max-width:900px;
+    margin:0 auto;
+    gap:40px;
+    align-items:start;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-  gap: 20px;
-}
-
-.footer-section {
-  text-align: center;
+.footer-section{
+    width:100%;
+    text-align:center;
 }
 
 .footer-section h3,
 .footer-section h4 {
   color: #ffcb05;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
+}
+
+.footer-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
 .footer-section ul {
+  margin-top: 5px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -375,8 +372,8 @@ button:hover {
 
 .footer .footer-logo {
   display: block;
-  width: 150px;
-  max-width: 70%;
+  width: 100px;
+  max-width: 60%;
   height: auto;
   margin: 12px auto;
   object-fit: contain;
@@ -384,17 +381,48 @@ button:hover {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
   border-top: 1px solid #555;
-  padding: 20px 15px 0;
+  padding: 15px 10px 0;
   font-size: 0.8rem;
 }
 
-.redes {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 15px;
-  justify-content: center;
+.redes{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin-top:12px;
+}
+
+.redes a{
+  width:42px;
+  height:42px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  background:#3b4cca;
+  color:white;
+  font-size:22px;
+  transition:.3s;
+}
+
+.redes-titulo{
+    margin-top:20px;
+}
+
+.redes a:hover{
+  background:#ffcb05;
+  color:#202020;
+  transform:translateY(-4px) scale(1.12);
+  box-shadow:0 0 15px rgba(255,203,5,.7);
+}
+
+.footer-frase{
+  margin-top:12px;
+  font-size:14px;
+  color:#ddd;
 }
 
 .footer-content a {
@@ -634,6 +662,23 @@ body.dark-mode {
   background-attachment: fixed;
   color: #fff4df;
 }
+/*Pokebola*/
+body.dark-mode .theme-slider::before{
+    background:
+        linear-gradient(
+            to bottom,
+            #743433 0%,
+            #743433 47%,
+            #222 47%,
+            #222 53%,
+            #b3a9a9 53%,
+            #b3a9a9 100%
+        );
+    box-shadow:
+        0 0 8px rgba(255,255,255,.25),
+        inset 0 0 6px rgba(0,0,0,.45);
+}
+
 
 body.dark-mode .nav-bar {
   background: rgba(31, 29, 26, 0.96);
@@ -802,7 +847,8 @@ body.dark-mode .login_terceros p {
 
   .grid-footer,
   .footer-content {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   .footer-section:last-child {
@@ -895,8 +941,7 @@ body.dark-mode .login_terceros p {
     margin: 20px auto;
   }
 
-  .grid-footer,
-  .footer-content {
+  .grid-footer {
     grid-template-columns: 1fr;
   }
 
